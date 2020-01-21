@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BDefSaveEditor
 {
-    public partial class Form3 : Form
+    public partial class TasksForm : Form
     {
         Main mainForm;
 
@@ -49,7 +49,7 @@ namespace BDefSaveEditor
             "Zombie"
         };
 
-        public Form3(Main link)
+        public TasksForm(Main link)
         {
             InitializeComponent();
             mainForm = link;

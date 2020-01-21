@@ -1,6 +1,6 @@
 ﻿namespace BDefSaveEditor
 {
-    partial class Form2
+    partial class WeaponsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -270,7 +270,7 @@
             this.labelNotice.Text = "NOTE: This only modifies the player\'s weapons.\r\nIt does NOT modify the weapon\'s a" +
     "mmo.";
             // 
-            // Form2
+            // WeaponsForm
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +299,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "WeaponsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -203,16 +198,16 @@ namespace BDefSaveEditor
         public int i_ITEM8_Attribute;
         public int i_ITEM8_Upgrades;
 
-        Form2 weaponForm;
-        Form3 taskForm;
-        Form4 inventoryForm;
+        WeaponsForm weaponForm;
+        TasksForm taskForm;
+        InventoryForm inventoryForm;
 
         public Main()
         {
             InitializeComponent();
-            weaponForm = new Form2(this);
-            taskForm = new Form3(this);
-            inventoryForm = new Form4(this);
+            weaponForm = new WeaponsForm(this);
+            taskForm = new TasksForm(this);
+            inventoryForm = new InventoryForm(this);
         }
 
         private void ResetWeapons()
@@ -738,7 +733,7 @@ namespace BDefSaveEditor
             if (boxXP.Value == boxXP.Maximum)
             {
                 DialogResult drWarning;
-                drWarning = MessageBox.Show("Total XP value exceeds game's maximum!\nThe game WILL FREEZE as soon as the map reads the save file contents.\nSave anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                drWarning = MessageBox.Show("Total XP value exceeds game's maximum!\nThe game WILL FREEZE as soon as it reads the save file contents.\nSave anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (drWarning == DialogResult.No)
                     return;
             }
@@ -1443,7 +1438,7 @@ namespace BDefSaveEditor
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            Form aboutForm = new AboutBox1();
+            Form aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
     }

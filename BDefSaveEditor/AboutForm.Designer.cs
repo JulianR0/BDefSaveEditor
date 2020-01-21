@@ -1,6 +1,6 @@
 ﻿namespace BDefSaveEditor
 {
-    partial class AboutBox1
+    partial class AboutForm
     {
         /// <summary>
         /// Required designer variable.
@@ -27,11 +27,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.labelProgramName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelVersion = new System.Windows.Forms.Label();
             this.labelDisclaimer = new System.Windows.Forms.Label();
+            this.linkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,15 +53,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // labelVersion
-            // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(50, 31);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(110, 13);
-            this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "v0.90 | April 7th, 2019";
-            // 
             // labelDisclaimer
             // 
             this.labelDisclaimer.AutoSize = true;
@@ -70,21 +61,35 @@
             this.labelDisclaimer.Size = new System.Drawing.Size(424, 39);
             this.labelDisclaimer.TabIndex = 3;
             this.labelDisclaimer.Text = "DISCLAIMER:\r\nThis program has been provided for ENTERTAINMENT and RESEARCH purpos" +
-    "es only.\r\nWe do not condone multiplayer cheating, please behave.";
+    "es only.\r\nWe are NOT responsible for any damage caused by the misuse of this too" +
+    "l.";
             // 
-            // AboutBox1
+            // linkLabel
+            // 
+            this.linkLabel.AutoSize = true;
+            this.linkLabel.LinkColor = System.Drawing.Color.Blue;
+            this.linkLabel.Location = new System.Drawing.Point(50, 31);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(113, 13);
+            this.linkLabel.TabIndex = 4;
+            this.linkLabel.TabStop = true;
+            this.linkLabel.Text = "Visit GitHub repository.";
+            this.linkLabel.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+            // 
+            // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 108);
+            this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.labelDisclaimer);
-            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelProgramName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutBox1";
+            this.Name = "AboutForm";
             this.Padding = new System.Windows.Forms.Padding(9);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -100,8 +105,7 @@
 
         private System.Windows.Forms.Label labelProgramName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelDisclaimer;
-
+        private System.Windows.Forms.LinkLabel linkLabel;
     }
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace BDefSaveEditor
 {
-    public partial class Form2 : Form
+    public partial class WeaponsForm : Form
     {
         Main mainForm;
 
-        public Form2(Main link)
+        public WeaponsForm(Main link)
         {
             InitializeComponent();
             mainForm = link;

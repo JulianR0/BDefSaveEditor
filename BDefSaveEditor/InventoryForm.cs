@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BDefSaveEditor
 {
-    public partial class Form4 : Form
+    public partial class InventoryForm : Form
     {
         Main mainForm;
 
@@ -258,7 +258,7 @@ namespace BDefSaveEditor
             3
         };
 
-        public Form4(Main link)
+        public InventoryForm(Main link)
         {
             InitializeComponent();
             mainForm = link;
