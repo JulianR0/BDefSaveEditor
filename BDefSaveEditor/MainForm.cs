@@ -105,6 +105,102 @@ namespace BDefSaveEditor
         const uint W_MINIGUN = (1 << 18);
         const uint W_SUIT = 0x80000000; // (1 << 31)
 
+        // It would be better if the XP formula could be reverse engineered
+        readonly int[] arrXPLevels =
+        {
+            0,
+            300,
+            758,
+            1283,
+            1884,
+            2572,
+            3360,
+            4263,
+            5296,
+            6479,
+            7834,
+            9386,
+            11163,
+            13197,
+            15526,
+            18193,
+            21247,
+            24744,
+            28748,
+            33333,
+            38583,
+            44594,
+            51477,
+            59358,
+            68382,
+            78714,
+            90544,
+            104090,
+            119600,
+            137359,
+            157693,
+            180975,
+            207633,
+            238157,
+            273107,
+            313125,
+            358946,
+            411411,
+            471483,
+            540266,
+            619022,
+            709198,
+            812449,
+            930672,
+            1066037,
+            1221030,
+            1398498,
+            1601698,
+            1834363,
+            2100764,
+            2405793,
+            2755051,
+            3154952,
+            3612839,
+            4137119,
+            4737420,
+            5424765,
+            6211775,
+            7112901,
+            8144691,
+            9326090,
+            10678792,
+            12227636,
+            14001062,
+            16031635,
+            18356641,
+            21018773,
+            24066914,
+            27557036,
+            31553225,
+            36128862,
+            41367966,
+            47366740,
+            54235337,
+            62099880,
+            71104782,
+            81415394,
+            93221045,
+            106738515,
+            122216018,
+            139937759,
+            160229152,
+            183462797,
+            210065320,
+            240525209,
+            275401781,
+            315335455,
+            361059511,
+            413413555,
+            473358934,
+            541996392
+        };
+
         public bool b_WPN_Melee;
         public bool b_WPN_Axe;
         public bool b_WPN_Pistol;
@@ -374,6 +470,7 @@ namespace BDefSaveEditor
                         fsFile.Read(bData, 0, bData.Length);
                         iData = BitConverter.ToInt32(bData, 0);
                         boxXP.Value = iData;
+                        boxLevel.Value = XPToLevel(iData);
 
                         // Long Jump
                         fsFile.Seek(ADDRESS_LONGJUMP, SeekOrigin.Begin);
@@ -385,7 +482,7 @@ namespace BDefSaveEditor
                         fsFile.Seek(ADDRESS_WEAPONS, SeekOrigin.Begin);
                         fsFile.Read(bData, 0, bData.Length);
                         uint uiData = BitConverter.ToUInt32(bData, 0);
-                        uiCheck = uiData; if ((uiCheck &= W_MELEE) == W_MELEE) b_WPN_Melee = true;
+                        uiCheck = uiData; if ((uiCheck &= W_MELEE) == W_MELEE) b_WPN_Melee = true; // Bad way of doing bitwise check!
                         uiCheck = uiData; if ((uiCheck &= W_AXE) == W_AXE) b_WPN_Axe = true;
                         uiCheck = uiData; if ((uiCheck &= W_PISTOL) == W_PISTOL) b_WPN_Pistol = true;
                         uiCheck = uiData; if ((uiCheck &= W_BLASTER) == W_BLASTER) b_WPN_Blaster = true;
@@ -666,6 +763,7 @@ namespace BDefSaveEditor
                         boxHPKits.Enabled = true;
                         boxMPKits.Enabled = true;
                         boxXP.Enabled = true;
+                        boxLevel.Enabled = true;
                         checkLJ.Enabled = true;
                         buttonWeapons.Enabled = true;
                         buttonTasks.Enabled = true;
@@ -689,6 +787,7 @@ namespace BDefSaveEditor
                         boxHPKits.Enabled = false;
                         boxMPKits.Enabled = false;
                         boxXP.Enabled = false;
+                        boxLevel.Enabled = false;
                         checkLJ.Enabled = false;
                         buttonWeapons.Enabled = false;
                         buttonTasks.Enabled = false;
@@ -718,6 +817,7 @@ namespace BDefSaveEditor
                 boxHPKits.Enabled = false;
                 boxMPKits.Enabled = false;
                 boxXP.Enabled = false;
+                boxLevel.Enabled = false;
                 checkLJ.Enabled = false;
                 buttonWeapons.Enabled = false;
                 buttonTasks.Enabled = false;
@@ -726,6 +826,18 @@ namespace BDefSaveEditor
 
                 MessageBox.Show("Unable to load file.\n" + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private int XPToLevel(int iXP)
+        {
+            // Can't use array methods, iterate through the array. Slow!
+            int index;
+            for (index = 0; index < arrXPLevels.Length; index++)
+            {
+                if (arrXPLevels[index] >= iXP)
+                    break; // This is the player's current level
+            }
+            return index + 1;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -1440,6 +1552,16 @@ namespace BDefSaveEditor
         {
             Form aboutForm = new AboutForm();
             aboutForm.ShowDialog();
+        }
+
+        private void boxLevel_Leave(object sender, EventArgs e)
+        {
+            boxXP.Value = arrXPLevels[Convert.ToInt32(boxLevel.Value) - 1];
+        }
+
+        private void boxXP_Leave(object sender, EventArgs e)
+        {
+            boxLevel.Value = XPToLevel(Convert.ToInt32(boxXP.Value));
         }
     }
 }

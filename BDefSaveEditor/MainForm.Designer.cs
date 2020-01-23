@@ -231,10 +231,26 @@
             // 
             this.boxLevel.Enabled = false;
             this.boxLevel.Location = new System.Drawing.Point(187, 76);
+            this.boxLevel.Maximum = new decimal(new int[] {
+            91,
+            0,
+            0,
+            0});
+            this.boxLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.boxLevel.Name = "boxLevel";
             this.boxLevel.Size = new System.Drawing.Size(80, 20);
             this.boxLevel.TabIndex = 2;
             this.boxLevel.TabStop = false;
+            this.boxLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.boxLevel.Leave += new System.EventHandler(this.boxLevel_Leave);
             // 
             // labelLevel
             // 
@@ -543,6 +559,7 @@
             this.boxXP.Name = "boxXP";
             this.boxXP.Size = new System.Drawing.Size(81, 20);
             this.boxXP.TabIndex = 15;
+            this.boxXP.Leave += new System.EventHandler(this.boxXP_Leave);
             // 
             // buttonWeapons
             // 
@@ -602,7 +619,7 @@
             this.tsmGem,
             this.tsmBag});
             this.contextMenuInventory.Name = "contextMenuInventory";
-            this.contextMenuInventory.Size = new System.Drawing.Size(167, 164);
+            this.contextMenuInventory.Size = new System.Drawing.Size(167, 142);
             // 
             // tsmTitle
             // 
@@ -662,56 +679,56 @@
             // tsmSlot1
             // 
             this.tsmSlot1.Name = "tsmSlot1";
-            this.tsmSlot1.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot1.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot1.Text = "Slot 1";
             this.tsmSlot1.Click += new System.EventHandler(this.tsmSlot1_Click);
             // 
             // tsmSlot2
             // 
             this.tsmSlot2.Name = "tsmSlot2";
-            this.tsmSlot2.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot2.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot2.Text = "Slot 2";
             this.tsmSlot2.Click += new System.EventHandler(this.tsmSlot2_Click);
             // 
             // tsmSlot3
             // 
             this.tsmSlot3.Name = "tsmSlot3";
-            this.tsmSlot3.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot3.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot3.Text = "Slot 3";
             this.tsmSlot3.Click += new System.EventHandler(this.tsmSlot3_Click);
             // 
             // tsmSlot4
             // 
             this.tsmSlot4.Name = "tsmSlot4";
-            this.tsmSlot4.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot4.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot4.Text = "Slot 4";
             this.tsmSlot4.Click += new System.EventHandler(this.tsmSlot4_Click);
             // 
             // tsmSlot5
             // 
             this.tsmSlot5.Name = "tsmSlot5";
-            this.tsmSlot5.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot5.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot5.Text = "Slot 5";
             this.tsmSlot5.Click += new System.EventHandler(this.tsmSlot5_Click);
             // 
             // tsmSlot6
             // 
             this.tsmSlot6.Name = "tsmSlot6";
-            this.tsmSlot6.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot6.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot6.Text = "Slot 6";
             this.tsmSlot6.Click += new System.EventHandler(this.tsmSlot6_Click);
             // 
             // tsmSlot7
             // 
             this.tsmSlot7.Name = "tsmSlot7";
-            this.tsmSlot7.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot7.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot7.Text = "Slot 7";
             this.tsmSlot7.Click += new System.EventHandler(this.tsmSlot7_Click);
             // 
             // tsmSlot8
             // 
             this.tsmSlot8.Name = "tsmSlot8";
-            this.tsmSlot8.Size = new System.Drawing.Size(152, 22);
+            this.tsmSlot8.Size = new System.Drawing.Size(103, 22);
             this.tsmSlot8.Text = "Slot 8";
             this.tsmSlot8.Click += new System.EventHandler(this.tsmSlot8_Click);
             // 
