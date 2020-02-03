@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BDefSaveEditor
@@ -33,6 +26,7 @@ namespace BDefSaveEditor
             mainForm.b_WPN_Crossbow = checkCrossbow.Checked;
             mainForm.b_WPN_Assault = checkAssault.Checked;
             mainForm.b_WPN_SAW = checkSAW.Checked;
+            mainForm.b_WPN_Sniper = checkSniper.Checked;
             mainForm.b_WPN_RPG = checkRPG.Checked;
             mainForm.b_WPN_Gauss = checkGauss.Checked;
             mainForm.b_WPN_Shock = checkShock.Checked;
@@ -57,6 +51,7 @@ namespace BDefSaveEditor
             checkCrossbow.Checked = mainForm.b_WPN_Crossbow;
             checkAssault.Checked = mainForm.b_WPN_Assault;
             checkSAW.Checked = mainForm.b_WPN_SAW;
+            checkSniper.Checked = mainForm.b_WPN_Sniper;
             checkRPG.Checked = mainForm.b_WPN_RPG;
             checkGauss.Checked = mainForm.b_WPN_Gauss;
             checkShock.Checked = mainForm.b_WPN_Shock;
@@ -64,6 +59,11 @@ namespace BDefSaveEditor
             checkFlame.Checked = mainForm.b_WPN_Flame;
             checkMinigun.Checked = mainForm.b_WPN_Minigun;
             checkSuit.Checked = mainForm.b_WPN_Suit;
+        }
+
+        private void OnFormClose(object sender, FormClosedEventArgs e)
+        {
+            mainForm.UpdateUpgradesContextItems();
         }
     }
 }

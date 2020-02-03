@@ -92,11 +92,11 @@
     <Compile Include="InventoryForm.Designer.cs">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="UpgradesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="UpgradesForm.Designer.cs">
+      <DependentUpon>UpgradesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form6.cs">
       <SubType>Form</SubType>
@@ -117,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpgradesForm.resx">
+      <DependentUpon>UpgradesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeaponsForm.resx">
       <DependentUpon>WeaponsForm.cs</DependentUpon>

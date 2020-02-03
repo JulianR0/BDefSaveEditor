@@ -84,6 +84,67 @@ namespace BDefSaveEditor
         const int ADDRESS_ITEM8_DEFENSE = 0x258;
         const int ADDRESS_ITEM8_ATTRIBUTE = 0x25C;
         const int ADDRESS_ITEM8_UPGRADES = 0x260;
+        const int ADDRESS_UPGRADE_MEELE_DAMAGE = 0x29C;
+        const int ADDRESS_UPGRADE_MEELE_RATE = 0x2A8;
+        const int ADDRESS_UPGRADE_AXE_SLOTS = 0x2CC;
+        const int ADDRESS_UPGRADE_AXE_DAMAGE = 0x2D0;
+        const int ADDRESS_UPGRADE_AXE_RATE = 0x2DC;
+        const int ADDRESS_UPGRADE_PISTOL_SLOTS = 0x300;
+        const int ADDRESS_UPGRADE_PISTOL_DAMAGE = 0x304;
+        const int ADDRESS_UPGRADE_PISTOL_RATE = 0x310;
+        const int ADDRESS_UPGRADE_PISTOL_AMMO = 0x31C;
+        const int ADDRESS_UPGRADE_PISTOL_UNIQUE = 0x328;
+        const int ADDRESS_UPGRADE_BLASTER_SLOTS = 0x334;
+        const int ADDRESS_UPGRADE_BLASTER_DAMAGE = 0x338;
+        const int ADDRESS_UPGRADE_BLASTER_RATE = 0x344;
+        const int ADDRESS_UPGRADE_PYTHON_SLOTS = 0x368;
+        const int ADDRESS_UPGRADE_PYTHON_DAMAGE = 0x36C;
+        const int ADDRESS_UPGRADE_PYTHON_RATE = 0x378;
+        const int ADDRESS_UPGRADE_PYTHON_AMMO = 0x384;
+        const int ADDRESS_UPGRADE_PYTHON_UNIQUE = 0x390;
+        const int ADDRESS_UPGRADE_AKIMBO_SLOTS = 0x39C;
+        const int ADDRESS_UPGRADE_AKIMBO_DAMAGE = 0x3A0;
+        const int ADDRESS_UPGRADE_AKIMBO_RATE = 0x3AC;
+        const int ADDRESS_UPGRADE_AKIMBO_AMMO = 0x3B8;
+        const int ADDRESS_UPGRADE_AKIMBO_UNIQUE = 0x3C4;
+        const int ADDRESS_UPGRADE_SMG_SLOTS = 0x3D0;
+        const int ADDRESS_UPGRADE_SMG_DAMAGE = 0x3D4;
+        const int ADDRESS_UPGRADE_SMG_RATE = 0x3E0;
+        const int ADDRESS_UPGRADE_SMG_AMMO = 0x3EC;
+        const int ADDRESS_UPGRADE_SHOTGUN_SLOTS = 0x404;
+        const int ADDRESS_UPGRADE_SHOTGUN_DAMAGE = 0x408;
+        const int ADDRESS_UPGRADE_SHOTGUN_RATE = 0x414;
+        const int ADDRESS_UPGRADE_SHOTGUN_AMMO = 0x420;
+        const int ADDRESS_UPGRADE_SHOTGUN_UNIQUE = 0x42C;
+        const int ADDRESS_UPGRADE_CROSSBOW_SLOTS = 0x438;
+        const int ADDRESS_UPGRADE_CROSSBOW_DAMAGE = 0x43C;
+        const int ADDRESS_UPGRADE_CROSSBOW_RATE = 0x448;
+        const int ADDRESS_UPGRADE_CROSSBOW_AMMO = 0x454;
+        const int ADDRESS_UPGRADE_CROSSBOW_UNIQUE = 0x460;
+        const int ADDRESS_UPGRADE_ASSAULT_SLOTS = 0x46C;
+        const int ADDRESS_UPGRADE_ASSAULT_DAMAGE = 0x470;
+        const int ADDRESS_UPGRADE_ASSAULT_RATE = 0x47C;
+        const int ADDRESS_UPGRADE_ASSAULT_AMMO = 0x488;
+        const int ADDRESS_UPGRADE_SAW_SLOTS = 0x4A0;
+        const int ADDRESS_UPGRADE_SAW_DAMAGE = 0x4A4;
+        const int ADDRESS_UPGRADE_SAW_RATE = 0x4B0;
+        const int ADDRESS_UPGRADE_SAW_AMMO = 0x4BC;
+        const int ADDRESS_UPGRADE_SNIPER_SLOTS = 0x4D4;
+        const int ADDRESS_UPGRADE_SNIPER_DAMAGE = 0x4D8;
+        const int ADDRESS_UPGRADE_SNIPER_RATE = 0x4E4;
+        const int ADDRESS_UPGRADE_SNIPER_AMMO = 0x4F0;
+        const int ADDRESS_UPGRADE_RPG_SLOTS = 0x508;
+        const int ADDRESS_UPGRADE_RPG_DAMAGE = 0x50C;
+        const int ADDRESS_UPGRADE_GAUSS_SLOTS = 0x53C;
+        const int ADDRESS_UPGRADE_GAUSS_DAMAGE = 0x540;
+        const int ADDRESS_UPGRADE_GAUSS_RATE = 0x54C;
+        const int ADDRESS_UPGRADE_SHOCK_RATE = 0x580;
+        const int ADDRESS_UPGRADE_GRENADE_SLOTS = 0x5A4;
+        const int ADDRESS_UPGRADE_GRENADE_RATE = 0x5B4;
+        const int ADDRESS_UPGRADE_GRENADE_AMMO = 0x5C0;
+        const int ADDRESS_UPGRADE_MINIGUN_SLOTS = 0x60C;
+        const int ADDRESS_UPGRADE_MINIGUN_DAMAGE = 0x610;
+        const int ADDRESS_UPGRADE_MINIGUN_RATE = 0x61C;
 
         const uint W_MELEE = (1 << 1);
         const uint W_AXE = (1 << 2);
@@ -294,9 +355,88 @@ namespace BDefSaveEditor
         public int i_ITEM8_Attribute;
         public int i_ITEM8_Upgrades;
 
+        public int i_UPGRADE_MEELE_Damage;
+        public int i_UPGRADE_MEELE_RateOfFire;
+
+        public int i_UPGRADE_AXE_Slots;
+        public int i_UPGRADE_AXE_Damage;
+        public int i_UPGRADE_AXE_RateOfFire;
+
+        public int i_UPGRADE_PISTOL_Slots;
+        public int i_UPGRADE_PISTOL_Damage;
+        public int i_UPGRADE_PISTOL_RateOfFire;
+        public int i_UPGRADE_PISTOL_Ammo;
+        public int i_UPGRADE_PISTOL_Unique;
+
+        public int i_UPGRADE_BLASTER_Slots;
+        public int i_UPGRADE_BLASTER_Damage;
+        public int i_UPGRADE_BLASTER_RateOfFire;
+
+        public int i_UPGRADE_PYTHON_Slots;
+        public int i_UPGRADE_PYTHON_Damage;
+        public int i_UPGRADE_PYTHON_RateOfFire;
+        public int i_UPGRADE_PYTHON_Ammo;
+        public int i_UPGRADE_PYTHON_Unique;
+
+        public int i_UPGRADE_AKIMBO_Slots;
+        public int i_UPGRADE_AKIMBO_Damage;
+        public int i_UPGRADE_AKIMBO_RateOfFire;
+        public int i_UPGRADE_AKIMBO_Ammo;
+        public int i_UPGRADE_AKIMBO_Unique;
+
+        public int i_UPGRADE_SMG_Slots;
+        public int i_UPGRADE_SMG_Damage;
+        public int i_UPGRADE_SMG_RateOfFire;
+        public int i_UPGRADE_SMG_Ammo;
+
+        public int i_UPGRADE_SHOTGUN_Slots;
+        public int i_UPGRADE_SHOTGUN_Damage;
+        public int i_UPGRADE_SHOTGUN_RateOfFire;
+        public int i_UPGRADE_SHOTGUN_Ammo;
+        public int i_UPGRADE_SHOTGUN_Unique;
+
+        public int i_UPGRADE_CROSSBOW_Slots;
+        public int i_UPGRADE_CROSSBOW_Damage;
+        public int i_UPGRADE_CROSSBOW_RateOfFire;
+        public int i_UPGRADE_CROSSBOW_Ammo;
+        public int i_UPGRADE_CROSSBOW_Unique;
+
+        public int i_UPGRADE_ASSAULT_Slots;
+        public int i_UPGRADE_ASSAULT_Damage;
+        public int i_UPGRADE_ASSAULT_RateOfFire;
+        public int i_UPGRADE_ASSAULT_Ammo;
+
+        public int i_UPGRADE_SAW_Slots;
+        public int i_UPGRADE_SAW_Damage;
+        public int i_UPGRADE_SAW_RateOfFire;
+        public int i_UPGRADE_SAW_Ammo;
+
+        public int i_UPGRADE_SNIPER_Slots;
+        public int i_UPGRADE_SNIPER_Damage;
+        public int i_UPGRADE_SNIPER_RateOfFire;
+        public int i_UPGRADE_SNIPER_Ammo;
+
+        public int i_UPGRADE_RPG_Slots;
+        public int i_UPGRADE_RPG_Damage;
+
+        public int i_UPGRADE_GAUSS_Slots;
+        public int i_UPGRADE_GAUSS_Damage;
+        public int i_UPGRADE_GAUSS_RateOfFire;
+
+        public int i_UPGRADE_SHOCK_RateOfFire;
+
+        public int i_UPGRADE_GRENADE_Slots;
+        public int i_UPGRADE_GRENADE_RateOfFire;
+        public int i_UPGRADE_GRENADE_Ammo;
+
+        public int i_UPGRADE_MINIGUN_Slots;
+        public int i_UPGRADE_MINIGUN_Damage;
+        public int i_UPGRADE_MINIGUN_RateOfFire;
+
         WeaponsForm weaponForm;
         TasksForm taskForm;
         InventoryForm inventoryForm;
+        UpgradesForm upgradesForm;
 
         public Main()
         {
@@ -304,6 +444,7 @@ namespace BDefSaveEditor
             weaponForm = new WeaponsForm(this);
             taskForm = new TasksForm(this);
             inventoryForm = new InventoryForm(this);
+            upgradesForm = new UpgradesForm(this);
         }
 
         private void ResetWeapons()
@@ -747,6 +888,28 @@ namespace BDefSaveEditor
                         i_ITEM8_Upgrades = iData;
                         UpdateInventoryMenu();
 
+                        // Weapon Upgrades
+                        fsFile.Seek(ADDRESS_UPGRADE_MEELE_DAMAGE, SeekOrigin.Begin); // Meele
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_MEELE_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_MEELE_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_MEELE_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_BLASTER_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_BLASTER_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_BLASTER_RateOfFire = iData;
+
                         // Controls
                         comboMode.Enabled = true;
                         comboClass.Enabled = true;
@@ -768,6 +931,7 @@ namespace BDefSaveEditor
                         buttonWeapons.Enabled = true;
                         buttonTasks.Enabled = true;
                         buttonInventory.Enabled = true;
+                        buttonUpgrades.Enabled = false;
                         buttonSave.Enabled = true;
                     }
                     else
@@ -792,6 +956,7 @@ namespace BDefSaveEditor
                         buttonWeapons.Enabled = false;
                         buttonTasks.Enabled = false;
                         buttonInventory.Enabled = false;
+                        buttonUpgrades.Enabled = false;
                         buttonSave.Enabled = false;
 
                         labelFile.Text = "No file opened";
@@ -822,6 +987,7 @@ namespace BDefSaveEditor
                 buttonWeapons.Enabled = false;
                 buttonTasks.Enabled = false;
                 buttonInventory.Enabled = false;
+                buttonUpgrades.Enabled = false;
                 buttonSave.Enabled = false;
 
                 MessageBox.Show("Unable to load file.\n" + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -838,6 +1004,43 @@ namespace BDefSaveEditor
                     break; // This is the player's current level
             }
             return index + 1;
+        }
+
+        public void UpdateUpgradesContextItems()
+        {
+            cmu1_Meele.Enabled = false;
+            cmu1_Axe.Enabled = false;
+            cmu2_Pistol.Enabled = false;
+            cmu2_Blaster.Enabled = false;
+            cmu2_Python.Enabled = false;
+            cmu2_Akimbo.Enabled = false;
+            cmu3_SMG.Enabled = false;
+            cmu3_Shotgun.Enabled = false;
+            cmu3_Crossbow.Enabled = false;
+            cmu3_ARifle.Enabled = false;
+            cmu3_SAW.Enabled = false;
+            cmu3_Sniper.Enabled = false;
+            cmu4_RPGLauncher.Enabled = false;
+            cmu4_Gauss.Enabled = false;
+            /*
+            if (b_WPN_Melee) cmu1_Meele.Enabled = true;
+            if (b_WPN_Axe) uiData += W_AXE;
+            if (b_WPN_Pistol) uiData += W_PISTOL;
+            if (b_WPN_Blaster) uiData += W_BLASTER;
+            if (b_WPN_357) uiData += W_357;
+            if (b_WPN_Akimbo) uiData += W_AKIMBO;
+            if (b_WPN_MP5) uiData += W_MP5;
+            if (b_WPN_Shotgun) uiData += W_SHOTGUN;
+            if (b_WPN_Crossbow) uiData += W_CROSSBOW;
+            if (b_WPN_Assault) uiData += W_ASSAULT;
+            if (b_WPN_SAW) uiData += W_SAW;
+            if (b_WPN_Sniper) uiData += W_SNIPER;
+            if (b_WPN_RPG) uiData += W_RPG;
+            if (b_WPN_Gauss) uiData += W_GAUSS;
+            if (b_WPN_Shock) uiData += W_SHOCK;
+            if (b_WPN_GL) uiData += W_GL;
+            if (b_WPN_Minigun) uiData += W_MINIGUN;
+            */
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -1439,6 +1642,38 @@ namespace BDefSaveEditor
                     fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
                     fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
 
+                    // Weapon Upgrades
+                    fsFile.Seek(ADDRESS_UPGRADE_MEELE_DAMAGE, SeekOrigin.Begin); // Meele
+                    iData = i_UPGRADE_MEELE_Damage;
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    fsFile.Seek(ADDRESS_UPGRADE_MEELE_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_MEELE_RateOfFire;
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
+                    iData = i_UPGRADE_BLASTER_Slots;
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_BLASTER_Damage;
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_BLASTER_RateOfFire;
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+
                     // End
                     MessageBox.Show("Save file updated.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -1562,6 +1797,18 @@ namespace BDefSaveEditor
         private void boxXP_Leave(object sender, EventArgs e)
         {
             boxLevel.Value = XPToLevel(Convert.ToInt32(boxXP.Value));
+        }
+
+        private void buttonUpgrades_Click(object sender, EventArgs e)
+        {
+            contextMenuUpgrades.Show(MousePosition);
+        }
+
+        private void cmu1_Meele_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Meele";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MEELE);
+            upgradesForm.ShowDialog();
         }
     }
 }

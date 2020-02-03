@@ -93,6 +93,30 @@
             this.buttonAmmo = new System.Windows.Forms.Button();
             this.buttonSkills = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
+            this.contextMenuUpgrades = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmuTitle = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmuCategory1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu1_Meele = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu1_Axe = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuCategory2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu2_Pistol = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu2_Blaster = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu2_Python = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu2_Akimbo = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuCategory3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_SMG = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_Shotgun = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_Crossbow = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_ARifle = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_SAW = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmuCategory4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu4_RPGLauncher = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu4_Gauss = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu4_SRifle = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu4_GrenadeLauncher = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu4_Minigun = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_Sniper = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.boxWave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLegerity)).BeginInit();
@@ -108,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxSouls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxXP)).BeginInit();
             this.contextMenuInventory.SuspendLayout();
+            this.contextMenuUpgrades.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOpen
@@ -382,7 +407,8 @@
             this.boxHPKits.Name = "boxHPKits";
             this.boxHPKits.Size = new System.Drawing.Size(80, 20);
             this.boxHPKits.TabIndex = 13;
-            this.toolTip.SetToolTip(this.boxHPKits, "WARNING: Going over \"Belt capacity\" will clamp this value to it\'s max.");
+            this.toolTip.SetToolTip(this.boxHPKits, "NOTE:\r\nGoing over \"Belt capacity\" will cause the game to clamp this value to it\'s" +
+        " max.");
             // 
             // boxMPKits
             // 
@@ -396,7 +422,8 @@
             this.boxMPKits.Name = "boxMPKits";
             this.boxMPKits.Size = new System.Drawing.Size(80, 20);
             this.boxMPKits.TabIndex = 14;
-            this.toolTip.SetToolTip(this.boxMPKits, "WARNING: Going over \"Belt capacity\" will clamp this value to it\'s max.");
+            this.toolTip.SetToolTip(this.boxMPKits, "NOTE:\r\nGoing over \"Belt capacity\" will cause the game to clamp this value to it\'s" +
+        " max.");
             // 
             // checkLJ
             // 
@@ -607,6 +634,7 @@
             this.buttonUpgrades.TabIndex = 119;
             this.buttonUpgrades.Text = "Edit Upgrades";
             this.buttonUpgrades.UseVisualStyleBackColor = true;
+            this.buttonUpgrades.Click += new System.EventHandler(this.buttonUpgrades_Click);
             // 
             // contextMenuInventory
             // 
@@ -749,7 +777,7 @@
             this.buttonSkills.Name = "buttonSkills";
             this.buttonSkills.Size = new System.Drawing.Size(85, 23);
             this.buttonSkills.TabIndex = 121;
-            this.buttonSkills.Text = "Edit Skills";
+            this.buttonSkills.Text = "Edit Powers";
             this.buttonSkills.UseVisualStyleBackColor = true;
             // 
             // buttonAbout
@@ -761,6 +789,178 @@
             this.buttonAbout.Text = "About";
             this.buttonAbout.UseVisualStyleBackColor = true;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
+            // contextMenuUpgrades
+            // 
+            this.contextMenuUpgrades.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmuTitle,
+            this.toolStripSeparator2,
+            this.cmuCategory1,
+            this.cmuCategory2,
+            this.cmuCategory3,
+            this.cmuCategory4});
+            this.contextMenuUpgrades.Name = "contextMenuUpgrades";
+            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 120);
+            // 
+            // cmuTitle
+            // 
+            this.cmuTitle.Enabled = false;
+            this.cmuTitle.Name = "cmuTitle";
+            this.cmuTitle.Size = new System.Drawing.Size(178, 22);
+            this.cmuTitle.Text = "Edit Upgrades";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
+            // 
+            // cmuCategory1
+            // 
+            this.cmuCategory1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmu1_Meele,
+            this.cmu1_Axe});
+            this.cmuCategory1.Name = "cmuCategory1";
+            this.cmuCategory1.Size = new System.Drawing.Size(178, 22);
+            this.cmuCategory1.Text = "Weapon Category 1";
+            // 
+            // cmu1_Meele
+            // 
+            this.cmu1_Meele.Name = "cmu1_Meele";
+            this.cmu1_Meele.Size = new System.Drawing.Size(137, 22);
+            this.cmu1_Meele.Text = "Meele";
+            this.cmu1_Meele.Click += new System.EventHandler(this.cmu1_Meele_Click);
+            // 
+            // cmu1_Axe
+            // 
+            this.cmu1_Axe.Name = "cmu1_Axe";
+            this.cmu1_Axe.Size = new System.Drawing.Size(137, 22);
+            this.cmu1_Axe.Text = "Ancient Axe";
+            // 
+            // cmuCategory2
+            // 
+            this.cmuCategory2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmu2_Pistol,
+            this.cmu2_Blaster,
+            this.cmu2_Python,
+            this.cmu2_Akimbo});
+            this.cmuCategory2.Name = "cmuCategory2";
+            this.cmuCategory2.Size = new System.Drawing.Size(178, 22);
+            this.cmuCategory2.Text = "Weapon Category 2";
+            // 
+            // cmu2_Pistol
+            // 
+            this.cmu2_Pistol.Name = "cmu2_Pistol";
+            this.cmu2_Pistol.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Pistol.Text = "Pistol";
+            // 
+            // cmu2_Blaster
+            // 
+            this.cmu2_Blaster.Name = "cmu2_Blaster";
+            this.cmu2_Blaster.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Blaster.Text = "Blaster";
+            // 
+            // cmu2_Python
+            // 
+            this.cmu2_Python.Name = "cmu2_Python";
+            this.cmu2_Python.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Python.Text = "Python";
+            // 
+            // cmu2_Akimbo
+            // 
+            this.cmu2_Akimbo.Name = "cmu2_Akimbo";
+            this.cmu2_Akimbo.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Akimbo.Text = "Akimbo";
+            // 
+            // cmuCategory3
+            // 
+            this.cmuCategory3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmu3_SMG,
+            this.cmu3_Shotgun,
+            this.cmu3_Crossbow,
+            this.cmu3_ARifle,
+            this.cmu3_SAW,
+            this.cmu3_Sniper});
+            this.cmuCategory3.Name = "cmuCategory3";
+            this.cmuCategory3.Size = new System.Drawing.Size(178, 22);
+            this.cmuCategory3.Text = "Weapon Category 3";
+            // 
+            // cmu3_SMG
+            // 
+            this.cmu3_SMG.Name = "cmu3_SMG";
+            this.cmu3_SMG.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_SMG.Text = "Submachine Gun";
+            // 
+            // cmu3_Shotgun
+            // 
+            this.cmu3_Shotgun.Name = "cmu3_Shotgun";
+            this.cmu3_Shotgun.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_Shotgun.Text = "Shotgun";
+            // 
+            // cmu3_Crossbow
+            // 
+            this.cmu3_Crossbow.Name = "cmu3_Crossbow";
+            this.cmu3_Crossbow.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_Crossbow.Text = "Crossbow";
+            // 
+            // cmu3_ARifle
+            // 
+            this.cmu3_ARifle.Name = "cmu3_ARifle";
+            this.cmu3_ARifle.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_ARifle.Text = "Assault Rifle";
+            // 
+            // cmu3_SAW
+            // 
+            this.cmu3_SAW.Name = "cmu3_SAW";
+            this.cmu3_SAW.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_SAW.Text = "Squad Automatic Weapon";
+            // 
+            // cmuCategory4
+            // 
+            this.cmuCategory4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmu4_RPGLauncher,
+            this.cmu4_Gauss,
+            this.cmu4_SRifle,
+            this.cmu4_GrenadeLauncher,
+            this.cmu4_Minigun});
+            this.cmuCategory4.Name = "cmuCategory4";
+            this.cmuCategory4.Size = new System.Drawing.Size(178, 22);
+            this.cmuCategory4.Text = "Weapon Category 4";
+            // 
+            // cmu4_RPGLauncher
+            // 
+            this.cmu4_RPGLauncher.Name = "cmu4_RPGLauncher";
+            this.cmu4_RPGLauncher.Size = new System.Drawing.Size(212, 22);
+            this.cmu4_RPGLauncher.Text = "Rocket-Propelled Grenade";
+            // 
+            // cmu4_Gauss
+            // 
+            this.cmu4_Gauss.Name = "cmu4_Gauss";
+            this.cmu4_Gauss.Size = new System.Drawing.Size(212, 22);
+            this.cmu4_Gauss.Text = "Gauss Rifle";
+            // 
+            // cmu4_SRifle
+            // 
+            this.cmu4_SRifle.Name = "cmu4_SRifle";
+            this.cmu4_SRifle.Size = new System.Drawing.Size(212, 22);
+            this.cmu4_SRifle.Text = "Shock Rifle";
+            // 
+            // cmu4_GrenadeLauncher
+            // 
+            this.cmu4_GrenadeLauncher.Name = "cmu4_GrenadeLauncher";
+            this.cmu4_GrenadeLauncher.Size = new System.Drawing.Size(212, 22);
+            this.cmu4_GrenadeLauncher.Text = "Grenade Launcher";
+            // 
+            // cmu4_Minigun
+            // 
+            this.cmu4_Minigun.Name = "cmu4_Minigun";
+            this.cmu4_Minigun.Size = new System.Drawing.Size(212, 22);
+            this.cmu4_Minigun.Text = "Minigun";
+            // 
+            // cmu3_Sniper
+            // 
+            this.cmu3_Sniper.Name = "cmu3_Sniper";
+            this.cmu3_Sniper.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_Sniper.Text = "Sniper Rifle";
             // 
             // Main
             // 
@@ -834,6 +1034,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxSouls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxXP)).EndInit();
             this.contextMenuInventory.ResumeLayout(false);
+            this.contextMenuUpgrades.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -904,7 +1105,30 @@
         private System.Windows.Forms.Button buttonAmmo;
         private System.Windows.Forms.Button buttonSkills;
         private System.Windows.Forms.Button buttonAbout;
-
+        private System.Windows.Forms.ContextMenuStrip contextMenuUpgrades;
+        private System.Windows.Forms.ToolStripMenuItem cmuTitle;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem cmuCategory1;
+        private System.Windows.Forms.ToolStripMenuItem cmuCategory2;
+        private System.Windows.Forms.ToolStripMenuItem cmuCategory3;
+        private System.Windows.Forms.ToolStripMenuItem cmuCategory4;
+        private System.Windows.Forms.ToolStripMenuItem cmu1_Meele;
+        private System.Windows.Forms.ToolStripMenuItem cmu1_Axe;
+        private System.Windows.Forms.ToolStripMenuItem cmu2_Pistol;
+        private System.Windows.Forms.ToolStripMenuItem cmu2_Blaster;
+        private System.Windows.Forms.ToolStripMenuItem cmu2_Python;
+        private System.Windows.Forms.ToolStripMenuItem cmu2_Akimbo;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_SMG;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_Shotgun;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_Crossbow;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_ARifle;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_SAW;
+        private System.Windows.Forms.ToolStripMenuItem cmu4_RPGLauncher;
+        private System.Windows.Forms.ToolStripMenuItem cmu4_Gauss;
+        private System.Windows.Forms.ToolStripMenuItem cmu4_SRifle;
+        private System.Windows.Forms.ToolStripMenuItem cmu4_GrenadeLauncher;
+        private System.Windows.Forms.ToolStripMenuItem cmu4_Minigun;
+        private System.Windows.Forms.ToolStripMenuItem cmu3_Sniper;
     }
 }
 

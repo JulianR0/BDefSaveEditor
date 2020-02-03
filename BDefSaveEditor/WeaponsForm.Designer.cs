@@ -48,11 +48,12 @@
             this.checkSuit = new System.Windows.Forms.CheckBox();
             this.checkBlaster = new System.Windows.Forms.CheckBox();
             this.labelNotice = new System.Windows.Forms.Label();
+            this.checkSniper = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(163, 392);
+            this.buttonOK.Location = new System.Drawing.Point(163, 411);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 0;
@@ -152,18 +153,18 @@
             // checkRPG
             // 
             this.checkRPG.AutoSize = true;
-            this.checkRPG.Location = new System.Drawing.Point(8, 219);
+            this.checkRPG.Location = new System.Drawing.Point(8, 238);
             this.checkRPG.Margin = new System.Windows.Forms.Padding(1);
             this.checkRPG.Name = "checkRPG";
-            this.checkRPG.Size = new System.Drawing.Size(109, 17);
+            this.checkRPG.Size = new System.Drawing.Size(152, 17);
             this.checkRPG.TabIndex = 11;
-            this.checkRPG.Text = "Rocket Launcher";
+            this.checkRPG.Text = "Rocket-Propelled Grenade";
             this.checkRPG.UseVisualStyleBackColor = true;
             // 
             // checkGauss
             // 
             this.checkGauss.AutoSize = true;
-            this.checkGauss.Location = new System.Drawing.Point(8, 238);
+            this.checkGauss.Location = new System.Drawing.Point(8, 257);
             this.checkGauss.Margin = new System.Windows.Forms.Padding(1);
             this.checkGauss.Name = "checkGauss";
             this.checkGauss.Size = new System.Drawing.Size(80, 17);
@@ -196,7 +197,7 @@
             // checkShock
             // 
             this.checkShock.AutoSize = true;
-            this.checkShock.Location = new System.Drawing.Point(8, 257);
+            this.checkShock.Location = new System.Drawing.Point(8, 276);
             this.checkShock.Margin = new System.Windows.Forms.Padding(1);
             this.checkShock.Name = "checkShock";
             this.checkShock.Size = new System.Drawing.Size(81, 17);
@@ -207,7 +208,7 @@
             // checkGL
             // 
             this.checkGL.AutoSize = true;
-            this.checkGL.Location = new System.Drawing.Point(8, 276);
+            this.checkGL.Location = new System.Drawing.Point(8, 295);
             this.checkGL.Margin = new System.Windows.Forms.Padding(1);
             this.checkGL.Name = "checkGL";
             this.checkGL.Size = new System.Drawing.Size(115, 17);
@@ -218,7 +219,7 @@
             // checkFlame
             // 
             this.checkFlame.AutoSize = true;
-            this.checkFlame.Location = new System.Drawing.Point(8, 295);
+            this.checkFlame.Location = new System.Drawing.Point(8, 314);
             this.checkFlame.Margin = new System.Windows.Forms.Padding(1);
             this.checkFlame.Name = "checkFlame";
             this.checkFlame.Size = new System.Drawing.Size(89, 17);
@@ -229,7 +230,7 @@
             // checkMinigun
             // 
             this.checkMinigun.AutoSize = true;
-            this.checkMinigun.Location = new System.Drawing.Point(8, 314);
+            this.checkMinigun.Location = new System.Drawing.Point(8, 333);
             this.checkMinigun.Margin = new System.Windows.Forms.Padding(1);
             this.checkMinigun.Name = "checkMinigun";
             this.checkMinigun.Size = new System.Drawing.Size(63, 17);
@@ -240,7 +241,7 @@
             // checkSuit
             // 
             this.checkSuit.AutoSize = true;
-            this.checkSuit.Location = new System.Drawing.Point(8, 333);
+            this.checkSuit.Location = new System.Drawing.Point(8, 352);
             this.checkSuit.Margin = new System.Windows.Forms.Padding(1);
             this.checkSuit.Name = "checkSuit";
             this.checkSuit.Size = new System.Drawing.Size(71, 17);
@@ -262,7 +263,7 @@
             // labelNotice
             // 
             this.labelNotice.AutoSize = true;
-            this.labelNotice.Location = new System.Drawing.Point(10, 357);
+            this.labelNotice.Location = new System.Drawing.Point(10, 376);
             this.labelNotice.Margin = new System.Windows.Forms.Padding(1, 6, 1, 6);
             this.labelNotice.Name = "labelNotice";
             this.labelNotice.Size = new System.Drawing.Size(231, 26);
@@ -270,12 +271,24 @@
             this.labelNotice.Text = "NOTE: This only modifies the player\'s weapons.\r\nIt does NOT modify the weapon\'s a" +
     "mmo.";
             // 
+            // checkSniper
+            // 
+            this.checkSniper.AutoSize = true;
+            this.checkSniper.Location = new System.Drawing.Point(8, 219);
+            this.checkSniper.Margin = new System.Windows.Forms.Padding(1);
+            this.checkSniper.Name = "checkSniper";
+            this.checkSniper.Size = new System.Drawing.Size(80, 17);
+            this.checkSniper.TabIndex = 21;
+            this.checkSniper.Text = "Sniper Rifle";
+            this.checkSniper.UseVisualStyleBackColor = true;
+            // 
             // WeaponsForm
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 427);
+            this.ClientSize = new System.Drawing.Size(250, 442);
+            this.Controls.Add(this.checkSniper);
             this.Controls.Add(this.labelNotice);
             this.Controls.Add(this.checkBlaster);
             this.Controls.Add(this.checkSuit);
@@ -304,6 +317,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Weapons";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -332,5 +346,6 @@
         private System.Windows.Forms.CheckBox checkMinigun;
         private System.Windows.Forms.CheckBox checkSuit;
         private System.Windows.Forms.CheckBox checkBlaster;
+        private System.Windows.Forms.CheckBox checkSniper;
     }
 }
