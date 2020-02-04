@@ -897,6 +897,38 @@ namespace BDefSaveEditor
                         fsFile.Read(bData, 0, bData.Length);
                         iData = BitConverter.ToInt32(bData, 0);
                         i_UPGRADE_MEELE_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AXE_SLOTS, SeekOrigin.Begin); // Ancient Axe
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AXE_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AXE_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AXE_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AXE_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AXE_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_SLOTS, SeekOrigin.Begin); // Pistol
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PISTOL_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PISTOL_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PISTOL_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PISTOL_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_UNIQUE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PISTOL_Unique = iData;
                         fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
                         fsFile.Read(bData, 0, bData.Length);
                         iData = BitConverter.ToInt32(bData, 0);
@@ -909,6 +941,198 @@ namespace BDefSaveEditor
                         fsFile.Read(bData, 0, bData.Length);
                         iData = BitConverter.ToInt32(bData, 0);
                         i_UPGRADE_BLASTER_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_SLOTS, SeekOrigin.Begin); // Python
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PYTHON_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PYTHON_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PYTHON_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PYTHON_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_UNIQUE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_PYTHON_Unique = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_SLOTS, SeekOrigin.Begin); // Akimbo
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AKIMBO_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AKIMBO_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AKIMBO_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AKIMBO_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_UNIQUE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_AKIMBO_Unique = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SMG_SLOTS, SeekOrigin.Begin); // Submachine Gun
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SMG_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SMG_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SMG_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SMG_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SMG_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SMG_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SMG_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_SLOTS, SeekOrigin.Begin); // Shotgun
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOTGUN_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOTGUN_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOTGUN_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOTGUN_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_UNIQUE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOTGUN_Unique = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_SLOTS, SeekOrigin.Begin); // Crossbow
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_CROSSBOW_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_CROSSBOW_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_CROSSBOW_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_CROSSBOW_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_UNIQUE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_CROSSBOW_Unique = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_SLOTS, SeekOrigin.Begin); // Assault Rifle
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_ASSAULT_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_ASSAULT_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_ASSAULT_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_ASSAULT_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SAW_SLOTS, SeekOrigin.Begin); // SAW
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SAW_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SAW_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SAW_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SAW_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SAW_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SAW_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SAW_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_SLOTS, SeekOrigin.Begin); // Sniper Rifle
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SNIPER_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SNIPER_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SNIPER_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SNIPER_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_RPG_SLOTS, SeekOrigin.Begin); // Rocket Launcher
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_RPG_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_RPG_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_RPG_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_SLOTS, SeekOrigin.Begin); // Gauss
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GAUSS_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GAUSS_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GAUSS_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_SHOCK_RATE, SeekOrigin.Begin); // Shock Rifle
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_SHOCK_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_SLOTS, SeekOrigin.Begin); // Grenade Launcher
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GRENADE_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GRENADE_RateOfFire = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_AMMO, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_GRENADE_Ammo = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_SLOTS, SeekOrigin.Begin); // Minigun
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_MINIGUN_Slots = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_DAMAGE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_MINIGUN_Damage = iData;
+                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_RATE, SeekOrigin.Begin);
+                        fsFile.Read(bData, 0, bData.Length);
+                        iData = BitConverter.ToInt32(bData, 0);
+                        i_UPGRADE_MINIGUN_RateOfFire = iData;
 
                         // Controls
                         comboMode.Enabled = true;
@@ -931,7 +1155,7 @@ namespace BDefSaveEditor
                         buttonWeapons.Enabled = true;
                         buttonTasks.Enabled = true;
                         buttonInventory.Enabled = true;
-                        buttonUpgrades.Enabled = false;
+                        buttonUpgrades.Enabled = true;
                         buttonSave.Enabled = true;
                     }
                     else
@@ -1022,25 +1246,27 @@ namespace BDefSaveEditor
             cmu3_Sniper.Enabled = false;
             cmu4_RPGLauncher.Enabled = false;
             cmu4_Gauss.Enabled = false;
-            /*
+            cmu4_SRifle.Enabled = false;
+            cmu4_GrenadeLauncher.Enabled = false;
+            cmu4_Minigun.Enabled = false;
+            
             if (b_WPN_Melee) cmu1_Meele.Enabled = true;
-            if (b_WPN_Axe) uiData += W_AXE;
-            if (b_WPN_Pistol) uiData += W_PISTOL;
-            if (b_WPN_Blaster) uiData += W_BLASTER;
-            if (b_WPN_357) uiData += W_357;
-            if (b_WPN_Akimbo) uiData += W_AKIMBO;
-            if (b_WPN_MP5) uiData += W_MP5;
-            if (b_WPN_Shotgun) uiData += W_SHOTGUN;
-            if (b_WPN_Crossbow) uiData += W_CROSSBOW;
-            if (b_WPN_Assault) uiData += W_ASSAULT;
-            if (b_WPN_SAW) uiData += W_SAW;
-            if (b_WPN_Sniper) uiData += W_SNIPER;
-            if (b_WPN_RPG) uiData += W_RPG;
-            if (b_WPN_Gauss) uiData += W_GAUSS;
-            if (b_WPN_Shock) uiData += W_SHOCK;
-            if (b_WPN_GL) uiData += W_GL;
-            if (b_WPN_Minigun) uiData += W_MINIGUN;
-            */
+            if (b_WPN_Axe) cmu1_Axe.Enabled = true;
+            if (b_WPN_Pistol) cmu2_Pistol.Enabled = true;
+            if (b_WPN_Blaster) cmu2_Blaster.Enabled = true;
+            if (b_WPN_357) cmu2_Python.Enabled = true;
+            if (b_WPN_Akimbo) cmu2_Akimbo.Enabled = true;
+            if (b_WPN_MP5) cmu3_SMG.Enabled = true;
+            if (b_WPN_Shotgun) cmu3_Shotgun.Enabled = true;
+            if (b_WPN_Crossbow) cmu3_Crossbow.Enabled = true;
+            if (b_WPN_Assault) cmu3_ARifle.Enabled = true;
+            if (b_WPN_SAW) cmu3_SAW.Enabled = true;
+            if (b_WPN_Sniper) cmu3_Sniper.Enabled = true;
+            if (b_WPN_RPG) cmu4_RPGLauncher.Enabled = true;
+            if (b_WPN_Gauss) cmu4_Gauss.Enabled = true;
+            if (b_WPN_Shock) cmu4_SRifle.Enabled = true;
+            if (b_WPN_GL) cmu4_GrenadeLauncher.Enabled = true;
+            if (b_WPN_Minigun) cmu4_Minigun.Enabled = true;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

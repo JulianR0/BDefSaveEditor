@@ -167,8 +167,8 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(227, 39);
             this.label6.TabIndex = 10;
-            this.label6.Text = "NOTE:\r\nGoing over the default maximum upgrades may\r\ncause the game to behave erra" +
-    "tically.";
+            this.label6.Text = "NOTE:\r\nGoing over the default maximum upgrades may\r\ncause the weapon to behave er" +
+    "ratically.";
             // 
             // buttonOK
             // 
