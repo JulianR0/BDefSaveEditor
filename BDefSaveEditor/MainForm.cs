@@ -1635,6 +1635,163 @@ namespace BDefSaveEditor
                     iData = i_UPGRADE_BLASTER_RateOfFire;
                     ConvertAndSave(fsFile, iData);
 
+                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_SLOTS, SeekOrigin.Begin); // Python
+                    iData = i_UPGRADE_PYTHON_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PYTHON_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PYTHON_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PYTHON_Ammo;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_UNIQUE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PYTHON_Unique;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_SLOTS, SeekOrigin.Begin); // Akimbo
+                    iData = i_UPGRADE_AKIMBO_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_AKIMBO_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_AKIMBO_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_AKIMBO_Ammo;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_UNIQUE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_AKIMBO_Unique;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_SMG_SLOTS, SeekOrigin.Begin); // Submachine Gun
+                    iData = i_UPGRADE_SMG_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SMG_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SMG_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SMG_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SMG_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SMG_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SMG_Ammo;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_SLOTS, SeekOrigin.Begin); // Shotgun
+                    iData = i_UPGRADE_SHOTGUN_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SHOTGUN_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SHOTGUN_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SHOTGUN_Ammo;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_UNIQUE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SHOTGUN_Unique;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_SLOTS, SeekOrigin.Begin); // Crossbow
+                    iData = i_UPGRADE_CROSSBOW_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_CROSSBOW_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_CROSSBOW_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_CROSSBOW_Ammo;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_UNIQUE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_CROSSBOW_Unique;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_SLOTS, SeekOrigin.Begin); // Assault Rifle
+                    iData = i_UPGRADE_ASSAULT_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_ASSAULT_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_ASSAULT_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_ASSAULT_Ammo;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_SAW_SLOTS, SeekOrigin.Begin); // SAW
+                    iData = i_UPGRADE_SAW_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SAW_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SAW_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SAW_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SAW_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SAW_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SAW_Ammo;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_SLOTS, SeekOrigin.Begin); // Sniper Rifle
+                    iData = i_UPGRADE_SNIPER_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SNIPER_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SNIPER_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_SNIPER_Ammo;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_RPG_SLOTS, SeekOrigin.Begin); // RPG
+                    iData = i_UPGRADE_RPG_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_RPG_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_RPG_Damage;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_SLOTS, SeekOrigin.Begin); // Gauss Rifle
+                    iData = i_UPGRADE_GAUSS_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_GAUSS_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_GAUSS_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_SHOCK_RATE, SeekOrigin.Begin); // Shock Rifle
+                    iData = i_UPGRADE_SHOCK_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_SLOTS, SeekOrigin.Begin); // Grenade Launcher
+                    iData = i_UPGRADE_GRENADE_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_GRENADE_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_GRENADE_Ammo;
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_SLOTS, SeekOrigin.Begin); // Minigun
+                    iData = i_UPGRADE_MINIGUN_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_MINIGUN_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_MINIGUN_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+
                     // End
                     MessageBox.Show("Save file updated.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
