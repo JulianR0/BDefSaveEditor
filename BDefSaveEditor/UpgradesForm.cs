@@ -203,6 +203,150 @@ namespace BDefSaveEditor
                         labelUnique.Text = "Maximum: 2"; toolTipUniques.SetToolTip(linkLabel1, CrossbowUpgrades());
                         break;
                     }
+                case e_Selector.ASSAULT:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_ASSAULT_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_ASSAULT_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_ASSAULT_RateOfFire;
+                        numericAmmo.Value = mainForm.i_UPGRADE_ASSAULT_Ammo;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 4";
+                        labelAmmo.Text = "Maximum: 5";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.SAW:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_SAW_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_SAW_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_SAW_RateOfFire;
+                        numericAmmo.Value = mainForm.i_UPGRADE_SAW_Ammo;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 5";
+                        labelAmmo.Text = "Maximum: 5";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.SNIPER:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_SNIPER_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_SNIPER_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_SNIPER_RateOfFire;
+                        numericAmmo.Value = mainForm.i_UPGRADE_SNIPER_Ammo;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 2";
+                        labelAmmo.Text = "Maximum: 5";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.ROCKET:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_RPG_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_RPG_Damage;
+                        numericRate.Value = 0;
+                        numericAmmo.Value = 0;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = false;
+                        numericAmmo.Enabled = false;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "No effect";
+                        labelAmmo.Text = "No effect";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.GAUSS:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_GAUSS_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_GAUSS_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_GAUSS_RateOfFire;
+                        numericAmmo.Value = 0;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = false;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 5";
+                        labelAmmo.Text = "No effect";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.SHOCK:
+                    {
+                        numericSlots.Value = 0;
+                        numericDamage.Value = 0;
+                        numericRate.Value = mainForm.i_UPGRADE_SHOCK_RateOfFire;
+                        numericAmmo.Value = 0;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = false; labelNoUpgrade.Visible = true;
+                        numericDamage.Enabled = false;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = false;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "No effect";
+                        labelRate.Text = "Maximum: 0";
+                        labelAmmo.Text = "No effect";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.GRENADE:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_GRENADE_Slots;
+                        numericDamage.Value = 0;
+                        numericRate.Value = mainForm.i_UPGRADE_GRENADE_RateOfFire;
+                        numericAmmo.Value = mainForm.i_UPGRADE_GRENADE_Ammo;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = false;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "No effect";
+                        labelRate.Text = "Maximum: 5";
+                        labelAmmo.Text = "Maximum: 3";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.MINIGUN:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_MINIGUN_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_MINIGUN_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_MINIGUN_RateOfFire;
+                        numericAmmo.Value = 0;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 2";
+                        labelRate.Text = "Maximum: 4";
+                        labelAmmo.Text = "No effect";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
             }
         }
 
@@ -215,6 +359,22 @@ namespace BDefSaveEditor
                     {
                         mainForm.i_UPGRADE_MEELE_Damage = (int)numericDamage.Value;
                         mainForm.i_UPGRADE_MEELE_RateOfFire = (int)numericRate.Value;
+                        break;
+                    }
+                case e_Selector.AXE:
+                    {
+                        mainForm.i_UPGRADE_AXE_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_AXE_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_AXE_RateOfFire = (int)numericRate.Value;
+                        break;
+                    }
+                case e_Selector.PISTOL:
+                    {
+                        mainForm.i_UPGRADE_PISTOL_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_PISTOL_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_PISTOL_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_PISTOL_Ammo = (int)numericAmmo.Value;
+                        mainForm.i_UPGRADE_PISTOL_Unique = (int)numericUnique.Value;
                         break;
                     }
                 case e_Selector.BLASTER:
