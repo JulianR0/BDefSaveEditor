@@ -239,6 +239,12 @@
             this.linkLabel1.Text = "(?)";
             this.toolTipUniques.SetToolTip(this.linkLabel1, "AAATRIGGER");
             // 
+            // toolTipUniques
+            // 
+            this.toolTipUniques.AutoPopDelay = 60000;
+            this.toolTipUniques.InitialDelay = 500;
+            this.toolTipUniques.ReshowDelay = 100;
+            // 
             // UpgradesForm
             // 
             this.AcceptButton = this.buttonOK;
