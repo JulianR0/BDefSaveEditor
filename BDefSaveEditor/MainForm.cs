@@ -1291,130 +1291,82 @@ namespace BDefSaveEditor
                     // Gamemode
                     fsFile.Seek(ADDRESS_GAMEMODE, SeekOrigin.Begin);
                     iData = comboMode.SelectedIndex + 1;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Class
                     fsFile.Seek(ADDRESS_CLASS, SeekOrigin.Begin);
                     iData = comboClass.SelectedIndex + 1;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Wave
                     fsFile.Seek(ADDRESS_WAVE, SeekOrigin.Begin);
                     iData = (int)boxWave.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Legerity
                     fsFile.Seek(ADDRESS_LEGERITY, SeekOrigin.Begin);
                     iData = (int)boxLegerity.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Precision
                     fsFile.Seek(ADDRESS_PRECISION, SeekOrigin.Begin);
                     iData = (int)boxPrecision.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Toughness
                     fsFile.Seek(ADDRESS_TOUGHNESS, SeekOrigin.Begin);
                     iData = (int)boxToughness.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Sorcery
                     fsFile.Seek(ADDRESS_SORCERY, SeekOrigin.Begin);
                     iData = (int)boxSorcery.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Ability Points
                     fsFile.Seek(ADDRESS_AP, SeekOrigin.Begin);
                     iData = (int)boxAP.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Kills
                     fsFile.Seek(ADDRESS_KILLS, SeekOrigin.Begin);
                     iData = (int)boxKills.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Money
                     fsFile.Seek(ADDRESS_MONEY, SeekOrigin.Begin);
                     iData = (int)boxMoney.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Salvage
                     fsFile.Seek(ADDRESS_SALVAGE, SeekOrigin.Begin);
                     iData = (int)boxSalvage.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Souls
                     fsFile.Seek(ADDRESS_SOULS, SeekOrigin.Begin);
                     iData = (int)boxSouls.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Health Kits
                     fsFile.Seek(ADDRESS_HPKITS, SeekOrigin.Begin);
                     iData = (int)boxHPKits.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Mana Kits
                     fsFile.Seek(ADDRESS_MPKITS, SeekOrigin.Begin);
                     iData = (int)boxMPKits.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Total Experience
                     fsFile.Seek(ADDRESS_XP, SeekOrigin.Begin);
                     iData = (int)boxXP.Value;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Long Jump
                     fsFile.Seek(ADDRESS_LONGJUMP, SeekOrigin.Begin);
                     iData = Convert.ToInt32(checkLJ.Checked);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Weapons
                     fsFile.Seek(ADDRESS_WEAPONS, SeekOrigin.Begin);
@@ -1439,424 +1391,249 @@ namespace BDefSaveEditor
                     iData = Convert.ToInt32(uiData);
                     iData += (1 << 22); // W_GESTURES
                     if (b_WPN_Suit) iData += (1 << 31); // W_SUIT
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Tasks
                     fsFile.Seek(ADDRESS_TASK_NUMBER, SeekOrigin.Begin); // Task number
                     iData = i_TASK_Number;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_TASK_TYPE, SeekOrigin.Begin); // Task type
                     iData = i_TASK_Type + 1;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_TASK_REMAIN, SeekOrigin.Begin); // Task remain
                     iData = i_TASK_Remain;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_TASK_EVENT, SeekOrigin.Begin); // Event task
                     iData = i_TASK_Event;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Inventory
                     fsFile.Seek(ADDRESS_HELMET_COLOR, SeekOrigin.Begin); // Helmet
                     iData = i_HELMET_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_HELMET_ITEMID, SeekOrigin.Begin);
                     iData = i_HELMET_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_HELMET_DEFENSE, SeekOrigin.Begin);
                     iData = i_HELMET_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_HELMET_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_HELMET_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_HELMET_UPGRADES, SeekOrigin.Begin);
                     iData = i_HELMET_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ARMOR_COLOR, SeekOrigin.Begin); // Armor
                     iData = i_ARMOR_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ARMOR_ITEMID, SeekOrigin.Begin);
                     iData = i_ARMOR_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ARMOR_DEFENSE, SeekOrigin.Begin);
                     iData = i_ARMOR_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ARMOR_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ARMOR_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ARMOR_UPGRADES, SeekOrigin.Begin);
                     iData = i_ARMOR_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_TRINKET_COLOR, SeekOrigin.Begin); // Trinket
                     iData = i_TRINKET_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_TRINKET_ITEMID, SeekOrigin.Begin);
                     iData = i_TRINKET_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_TRINKET_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_TRINKET_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_TRINKET_UPGRADES, SeekOrigin.Begin);
                     iData = i_TRINKET_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_GEM_COLOR, SeekOrigin.Begin); // Gem
                     iData = i_GEM_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_GEM_ITEMID, SeekOrigin.Begin);
                     iData = i_GEM_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM1_COLOR, SeekOrigin.Begin); // Bag Slot 1
                     iData = i_ITEM1_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM1_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM1_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM1_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM1_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM1_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM1_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM1_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM1_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM2_COLOR, SeekOrigin.Begin); // Bag Slot 2
                     iData = i_ITEM2_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM2_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM2_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM2_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM2_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM2_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM2_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM2_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM2_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM3_COLOR, SeekOrigin.Begin); // Bag Slot 3
                     iData = i_ITEM3_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM3_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM3_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM3_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM3_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM3_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM3_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM3_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM3_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM4_COLOR, SeekOrigin.Begin); // Bag Slot 4
                     iData = i_ITEM4_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM4_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM4_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM4_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM4_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM4_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM4_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM4_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM4_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM5_COLOR, SeekOrigin.Begin); // Bag Slot 5
                     iData = i_ITEM5_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM5_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM5_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM5_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM5_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM5_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM5_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM5_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM5_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM6_COLOR, SeekOrigin.Begin); // Bag Slot 6
                     iData = i_ITEM6_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM6_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM6_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM6_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM6_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM6_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM6_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM6_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM6_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM7_COLOR, SeekOrigin.Begin); // Bag Slot 7
                     iData = i_ITEM7_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM7_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM7_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM7_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM7_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM7_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM7_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM7_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM7_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_ITEM8_COLOR, SeekOrigin.Begin); // Bag Slot 8
                     iData = i_ITEM8_Color;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM8_ITEMID, SeekOrigin.Begin);
                     iData = i_ITEM8_ItemID;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM8_DEFENSE, SeekOrigin.Begin);
                     iData = i_ITEM8_Defense;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM8_ATTRIBUTE, SeekOrigin.Begin);
                     iData = i_ITEM8_Attribute;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_ITEM8_UPGRADES, SeekOrigin.Begin);
                     iData = i_ITEM8_Upgrades;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // Weapon Upgrades
                     fsFile.Seek(ADDRESS_UPGRADE_MEELE_DAMAGE, SeekOrigin.Begin); // Meele
                     iData = i_UPGRADE_MEELE_Damage;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_UPGRADE_MEELE_RATE, SeekOrigin.Begin);
                     iData = i_UPGRADE_MEELE_RateOfFire;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_UPGRADE_AXE_SLOTS, SeekOrigin.Begin); // Ancient Axe
                     iData = i_UPGRADE_AXE_Slots;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_UPGRADE_AXE_DAMAGE, SeekOrigin.Begin);
                     iData = i_UPGRADE_AXE_Damage;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_UPGRADE_AXE_RATE, SeekOrigin.Begin);
                     iData = i_UPGRADE_AXE_RateOfFire;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
+
+                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_SLOTS, SeekOrigin.Begin); // Pistol
+                    iData = i_UPGRADE_PISTOL_Slots;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_DAMAGE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PISTOL_Damage;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_RATE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PISTOL_RateOfFire;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_AMMO, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PISTOL_Ammo;
+                    ConvertAndSave(fsFile, iData);
+                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_UNIQUE, SeekOrigin.Begin);
+                    iData = i_UPGRADE_PISTOL_Unique;
+                    ConvertAndSave(fsFile, iData);
+
                     fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
                     iData = i_UPGRADE_BLASTER_Slots;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_UPGRADE_BLASTER_DAMAGE, SeekOrigin.Begin);
                     iData = i_UPGRADE_BLASTER_Damage;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
                     fsFile.Seek(ADDRESS_UPGRADE_BLASTER_RATE, SeekOrigin.Begin);
                     iData = i_UPGRADE_BLASTER_RateOfFire;
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-                    fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+                    ConvertAndSave(fsFile, iData);
 
                     // End
                     MessageBox.Show("Save file updated.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1868,9 +1645,13 @@ namespace BDefSaveEditor
             }
         }
 
-        private void DoConvert(FileStream fsFile, int iData)
+        private void ConvertAndSave(FileStream fsFile, int iData)
         {
-
+            // Let us not repeat these 4 lines everywhere eh?
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
         }
 
         private void buttonWeapons_Click(object sender, EventArgs e)
