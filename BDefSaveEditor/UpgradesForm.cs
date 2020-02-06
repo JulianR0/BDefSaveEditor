@@ -59,6 +59,42 @@ namespace BDefSaveEditor
                         labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
                         break;
                     }
+                case e_Selector.AXE:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_AXE_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_AXE_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_AXE_RateOfFire;
+                        numericAmmo.Value = 0;
+                        numericUnique.Value = 0;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = false;
+                        numericUnique.Enabled = false;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 0";
+                        labelAmmo.Text = "No effect";
+                        labelUnique.Text = "No uniques"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
+                case e_Selector.PISTOL:
+                    {
+                        numericSlots.Value = mainForm.i_UPGRADE_PISTOL_Slots;
+                        numericDamage.Value = mainForm.i_UPGRADE_PISTOL_Damage;
+                        numericRate.Value = mainForm.i_UPGRADE_PISTOL_RateOfFire;
+                        numericAmmo.Value = mainForm.i_UPGRADE_PISTOL_Ammo;
+                        numericUnique.Value = mainForm.i_UPGRADE_PISTOL_Unique;
+                        numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
+                        numericDamage.Enabled = true;
+                        numericRate.Enabled = true;
+                        numericAmmo.Enabled = true;
+                        numericUnique.Enabled = true;
+                        labelDamage.Text = "Maximum: 5";
+                        labelRate.Text = "Maximum: 5";
+                        labelAmmo.Text = "Maximum: 2";
+                        labelUnique.Text = "Maximum: 2"; toolTipUniques.SetToolTip(linkLabel1, "This weapon has no unique upgrades.");
+                        break;
+                    }
                 case e_Selector.BLASTER:
                     {
                         numericSlots.Value = mainForm.i_UPGRADE_BLASTER_Slots;
@@ -99,6 +135,25 @@ namespace BDefSaveEditor
                         break;
                     }
             }
+        }
+
+        private string PistolUpgrades()
+        {
+            /*
+             * Pistol has 2 unique grades.
+
+                1. Lightning enchantment
+                Every 3 bullets that you fire continuously will cast a lightning strike.
+                Damage: 20 HP.
+
+                2. Explosive attack
+                Activates secondary attack of pistol, it takes 2 bullets per shot and has low attack speed.
+                Bullet creates an explosion on impact.
+                Damage: 25 HP.
+                Radius: 64 units.
+
+             * */
+            return "";
         }
     }
 }

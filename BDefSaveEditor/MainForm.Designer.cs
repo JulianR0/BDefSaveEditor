@@ -110,13 +110,13 @@
             this.cmu3_Crossbow = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu3_ARifle = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu3_SAW = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmu3_Sniper = new System.Windows.Forms.ToolStripMenuItem();
             this.cmuCategory4 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu4_RPGLauncher = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu4_Gauss = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu4_SRifle = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu4_GrenadeLauncher = new System.Windows.Forms.ToolStripMenuItem();
             this.cmu4_Minigun = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_Sniper = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.boxWave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLegerity)).BeginInit();
@@ -800,7 +800,7 @@
             this.cmuCategory3,
             this.cmuCategory4});
             this.contextMenuUpgrades.Name = "contextMenuUpgrades";
-            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 120);
+            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 142);
             // 
             // cmuTitle
             // 
@@ -826,15 +826,16 @@
             // cmu1_Meele
             // 
             this.cmu1_Meele.Name = "cmu1_Meele";
-            this.cmu1_Meele.Size = new System.Drawing.Size(137, 22);
+            this.cmu1_Meele.Size = new System.Drawing.Size(152, 22);
             this.cmu1_Meele.Text = "Meele";
             this.cmu1_Meele.Click += new System.EventHandler(this.cmu1_Meele_Click);
             // 
             // cmu1_Axe
             // 
             this.cmu1_Axe.Name = "cmu1_Axe";
-            this.cmu1_Axe.Size = new System.Drawing.Size(137, 22);
+            this.cmu1_Axe.Size = new System.Drawing.Size(152, 22);
             this.cmu1_Axe.Text = "Ancient Axe";
+            this.cmu1_Axe.Click += new System.EventHandler(this.cmu1_Axe_Click);
             // 
             // cmuCategory2
             // 
@@ -850,26 +851,30 @@
             // cmu2_Pistol
             // 
             this.cmu2_Pistol.Name = "cmu2_Pistol";
-            this.cmu2_Pistol.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Pistol.Size = new System.Drawing.Size(152, 22);
             this.cmu2_Pistol.Text = "Pistol";
+            this.cmu2_Pistol.Click += new System.EventHandler(this.cmu2_Pistol_Click);
             // 
             // cmu2_Blaster
             // 
             this.cmu2_Blaster.Name = "cmu2_Blaster";
-            this.cmu2_Blaster.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Blaster.Size = new System.Drawing.Size(152, 22);
             this.cmu2_Blaster.Text = "Blaster";
+            this.cmu2_Blaster.Click += new System.EventHandler(this.cmu2_Blaster_Click);
             // 
             // cmu2_Python
             // 
             this.cmu2_Python.Name = "cmu2_Python";
-            this.cmu2_Python.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Python.Size = new System.Drawing.Size(152, 22);
             this.cmu2_Python.Text = "Python";
+            this.cmu2_Python.Click += new System.EventHandler(this.cmu2_Python_Click);
             // 
             // cmu2_Akimbo
             // 
             this.cmu2_Akimbo.Name = "cmu2_Akimbo";
-            this.cmu2_Akimbo.Size = new System.Drawing.Size(116, 22);
+            this.cmu2_Akimbo.Size = new System.Drawing.Size(152, 22);
             this.cmu2_Akimbo.Text = "Akimbo";
+            this.cmu2_Akimbo.Click += new System.EventHandler(this.cmu2_Akimbo_Click);
             // 
             // cmuCategory3
             // 
@@ -889,30 +894,42 @@
             this.cmu3_SMG.Name = "cmu3_SMG";
             this.cmu3_SMG.Size = new System.Drawing.Size(213, 22);
             this.cmu3_SMG.Text = "Submachine Gun";
+            this.cmu3_SMG.Click += new System.EventHandler(this.cmu3_SMG_Click);
             // 
             // cmu3_Shotgun
             // 
             this.cmu3_Shotgun.Name = "cmu3_Shotgun";
             this.cmu3_Shotgun.Size = new System.Drawing.Size(213, 22);
             this.cmu3_Shotgun.Text = "Shotgun";
+            this.cmu3_Shotgun.Click += new System.EventHandler(this.cmu3_Shotgun_Click);
             // 
             // cmu3_Crossbow
             // 
             this.cmu3_Crossbow.Name = "cmu3_Crossbow";
             this.cmu3_Crossbow.Size = new System.Drawing.Size(213, 22);
             this.cmu3_Crossbow.Text = "Crossbow";
+            this.cmu3_Crossbow.Click += new System.EventHandler(this.cmu3_Crossbow_Click);
             // 
             // cmu3_ARifle
             // 
             this.cmu3_ARifle.Name = "cmu3_ARifle";
             this.cmu3_ARifle.Size = new System.Drawing.Size(213, 22);
             this.cmu3_ARifle.Text = "Assault Rifle";
+            this.cmu3_ARifle.Click += new System.EventHandler(this.cmu3_ARifle_Click);
             // 
             // cmu3_SAW
             // 
             this.cmu3_SAW.Name = "cmu3_SAW";
             this.cmu3_SAW.Size = new System.Drawing.Size(213, 22);
             this.cmu3_SAW.Text = "Squad Automatic Weapon";
+            this.cmu3_SAW.Click += new System.EventHandler(this.cmu3_SAW_Click);
+            // 
+            // cmu3_Sniper
+            // 
+            this.cmu3_Sniper.Name = "cmu3_Sniper";
+            this.cmu3_Sniper.Size = new System.Drawing.Size(213, 22);
+            this.cmu3_Sniper.Text = "Sniper Rifle";
+            this.cmu3_Sniper.Click += new System.EventHandler(this.cmu3_Sniper_Click);
             // 
             // cmuCategory4
             // 
@@ -931,36 +948,35 @@
             this.cmu4_RPGLauncher.Name = "cmu4_RPGLauncher";
             this.cmu4_RPGLauncher.Size = new System.Drawing.Size(212, 22);
             this.cmu4_RPGLauncher.Text = "Rocket-Propelled Grenade";
+            this.cmu4_RPGLauncher.Click += new System.EventHandler(this.cmu4_RPGLauncher_Click);
             // 
             // cmu4_Gauss
             // 
             this.cmu4_Gauss.Name = "cmu4_Gauss";
             this.cmu4_Gauss.Size = new System.Drawing.Size(212, 22);
             this.cmu4_Gauss.Text = "Gauss Rifle";
+            this.cmu4_Gauss.Click += new System.EventHandler(this.cmu4_Gauss_Click);
             // 
             // cmu4_SRifle
             // 
             this.cmu4_SRifle.Name = "cmu4_SRifle";
             this.cmu4_SRifle.Size = new System.Drawing.Size(212, 22);
             this.cmu4_SRifle.Text = "Shock Rifle";
+            this.cmu4_SRifle.Click += new System.EventHandler(this.cmu4_SRifle_Click);
             // 
             // cmu4_GrenadeLauncher
             // 
             this.cmu4_GrenadeLauncher.Name = "cmu4_GrenadeLauncher";
             this.cmu4_GrenadeLauncher.Size = new System.Drawing.Size(212, 22);
             this.cmu4_GrenadeLauncher.Text = "Grenade Launcher";
+            this.cmu4_GrenadeLauncher.Click += new System.EventHandler(this.cmu4_GrenadeLauncher_Click);
             // 
             // cmu4_Minigun
             // 
             this.cmu4_Minigun.Name = "cmu4_Minigun";
             this.cmu4_Minigun.Size = new System.Drawing.Size(212, 22);
             this.cmu4_Minigun.Text = "Minigun";
-            // 
-            // cmu3_Sniper
-            // 
-            this.cmu3_Sniper.Name = "cmu3_Sniper";
-            this.cmu3_Sniper.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_Sniper.Text = "Sniper Rifle";
+            this.cmu4_Minigun.Click += new System.EventHandler(this.cmu4_Minigun_Click);
             // 
             // Main
             // 

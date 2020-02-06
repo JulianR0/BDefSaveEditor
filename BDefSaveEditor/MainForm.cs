@@ -1937,5 +1937,117 @@ namespace BDefSaveEditor
             upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MEELE);
             upgradesForm.ShowDialog();
         }
+
+        private void cmu1_Axe_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Ancient Axe";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.AXE);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu2_Pistol_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Pistol";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.PISTOL);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu2_Blaster_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Blaster";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.BLASTER);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu2_Python_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Python";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.PYTHON);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu2_Akimbo_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Akimbo";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.AKIMBO);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_SMG_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Submachine Gun";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SMG);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_Shotgun_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Shotgun";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SHOTGUN);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_Crossbow_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Crossbow";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.CROSSBOW);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_ARifle_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Assault Rifle";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.ASSAULT);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_SAW_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Squad Automatic Weapon";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SAW);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu3_Sniper_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Sniper Rifle";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SNIPER);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu4_RPGLauncher_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Rocket-Propelled Grenade";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.ROCKET);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu4_Gauss_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Gauss Rifle";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.GAUSS);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu4_SRifle_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Shock Rifle";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SHOCK);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu4_GrenadeLauncher_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Grenade Launcher";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.GRENADE);
+            upgradesForm.ShowDialog();
+        }
+
+        private void cmu4_Minigun_Click(object sender, EventArgs e)
+        {
+            upgradesForm.Text = "Minigun";
+            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MINIGUN);
+            upgradesForm.ShowDialog();
+        }
     }
 }
