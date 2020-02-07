@@ -241,7 +241,8 @@
             // 
             // toolTipUniques
             // 
-            this.toolTipUniques.AutoPopDelay = 60000;
+            this.toolTipUniques.AutomaticDelay = 0;
+            this.toolTipUniques.AutoPopDelay = 32767;
             this.toolTipUniques.InitialDelay = 500;
             this.toolTipUniques.ReshowDelay = 100;
             // 

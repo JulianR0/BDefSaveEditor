@@ -339,7 +339,7 @@ namespace BDefSaveEditor
                         numericSlots.Enabled = true; labelNoUpgrade.Visible = false;
                         numericDamage.Enabled = true;
                         numericRate.Enabled = true;
-                        numericAmmo.Enabled = true;
+                        numericAmmo.Enabled = false;
                         numericUnique.Enabled = false;
                         labelDamage.Text = "Maximum: 2";
                         labelRate.Text = "Maximum: 4";
@@ -554,7 +554,7 @@ namespace BDefSaveEditor
             szUniques += "2. Explosive bolts\n";
             szUniques += "Bolts are enchanted with hellish explosive power, they will explode on impact.\n";
             szUniques += "Enchantment doesn't work when aiming with scope.\n";
-            szUniques += "Damage: 20 HP.";
+            szUniques += "Damage: 20 HP.\n";
             szUniques += "Radius: 128 units.";
 
             return szUniques;
