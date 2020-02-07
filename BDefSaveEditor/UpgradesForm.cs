@@ -384,6 +384,106 @@ namespace BDefSaveEditor
                         mainForm.i_UPGRADE_BLASTER_RateOfFire = (int)numericRate.Value;
                         break;
                     }
+                case e_Selector.PYTHON:
+                    {
+                        mainForm.i_UPGRADE_PYTHON_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_PYTHON_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_PYTHON_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_PYTHON_Ammo = (int)numericAmmo.Value;
+                        mainForm.i_UPGRADE_PYTHON_Unique = (int)numericUnique.Value;
+                        break;
+                    }
+                case e_Selector.AKIMBO:
+                    {
+                        mainForm.i_UPGRADE_AKIMBO_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_AKIMBO_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_AKIMBO_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_AKIMBO_Ammo = (int)numericAmmo.Value;
+                        mainForm.i_UPGRADE_AKIMBO_Unique = (int)numericUnique.Value;
+                        break;
+                    }
+                case e_Selector.SMG:
+                    {
+                        mainForm.i_UPGRADE_SMG_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_SMG_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_SMG_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_SMG_Ammo = (int)numericAmmo.Value;
+                        break;
+                    }
+                case e_Selector.SHOTGUN:
+                    {
+                        mainForm.i_UPGRADE_SHOTGUN_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_SHOTGUN_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_SHOTGUN_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_SHOTGUN_Ammo = (int)numericAmmo.Value;
+                        mainForm.i_UPGRADE_SHOTGUN_Unique = (int)numericUnique.Value;
+                        break;
+                    }
+                case e_Selector.CROSSBOW:
+                    {
+                        mainForm.i_UPGRADE_CROSSBOW_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_CROSSBOW_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_CROSSBOW_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_CROSSBOW_Ammo = (int)numericAmmo.Value;
+                        mainForm.i_UPGRADE_CROSSBOW_Unique = (int)numericUnique.Value;
+                        break;
+                    }
+                case e_Selector.ASSAULT:
+                    {
+                        mainForm.i_UPGRADE_ASSAULT_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_ASSAULT_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_ASSAULT_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_ASSAULT_Ammo = (int)numericAmmo.Value;
+                        break;
+                    }
+                case e_Selector.SAW:
+                    {
+                        mainForm.i_UPGRADE_SAW_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_SAW_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_SAW_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_SAW_Ammo = (int)numericAmmo.Value;
+                        break;
+                    }
+                case e_Selector.SNIPER:
+                    {
+                        mainForm.i_UPGRADE_SNIPER_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_SNIPER_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_SNIPER_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_SNIPER_Ammo = (int)numericAmmo.Value;
+                        break;
+                    }
+                case e_Selector.ROCKET:
+                    {
+                        mainForm.i_UPGRADE_RPG_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_RPG_Damage = (int)numericDamage.Value;
+                        break;
+                    }
+                case e_Selector.GAUSS:
+                    {
+                        mainForm.i_UPGRADE_GAUSS_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_GAUSS_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_GAUSS_RateOfFire = (int)numericRate.Value;
+                        break;
+                    }
+                case e_Selector.SHOCK:
+                    {
+                        mainForm.i_UPGRADE_SHOCK_RateOfFire = (int)numericRate.Value;
+                        break;
+                    }
+                case e_Selector.GRENADE:
+                    {
+                        mainForm.i_UPGRADE_GRENADE_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_GRENADE_RateOfFire = (int)numericRate.Value;
+                        mainForm.i_UPGRADE_GRENADE_Ammo = (int)numericAmmo.Value;
+                        break;
+                    }
+                case e_Selector.MINIGUN:
+                    {
+                        mainForm.i_UPGRADE_MINIGUN_Slots = (int)numericSlots.Value;
+                        mainForm.i_UPGRADE_MINIGUN_Damage = (int)numericDamage.Value;
+                        mainForm.i_UPGRADE_MINIGUN_RateOfFire = (int)numericRate.Value;
+                        break;
+                    }
             }
         }
 
