@@ -485,6 +485,8 @@ namespace BDefSaveEditor
                         break;
                     }
             }
+
+            Close();
         }
 
         private string PistolUpgrades()
