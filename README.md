@@ -28,6 +28,10 @@ As a good practice, always keep a copy of the original save file before making c
 
 ## F.A.Q.
 
+### I can't start the editor.
+
+The editor requires .NET Framework 4.5. Install it on your computer in order to run this tool.
+
 ### What is this "Underworld" mode?
 
 The underworld mode is an unreleased game mode containing only zombies. To access this game mode: Start your server, enter *mp_mode 2* into the console, then restart the map.
