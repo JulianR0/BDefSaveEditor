@@ -145,6 +145,25 @@ namespace BDefSaveEditor
         const int ADDRESS_UPGRADE_MINIGUN_SLOTS = 0x60C;
         const int ADDRESS_UPGRADE_MINIGUN_DAMAGE = 0x610;
         const int ADDRESS_UPGRADE_MINIGUN_RATE = 0x61C;
+        const int ADDRESS_AMMO_BUCKSHOT = 0x038;
+        const int ADDRESS_AMMO_9MM = 0x03C;
+        const int ADDRESS_AMMO_SHOCK = 0x040;
+        const int ADDRESS_AMMO_SAW = 0x044;
+        const int ADDRESS_AMMO_SNIPER = 0x048;
+        const int ADDRESS_AMMO_FLAME = 0x050;
+        const int ADDRESS_AMMO_MINIGUN = 0x054;
+        const int ADDRESS_AMMO_PYTHON = 0x058;
+        const int ADDRESS_AMMO_GAUSS = 0x05C;
+        const int ADDRESS_AMMO_RPG = 0x060;
+        const int ADDRESS_AMMO_CROSSBOW = 0x064;
+        const int ADDRESS_AMMO_TRIPMINE = 0x068;
+        const int ADDRESS_AMMO_SATCHEL = 0x06C;
+        const int ADDRESS_AMMO_HANDGRENADE = 0x070;
+        const int ADDRESS_AMMO_GRENADELAUNCHER = 0x074;
+        const int ADDRESS_POWERS_FIRST = 0x0CC;
+        const int ADDRESS_POWERS_SECOND = 0x0D0;
+        const int ADDRESS_POWERS_THIRD = 0x0D4;
+        const int ADDRESS_POWERS_FOURTH = 0x0D8;
 
         const uint W_MELEE = (1 << 1);
         const uint W_AXE = (1 << 2);
@@ -164,6 +183,9 @@ namespace BDefSaveEditor
         const uint W_GL = (1 << 16);
         const uint W_FLAME = (1 << 17);
         const uint W_MINIGUN = (1 << 18);
+        const uint W_HANDGRENADE = (1 << 19);
+        const uint W_TRIPMINE = (1 << 20);
+        const uint W_SATCHEL = (1 << 21);
         const uint W_SUIT = 0x80000000; // (1 << 31)
 
         // It would be better if the XP formula could be reverse engineered
