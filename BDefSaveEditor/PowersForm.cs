@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BDefSaveEditor
 {
-    public partial class Form6 : Form
+    public partial class PowersForm : Form
     {
-        public Form6()
+        public PowersForm()
         {
             InitializeComponent();
         }

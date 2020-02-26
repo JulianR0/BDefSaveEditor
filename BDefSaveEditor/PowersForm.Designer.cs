@@ -1,6 +1,6 @@
 ﻿namespace BDefSaveEditor
 {
-    partial class Form6
+    partial class PowersForm
     {
         /// <summary>
         /// Required designer variable.

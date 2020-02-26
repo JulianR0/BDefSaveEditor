@@ -90,7 +90,6 @@
             this.tsmSlot6 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSlot7 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSlot8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonAmmo = new System.Windows.Forms.Button();
             this.buttonSkills = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.contextMenuUpgrades = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -138,18 +137,19 @@
             // buttonOpen
             // 
             this.buttonOpen.Location = new System.Drawing.Point(0, 0);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(1);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpen.Size = new System.Drawing.Size(41, 23);
             this.buttonOpen.TabIndex = 99;
             this.buttonOpen.TabStop = false;
-            this.buttonOpen.Text = "Open File";
+            this.buttonOpen.Text = "Open";
             this.buttonOpen.UseVisualStyleBackColor = true;
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // labelFile
             // 
             this.labelFile.AutoSize = true;
-            this.labelFile.Location = new System.Drawing.Point(81, 5);
+            this.labelFile.Location = new System.Drawing.Point(88, 5);
             this.labelFile.Name = "labelFile";
             this.labelFile.Size = new System.Drawing.Size(76, 13);
             this.labelFile.TabIndex = 97;
@@ -166,7 +166,7 @@
             // labelMapName
             // 
             this.labelMapName.AutoSize = true;
-            this.labelMapName.Location = new System.Drawing.Point(81, 31);
+            this.labelMapName.Location = new System.Drawing.Point(88, 31);
             this.labelMapName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.labelMapName.Name = "labelMapName";
             this.labelMapName.Size = new System.Drawing.Size(34, 13);
@@ -198,12 +198,13 @@
             // buttonSave
             // 
             this.buttonSave.Enabled = false;
-            this.buttonSave.Location = new System.Drawing.Point(0, 26);
+            this.buttonSave.Location = new System.Drawing.Point(43, 0);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(41, 23);
             this.buttonSave.TabIndex = 98;
             this.buttonSave.TabStop = false;
-            this.buttonSave.Text = "Save File";
+            this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -594,45 +595,45 @@
             this.buttonWeapons.Location = new System.Drawing.Point(10, 271);
             this.buttonWeapons.Margin = new System.Windows.Forms.Padding(1);
             this.buttonWeapons.Name = "buttonWeapons";
-            this.buttonWeapons.Size = new System.Drawing.Size(85, 23);
+            this.buttonWeapons.Size = new System.Drawing.Size(67, 23);
             this.buttonWeapons.TabIndex = 116;
-            this.buttonWeapons.Text = "Edit Weapons";
+            this.buttonWeapons.Text = "Weapons";
             this.buttonWeapons.UseVisualStyleBackColor = true;
             this.buttonWeapons.Click += new System.EventHandler(this.buttonWeapons_Click);
             // 
             // buttonTasks
             // 
             this.buttonTasks.Enabled = false;
-            this.buttonTasks.Location = new System.Drawing.Point(98, 271);
+            this.buttonTasks.Location = new System.Drawing.Point(80, 271);
             this.buttonTasks.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTasks.Name = "buttonTasks";
-            this.buttonTasks.Size = new System.Drawing.Size(85, 23);
+            this.buttonTasks.Size = new System.Drawing.Size(67, 23);
             this.buttonTasks.TabIndex = 117;
-            this.buttonTasks.Text = "Edit Tasks";
+            this.buttonTasks.Text = "Tasks";
             this.buttonTasks.UseVisualStyleBackColor = true;
             this.buttonTasks.Click += new System.EventHandler(this.buttonTasks_Click);
             // 
             // buttonInventory
             // 
             this.buttonInventory.Enabled = false;
-            this.buttonInventory.Location = new System.Drawing.Point(185, 271);
+            this.buttonInventory.Location = new System.Drawing.Point(151, 271);
             this.buttonInventory.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInventory.Name = "buttonInventory";
-            this.buttonInventory.Size = new System.Drawing.Size(85, 23);
+            this.buttonInventory.Size = new System.Drawing.Size(67, 23);
             this.buttonInventory.TabIndex = 118;
-            this.buttonInventory.Text = "Edit Inventory";
+            this.buttonInventory.Text = "Inventory";
             this.buttonInventory.UseVisualStyleBackColor = true;
             this.buttonInventory.Click += new System.EventHandler(this.buttonInventory_Click);
             // 
             // buttonUpgrades
             // 
             this.buttonUpgrades.Enabled = false;
-            this.buttonUpgrades.Location = new System.Drawing.Point(273, 271);
+            this.buttonUpgrades.Location = new System.Drawing.Point(221, 271);
             this.buttonUpgrades.Margin = new System.Windows.Forms.Padding(1);
             this.buttonUpgrades.Name = "buttonUpgrades";
-            this.buttonUpgrades.Size = new System.Drawing.Size(85, 23);
+            this.buttonUpgrades.Size = new System.Drawing.Size(67, 23);
             this.buttonUpgrades.TabIndex = 119;
-            this.buttonUpgrades.Text = "Edit Upgrades";
+            this.buttonUpgrades.Text = "Upgrades";
             this.buttonUpgrades.UseVisualStyleBackColor = true;
             this.buttonUpgrades.Click += new System.EventHandler(this.buttonUpgrades_Click);
             // 
@@ -760,31 +761,22 @@
             this.tsmSlot8.Text = "Slot 8";
             this.tsmSlot8.Click += new System.EventHandler(this.tsmSlot8_Click);
             // 
-            // buttonAmmo
-            // 
-            this.buttonAmmo.Enabled = false;
-            this.buttonAmmo.Location = new System.Drawing.Point(10, 298);
-            this.buttonAmmo.Name = "buttonAmmo";
-            this.buttonAmmo.Size = new System.Drawing.Size(85, 23);
-            this.buttonAmmo.TabIndex = 120;
-            this.buttonAmmo.Text = "Edit Ammo";
-            this.buttonAmmo.UseVisualStyleBackColor = true;
-            // 
             // buttonSkills
             // 
             this.buttonSkills.Enabled = false;
-            this.buttonSkills.Location = new System.Drawing.Point(98, 298);
+            this.buttonSkills.Location = new System.Drawing.Point(292, 271);
             this.buttonSkills.Name = "buttonSkills";
-            this.buttonSkills.Size = new System.Drawing.Size(85, 23);
+            this.buttonSkills.Size = new System.Drawing.Size(67, 23);
             this.buttonSkills.TabIndex = 121;
-            this.buttonSkills.Text = "Edit Powers";
+            this.buttonSkills.Text = "Powers";
             this.buttonSkills.UseVisualStyleBackColor = true;
             // 
             // buttonAbout
             // 
-            this.buttonAbout.Location = new System.Drawing.Point(273, 298);
+            this.buttonAbout.Location = new System.Drawing.Point(0, 25);
+            this.buttonAbout.Margin = new System.Windows.Forms.Padding(1);
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(85, 23);
+            this.buttonAbout.Size = new System.Drawing.Size(84, 23);
             this.buttonAbout.TabIndex = 93;
             this.buttonAbout.Text = "About";
             this.buttonAbout.UseVisualStyleBackColor = true;
@@ -800,7 +792,7 @@
             this.cmuCategory3,
             this.cmuCategory4});
             this.contextMenuUpgrades.Name = "contextMenuUpgrades";
-            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 142);
+            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 120);
             // 
             // cmuTitle
             // 
@@ -826,14 +818,14 @@
             // cmu1_Meele
             // 
             this.cmu1_Meele.Name = "cmu1_Meele";
-            this.cmu1_Meele.Size = new System.Drawing.Size(152, 22);
+            this.cmu1_Meele.Size = new System.Drawing.Size(137, 22);
             this.cmu1_Meele.Text = "Meele";
             this.cmu1_Meele.Click += new System.EventHandler(this.cmu1_Meele_Click);
             // 
             // cmu1_Axe
             // 
             this.cmu1_Axe.Name = "cmu1_Axe";
-            this.cmu1_Axe.Size = new System.Drawing.Size(152, 22);
+            this.cmu1_Axe.Size = new System.Drawing.Size(137, 22);
             this.cmu1_Axe.Text = "Ancient Axe";
             this.cmu1_Axe.Click += new System.EventHandler(this.cmu1_Axe_Click);
             // 
@@ -851,28 +843,28 @@
             // cmu2_Pistol
             // 
             this.cmu2_Pistol.Name = "cmu2_Pistol";
-            this.cmu2_Pistol.Size = new System.Drawing.Size(152, 22);
+            this.cmu2_Pistol.Size = new System.Drawing.Size(116, 22);
             this.cmu2_Pistol.Text = "Pistol";
             this.cmu2_Pistol.Click += new System.EventHandler(this.cmu2_Pistol_Click);
             // 
             // cmu2_Blaster
             // 
             this.cmu2_Blaster.Name = "cmu2_Blaster";
-            this.cmu2_Blaster.Size = new System.Drawing.Size(152, 22);
+            this.cmu2_Blaster.Size = new System.Drawing.Size(116, 22);
             this.cmu2_Blaster.Text = "Blaster";
             this.cmu2_Blaster.Click += new System.EventHandler(this.cmu2_Blaster_Click);
             // 
             // cmu2_Python
             // 
             this.cmu2_Python.Name = "cmu2_Python";
-            this.cmu2_Python.Size = new System.Drawing.Size(152, 22);
+            this.cmu2_Python.Size = new System.Drawing.Size(116, 22);
             this.cmu2_Python.Text = "Python";
             this.cmu2_Python.Click += new System.EventHandler(this.cmu2_Python_Click);
             // 
             // cmu2_Akimbo
             // 
             this.cmu2_Akimbo.Name = "cmu2_Akimbo";
-            this.cmu2_Akimbo.Size = new System.Drawing.Size(152, 22);
+            this.cmu2_Akimbo.Size = new System.Drawing.Size(116, 22);
             this.cmu2_Akimbo.Text = "Akimbo";
             this.cmu2_Akimbo.Click += new System.EventHandler(this.cmu2_Akimbo_Click);
             // 
@@ -983,10 +975,9 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 326);
+            this.ClientSize = new System.Drawing.Size(368, 303);
             this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.buttonSkills);
-            this.Controls.Add(this.buttonAmmo);
             this.Controls.Add(this.buttonUpgrades);
             this.Controls.Add(this.buttonInventory);
             this.Controls.Add(this.buttonTasks);
@@ -1118,7 +1109,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmSlot7;
         private System.Windows.Forms.ToolStripMenuItem tsmSlot8;
         private System.Windows.Forms.ToolStripMenuItem tsmHelmet;
-        private System.Windows.Forms.Button buttonAmmo;
         private System.Windows.Forms.Button buttonSkills;
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.ContextMenuStrip contextMenuUpgrades;
