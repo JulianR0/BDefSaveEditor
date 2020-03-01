@@ -455,6 +455,27 @@ namespace BDefSaveEditor
         public int i_UPGRADE_MINIGUN_Damage;
         public int i_UPGRADE_MINIGUN_RateOfFire;
 
+        public int i_AMMO_Shotgun;
+        public int i_AMMO_9mm;
+        public int i_AMMO_Shock;
+        public int i_AMMO_SAW;
+        public int i_AMMO_Sniper;
+        public int i_AMMO_Flame;
+        public int i_AMMO_Minigun;
+        public int i_AMMO_357;
+        public int i_AMMO_Gauss;
+        public int i_AMMO_RPG;
+        public int i_AMMO_Crossbow;
+        public int i_AMMO_Tripmine;
+        public int i_AMMO_Satchel;
+        public int i_AMMO_Grenade;
+        public int i_AMMO_GLauncher;
+
+        public int i_POWER_First;
+        public int i_POWER_Second;
+        public int i_POWER_Third;
+        public int i_POWER_Fourth;
+
         WeaponsForm weaponForm;
         TasksForm taskForm;
         InventoryForm inventoryForm;
@@ -1156,6 +1177,23 @@ namespace BDefSaveEditor
                         iData = BitConverter.ToInt32(bData, 0);
                         i_UPGRADE_MINIGUN_RateOfFire = iData;
 
+                        // Ammo
+                        i_AMMO_Shotgun = ConvertAndLoad(fsFile, ADDRESS_AMMO_BUCKSHOT);
+                        i_AMMO_9mm = ConvertAndLoad(fsFile, ADDRESS_AMMO_9MM);
+                        i_AMMO_Shock = ConvertAndLoad(fsFile, ADDRESS_AMMO_SHOCK);
+                        i_AMMO_SAW = ConvertAndLoad(fsFile, ADDRESS_AMMO_SAW);
+                        i_AMMO_Sniper = ConvertAndLoad(fsFile, ADDRESS_AMMO_SNIPER);
+                        i_AMMO_Flame = ConvertAndLoad(fsFile, ADDRESS_AMMO_FLAME);
+                        i_AMMO_Minigun = ConvertAndLoad(fsFile, ADDRESS_AMMO_MINIGUN);
+                        i_AMMO_357 = ConvertAndLoad(fsFile, ADDRESS_AMMO_PYTHON);
+                        i_AMMO_Gauss = ConvertAndLoad(fsFile, ADDRESS_AMMO_GAUSS);
+                        i_AMMO_RPG = ConvertAndLoad(fsFile, ADDRESS_AMMO_RPG);
+                        i_AMMO_Crossbow = ConvertAndLoad(fsFile, ADDRESS_AMMO_CROSSBOW);
+                        i_AMMO_Tripmine = ConvertAndLoad(fsFile, ADDRESS_AMMO_TRIPMINE);
+                        i_AMMO_Satchel = ConvertAndLoad(fsFile, ADDRESS_AMMO_SATCHEL);
+                        i_AMMO_Grenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_HANDGRENADE);
+                        i_AMMO_GLauncher = ConvertAndLoad(fsFile, ADDRESS_AMMO_GRENADELAUNCHER);
+
                         // Controls
                         comboMode.Enabled = true;
                         comboClass.Enabled = true;
@@ -1814,6 +1852,23 @@ namespace BDefSaveEditor
                     iData = i_UPGRADE_MINIGUN_RateOfFire;
                     ConvertAndSave(fsFile, iData);
 
+                    // Ammo
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_BUCKSHOT, i_AMMO_Shotgun);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_9MM, i_AMMO_9mm);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SHOCK, i_AMMO_Shock);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SAW, i_AMMO_SAW);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SNIPER, i_AMMO_Sniper);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_FLAME, i_AMMO_Flame);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_MINIGUN, i_AMMO_Minigun);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_PYTHON, i_AMMO_357);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_GAUSS, i_AMMO_Gauss);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_RPG, i_AMMO_RPG);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_CROSSBOW, i_AMMO_Crossbow);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_TRIPMINE, i_AMMO_Tripmine);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SATCHEL, i_AMMO_Satchel);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_HANDGRENADE, i_AMMO_Grenade);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_GRENADELAUNCHER, i_AMMO_GLauncher);
+
                     // End
                     MessageBox.Show("Save file updated.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -1824,9 +1879,27 @@ namespace BDefSaveEditor
             }
         }
 
+        // Let us not repeat these lines everywhere eh?
+        private int ConvertAndLoad(FileStream fsFile, int iAddress)
+        {
+            byte[] bData = new byte[4];
+            fsFile.Seek(iAddress, SeekOrigin.Begin);
+            fsFile.Read(bData, 0, bData.Length);
+            return BitConverter.ToInt32(bData, 0);
+        }
+
         private void ConvertAndSave(FileStream fsFile, int iData)
         {
-            // Let us not repeat these 4 lines everywhere eh?
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
+            fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
+        }
+
+        private void ConvertAndSaveNew(FileStream fsFile, int iAddress, int iData)
+        {
+            // Testing if we can make the code even cleaner for save
+            fsFile.Seek(iAddress, SeekOrigin.Begin);
             fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
             fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
             fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
