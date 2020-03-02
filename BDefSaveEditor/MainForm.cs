@@ -150,6 +150,7 @@ namespace BDefSaveEditor
         const int ADDRESS_AMMO_SHOCK = 0x040;
         const int ADDRESS_AMMO_SAW = 0x044;
         const int ADDRESS_AMMO_SNIPER = 0x048;
+        const int ADDRESS_AMMO_ARGRENADE = 0x04C;
         const int ADDRESS_AMMO_FLAME = 0x050;
         const int ADDRESS_AMMO_MINIGUN = 0x054;
         const int ADDRESS_AMMO_PYTHON = 0x058;
@@ -460,6 +461,7 @@ namespace BDefSaveEditor
         public int i_AMMO_Shock;
         public int i_AMMO_SAW;
         public int i_AMMO_Sniper;
+        public int i_AMMO_ARGrenade;
         public int i_AMMO_Flame;
         public int i_AMMO_Minigun;
         public int i_AMMO_357;
@@ -1180,9 +1182,10 @@ namespace BDefSaveEditor
                         // Ammo
                         i_AMMO_Shotgun = ConvertAndLoad(fsFile, ADDRESS_AMMO_BUCKSHOT);
                         i_AMMO_9mm = ConvertAndLoad(fsFile, ADDRESS_AMMO_9MM);
-                        i_AMMO_Shock = ConvertAndLoad(fsFile, ADDRESS_AMMO_SHOCK);
+                        i_AMMO_Shock = ConvertAndLoad(fsFile, ADDRESS_AMMO_SHOCK); if (i_AMMO_Shock < 1) i_AMMO_Shock = 1;
                         i_AMMO_SAW = ConvertAndLoad(fsFile, ADDRESS_AMMO_SAW);
                         i_AMMO_Sniper = ConvertAndLoad(fsFile, ADDRESS_AMMO_SNIPER);
+                        i_AMMO_ARGrenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_ARGRENADE);
                         i_AMMO_Flame = ConvertAndLoad(fsFile, ADDRESS_AMMO_FLAME);
                         i_AMMO_Minigun = ConvertAndLoad(fsFile, ADDRESS_AMMO_MINIGUN);
                         i_AMMO_357 = ConvertAndLoad(fsFile, ADDRESS_AMMO_PYTHON);
@@ -1448,6 +1451,9 @@ namespace BDefSaveEditor
                     if (b_WPN_GL) uiData += W_GL;
                     if (b_WPN_Flame) uiData += W_FLAME;
                     if (b_WPN_Minigun) uiData += W_MINIGUN;
+                    if (i_AMMO_Tripmine > 0) uiData += W_TRIPMINE;
+                    if (i_AMMO_Satchel > 0) uiData += W_SATCHEL;
+                    if (i_AMMO_Grenade > 0) uiData += W_HANDGRENADE;
                     iData = Convert.ToInt32(uiData);
                     iData += (1 << 22); // W_GESTURES
                     if (b_WPN_Suit) iData += (1 << 31); // W_SUIT
@@ -1858,6 +1864,7 @@ namespace BDefSaveEditor
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SHOCK, i_AMMO_Shock);
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SAW, i_AMMO_SAW);
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SNIPER, i_AMMO_Sniper);
+                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_ARGRENADE, i_AMMO_ARGrenade);
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_FLAME, i_AMMO_Flame);
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_MINIGUN, i_AMMO_Minigun);
                     ConvertAndSaveNew(fsFile, ADDRESS_AMMO_PYTHON, i_AMMO_357);
