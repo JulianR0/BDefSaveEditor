@@ -18,7 +18,7 @@ Inside that folder you will see even more folders that are named after the maps 
 
 Now you'll see a bunch of apparently nonsensical numbers with a .sav extension. These are the save files.
 
-The numbers of the file name are actually the player's steamID64 number. Because of this, unless you are not hosting a very crowded server, it's nigh-impossible to easily idenfity which player is who.
+The numbers of the file name are actually the player's steamID64 number. Depending on how many files are inside the folder, it might or might not be a hazzle to find players with those numbers.
 
 At the end of the filename you will see an underscore and a number. For example: XXXXXXXXXXXXXXX_0.sav or XXXXXXXXXXXXXXX_1.sav. These are the character slots. As you can see, they start from zero, so _0 means the first character slot.
 
@@ -60,17 +60,17 @@ That's bullshit.
 
 As a bonus point, even you SOMEHOW where to reach level 90, the game does NOT know what to do afterwards! The total XP on your character will immediately jump to 541,996,392 XP, which is theorically **Level 91**. The game does not know how to handle such data, and so, the next time you want to continue from your glorious max level character, the game will be permanently stuck once it tries to read the save file contents. The only way to fix it (if you don't have this editor) is to delete the save file. Yay bugs!
 
-### Why open source?
+### Why free software?
 
 Simply put, information is meant to be free. Also, I believe that the game needs to allow extensive modifications in order to bring it back to life. Because, let's admit it: This game is fun and all, but it gets stale very quickly.
 
 ### The interface sucks!
 
-I don't blame you for it. I built this program to learn the very basics of .NET and C#. Once I finish the proyect (Edit ammo and skill upgrades) I will start focusing on the UX/UI so it's more appealing.
+I don't blame you for it. I built this program to learn the very basics of .NET and C#. I might focus on a better interface in the future, but I don't make any promises.
 
 ### The coding sucks!
 
-Again, I don't blame you. Being a novice programmer myself I'm bound to write horrendous code. One day I will clean up the code and remake it.
+Again, I don't blame you. Being a novice programmer myself I'm bound to write horrendous code. Might fix it one day, but keep your expectations low.
 
 ### Can i haz Atheist achievement with dis? :3
 
