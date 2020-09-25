@@ -482,6 +482,7 @@ namespace BDefSaveEditor
         TasksForm taskForm;
         InventoryForm inventoryForm;
         UpgradesForm upgradesForm;
+        PowersForm powersForm;
 
         public Main()
         {
@@ -490,6 +491,7 @@ namespace BDefSaveEditor
             taskForm = new TasksForm(this);
             inventoryForm = new InventoryForm(this);
             upgradesForm = new UpgradesForm(this);
+            powersForm = new PowersForm(this);
         }
 
         private void ResetWeapons()
@@ -568,106 +570,60 @@ namespace BDefSaveEditor
                     if (bData[0] == 0xBE && bData[1] == 0xBA && bData[2] == 0xAD && bData[3] == 0xDE)
                     {
                         // Gamemode
-                        fsFile.Seek(ADDRESS_GAMEMODE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        comboMode.SelectedIndex = iData - 1;
+                        comboMode.SelectedIndex = ConvertAndLoad(fsFile, ADDRESS_GAMEMODE) - 1;
 
                         // Class
-                        fsFile.Seek(ADDRESS_CLASS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        comboClass.SelectedIndex = iData - 1;
+                        comboClass.SelectedIndex = ConvertAndLoad(fsFile, ADDRESS_CLASS) - 1;
 
                         // Wave
-                        fsFile.Seek(ADDRESS_WAVE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxWave.Value = iData;
+                        boxWave.Value = ConvertAndLoad(fsFile, ADDRESS_WAVE);
 
                         // Legerity
-                        fsFile.Seek(ADDRESS_LEGERITY, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxLegerity.Value = iData;
+                        boxLegerity.Value = ConvertAndLoad(fsFile, ADDRESS_LEGERITY);
 
                         // Precision
-                        fsFile.Seek(ADDRESS_PRECISION, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxPrecision.Value = iData;
+                        boxPrecision.Value = ConvertAndLoad(fsFile, ADDRESS_PRECISION);
 
                         // Toughness
-                        fsFile.Seek(ADDRESS_TOUGHNESS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxToughness.Value = iData;
+                        boxToughness.Value = ConvertAndLoad(fsFile, ADDRESS_TOUGHNESS);
 
                         // Sorcery
-                        fsFile.Seek(ADDRESS_SORCERY, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxSorcery.Value = iData;
+                        boxSorcery.Value = ConvertAndLoad(fsFile, ADDRESS_SORCERY);
 
                         // Ability Points
-                        fsFile.Seek(ADDRESS_AP, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxAP.Value = iData;
+                        boxAP.Value = ConvertAndLoad(fsFile, ADDRESS_AP);
 
                         // Kills
-                        fsFile.Seek(ADDRESS_KILLS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxKills.Value = iData;
+                        boxKills.Value = ConvertAndLoad(fsFile, ADDRESS_KILLS);
 
                         // Money
-                        fsFile.Seek(ADDRESS_MONEY, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxMoney.Value = iData;
+                        boxMoney.Value = ConvertAndLoad(fsFile, ADDRESS_MONEY);
 
                         // Salvage
-                        fsFile.Seek(ADDRESS_SALVAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxSalvage.Value = iData;
+                        boxSalvage.Value = ConvertAndLoad(fsFile, ADDRESS_SALVAGE);
 
                         // Souls
-                        fsFile.Seek(ADDRESS_SOULS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxSouls.Value = iData;
+                        boxSouls.Value = ConvertAndLoad(fsFile, ADDRESS_SOULS);
 
                         // Health Kits
-                        fsFile.Seek(ADDRESS_HPKITS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxHPKits.Value = iData;
+                        boxHPKits.Value = ConvertAndLoad(fsFile, ADDRESS_HPKITS);
 
                         // Mana Kits
-                        fsFile.Seek(ADDRESS_MPKITS, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        boxMPKits.Value = iData;
+                        boxMPKits.Value = ConvertAndLoad(fsFile, ADDRESS_MPKITS);
 
                         // Total Experience
-                        fsFile.Seek(ADDRESS_XP, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
+                        iData = ConvertAndLoad(fsFile, ADDRESS_XP);
                         boxXP.Value = iData;
                         boxLevel.Value = XPToLevel(iData);
 
                         // Long Jump
-                        fsFile.Seek(ADDRESS_LONGJUMP, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        checkLJ.Checked = Convert.ToBoolean(iData);
+                        checkLJ.Checked = Convert.ToBoolean(ConvertAndLoad(fsFile, ADDRESS_LONGJUMP));
 
                         // Weapons
                         fsFile.Seek(ADDRESS_WEAPONS, SeekOrigin.Begin);
                         fsFile.Read(bData, 0, bData.Length);
                         uint uiData = BitConverter.ToUInt32(bData, 0);
+                        /* uint uiData = Convert.ToUInt32(ConvertAndLoad(fsFile, ADDRESS_WEAPONS)); fails */
                         uiCheck = uiData; if ((uiCheck &= W_MELEE) == W_MELEE) b_WPN_Melee = true; // Bad way of doing bitwise check!
                         uiCheck = uiData; if ((uiCheck &= W_AXE) == W_AXE) b_WPN_Axe = true;
                         uiCheck = uiData; if ((uiCheck &= W_PISTOL) == W_PISTOL) b_WPN_Pistol = true;
@@ -689,495 +645,160 @@ namespace BDefSaveEditor
                         uiCheck = uiData; if ((uiCheck &= W_SUIT) == W_SUIT) b_WPN_Suit = true;
                         
                         // Tasks
-                        fsFile.Seek(ADDRESS_TASK_NUMBER, SeekOrigin.Begin); // Task number
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TASK_Number = iData;
-                        fsFile.Seek(ADDRESS_TASK_TYPE, SeekOrigin.Begin); // Task type
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TASK_Type = iData - 1;
-                        fsFile.Seek(ADDRESS_TASK_REMAIN, SeekOrigin.Begin); // Task remain
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TASK_Remain = iData;
-                        fsFile.Seek(ADDRESS_TASK_EVENT, SeekOrigin.Begin); // Event task
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TASK_Event = iData;
+                        i_TASK_Number = ConvertAndLoad(fsFile, ADDRESS_TASK_NUMBER); // Task number
+                        i_TASK_Type = ConvertAndLoad(fsFile, ADDRESS_TASK_TYPE) - 1; // Task type
+                        i_TASK_Remain = ConvertAndLoad(fsFile, ADDRESS_TASK_REMAIN); // Task remain
+                        i_TASK_Event = ConvertAndLoad(fsFile, ADDRESS_TASK_EVENT); // Event task
 
                         // Inventory
-                        fsFile.Seek(ADDRESS_HELMET_COLOR, SeekOrigin.Begin); // Helmet
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_HELMET_Color = iData;
-                        fsFile.Seek(ADDRESS_HELMET_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_HELMET_ItemID = iData;
-                        fsFile.Seek(ADDRESS_HELMET_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_HELMET_Defense = iData;
-                        fsFile.Seek(ADDRESS_HELMET_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_HELMET_Attribute = iData;
-                        fsFile.Seek(ADDRESS_HELMET_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_HELMET_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ARMOR_COLOR, SeekOrigin.Begin); // Armor
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ARMOR_Color = iData;
-                        fsFile.Seek(ADDRESS_ARMOR_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ARMOR_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ARMOR_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ARMOR_Defense = iData;
-                        fsFile.Seek(ADDRESS_ARMOR_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ARMOR_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ARMOR_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ARMOR_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_TRINKET_COLOR, SeekOrigin.Begin); // Trinket
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TRINKET_Color = iData;
-                        fsFile.Seek(ADDRESS_TRINKET_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TRINKET_ItemID = iData;
-                        fsFile.Seek(ADDRESS_TRINKET_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TRINKET_Attribute = iData;
-                        fsFile.Seek(ADDRESS_TRINKET_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_TRINKET_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_GEM_COLOR, SeekOrigin.Begin); // Gem
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_GEM_Color = iData;
-                        fsFile.Seek(ADDRESS_GEM_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_GEM_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM1_COLOR, SeekOrigin.Begin); // Bag Slot 1
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM1_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM1_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM1_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM1_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM1_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM1_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM1_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM1_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM1_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM2_COLOR, SeekOrigin.Begin); // Bag Slot 2
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM2_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM2_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM2_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM2_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM2_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM2_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM2_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM2_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM2_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM3_COLOR, SeekOrigin.Begin); // Bag Slot 3
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM3_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM3_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM3_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM3_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM3_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM3_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM3_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM3_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM3_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM4_COLOR, SeekOrigin.Begin); // Bag Slot 4
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM4_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM4_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM4_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM4_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM4_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM4_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM4_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM4_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM4_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM5_COLOR, SeekOrigin.Begin); // Bag Slot 5
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM5_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM5_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM5_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM5_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM5_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM5_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM5_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM5_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM5_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM6_COLOR, SeekOrigin.Begin); // Bag Slot 6
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM6_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM6_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM6_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM6_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM6_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM6_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM6_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM6_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM6_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM7_COLOR, SeekOrigin.Begin); // Bag Slot 7
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM7_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM7_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM7_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM7_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM7_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM7_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM7_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM7_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM7_Upgrades = iData;
-                        fsFile.Seek(ADDRESS_ITEM8_COLOR, SeekOrigin.Begin); // Bag Slot 8
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM8_Color = iData;
-                        fsFile.Seek(ADDRESS_ITEM8_ITEMID, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM8_ItemID = iData;
-                        fsFile.Seek(ADDRESS_ITEM8_DEFENSE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM8_Defense = iData;
-                        fsFile.Seek(ADDRESS_ITEM8_ATTRIBUTE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM8_Attribute = iData;
-                        fsFile.Seek(ADDRESS_ITEM8_UPGRADES, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_ITEM8_Upgrades = iData;
+                        i_HELMET_Color = ConvertAndLoad(fsFile, ADDRESS_HELMET_COLOR); // Helmet
+                        i_HELMET_ItemID = ConvertAndLoad(fsFile, ADDRESS_HELMET_ITEMID);
+                        i_HELMET_Defense = ConvertAndLoad(fsFile, ADDRESS_HELMET_DEFENSE);
+                        i_HELMET_Attribute = ConvertAndLoad(fsFile, ADDRESS_HELMET_ATTRIBUTE);
+                        i_HELMET_Upgrades = ConvertAndLoad(fsFile, ADDRESS_HELMET_UPGRADES);
+
+                        i_ARMOR_Color = ConvertAndLoad(fsFile, ADDRESS_ARMOR_COLOR); // Armor
+                        i_ARMOR_ItemID = ConvertAndLoad(fsFile, ADDRESS_ARMOR_ITEMID);
+                        i_ARMOR_Defense = ConvertAndLoad(fsFile, ADDRESS_ARMOR_DEFENSE);
+                        i_ARMOR_Attribute = ConvertAndLoad(fsFile, ADDRESS_ARMOR_ATTRIBUTE);
+                        i_ARMOR_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ARMOR_UPGRADES);
+
+                        i_TRINKET_Color = ConvertAndLoad(fsFile, ADDRESS_TRINKET_COLOR); // Trinket
+                        i_TRINKET_ItemID = ConvertAndLoad(fsFile, ADDRESS_TRINKET_ITEMID);
+                        i_TRINKET_Attribute = ConvertAndLoad(fsFile, ADDRESS_TRINKET_ATTRIBUTE);
+                        i_TRINKET_Upgrades = ConvertAndLoad(fsFile, ADDRESS_TRINKET_UPGRADES);
+
+                        i_GEM_Color = ConvertAndLoad(fsFile, ADDRESS_GEM_COLOR); // Gem
+                        i_GEM_ItemID = ConvertAndLoad(fsFile, ADDRESS_GEM_ITEMID);
+
+                        i_ITEM1_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM1_COLOR); // Bag Slot 1
+                        i_ITEM1_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM1_ITEMID);
+                        i_ITEM1_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM1_DEFENSE);
+                        i_ITEM1_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM1_ATTRIBUTE);
+                        i_ITEM1_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM1_UPGRADES);
+
+                        i_ITEM2_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM2_COLOR); // Bag Slot 2
+                        i_ITEM2_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM2_ITEMID);
+                        i_ITEM2_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM2_DEFENSE);
+                        i_ITEM2_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM2_ATTRIBUTE);
+                        i_ITEM2_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM2_UPGRADES);
+
+                        i_ITEM3_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM3_COLOR); // Bag Slot 3
+                        i_ITEM3_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM3_ITEMID);
+                        i_ITEM3_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM3_DEFENSE);
+                        i_ITEM3_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM3_ATTRIBUTE);
+                        i_ITEM3_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM3_UPGRADES);
+
+                        i_ITEM4_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM4_COLOR); // Bag Slot 4
+                        i_ITEM4_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM4_ITEMID);
+                        i_ITEM4_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM4_DEFENSE);
+                        i_ITEM4_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM4_ATTRIBUTE);
+                        i_ITEM4_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM4_UPGRADES);
+
+                        i_ITEM5_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM5_COLOR); // Bag Slot 5
+                        i_ITEM5_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM5_ITEMID);
+                        i_ITEM5_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM5_DEFENSE);
+                        i_ITEM5_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM5_ATTRIBUTE);
+                        i_ITEM5_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM5_UPGRADES);
+
+                        i_ITEM6_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM6_COLOR); // Bag Slot 6
+                        i_ITEM6_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM6_ITEMID);
+                        i_ITEM6_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM6_DEFENSE);
+                        i_ITEM6_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM6_ATTRIBUTE);
+                        i_ITEM6_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM6_UPGRADES);
+
+                        i_ITEM7_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM7_COLOR); // Bag Slot 7
+                        i_ITEM7_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM7_ITEMID);
+                        i_ITEM7_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM7_DEFENSE);
+                        i_ITEM7_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM7_ATTRIBUTE);
+                        i_ITEM7_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM7_UPGRADES);
+
+                        i_ITEM8_Color = ConvertAndLoad(fsFile, ADDRESS_ITEM8_COLOR); // Bag Slot 8
+                        i_ITEM8_ItemID = ConvertAndLoad(fsFile, ADDRESS_ITEM8_ITEMID);
+                        i_ITEM8_Defense = ConvertAndLoad(fsFile, ADDRESS_ITEM8_DEFENSE);
+                        i_ITEM8_Attribute = ConvertAndLoad(fsFile, ADDRESS_ITEM8_ATTRIBUTE);
+                        i_ITEM8_Upgrades = ConvertAndLoad(fsFile, ADDRESS_ITEM8_UPGRADES);
+
                         UpdateInventoryMenu();
 
                         // Weapon Upgrades
-                        fsFile.Seek(ADDRESS_UPGRADE_MEELE_DAMAGE, SeekOrigin.Begin); // Meele
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_MEELE_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_MEELE_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_MEELE_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AXE_SLOTS, SeekOrigin.Begin); // Ancient Axe
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AXE_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AXE_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AXE_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AXE_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AXE_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_SLOTS, SeekOrigin.Begin); // Pistol
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PISTOL_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PISTOL_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PISTOL_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PISTOL_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PISTOL_UNIQUE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PISTOL_Unique = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_BLASTER_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_BLASTER_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_BLASTER_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_BLASTER_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_SLOTS, SeekOrigin.Begin); // Python
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PYTHON_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PYTHON_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PYTHON_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PYTHON_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_PYTHON_UNIQUE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_PYTHON_Unique = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_SLOTS, SeekOrigin.Begin); // Akimbo
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AKIMBO_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AKIMBO_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AKIMBO_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AKIMBO_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_UNIQUE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_AKIMBO_Unique = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SMG_SLOTS, SeekOrigin.Begin); // Submachine Gun
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SMG_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SMG_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SMG_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SMG_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SMG_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SMG_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SMG_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_SLOTS, SeekOrigin.Begin); // Shotgun
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOTGUN_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOTGUN_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOTGUN_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOTGUN_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_UNIQUE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOTGUN_Unique = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_SLOTS, SeekOrigin.Begin); // Crossbow
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_CROSSBOW_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_CROSSBOW_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_CROSSBOW_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_CROSSBOW_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_UNIQUE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_CROSSBOW_Unique = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_SLOTS, SeekOrigin.Begin); // Assault Rifle
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_ASSAULT_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_ASSAULT_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_ASSAULT_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_ASSAULT_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SAW_SLOTS, SeekOrigin.Begin); // SAW
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SAW_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SAW_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SAW_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SAW_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SAW_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SAW_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SAW_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_SLOTS, SeekOrigin.Begin); // Sniper Rifle
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SNIPER_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SNIPER_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SNIPER_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SNIPER_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SNIPER_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_RPG_SLOTS, SeekOrigin.Begin); // Rocket Launcher
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_RPG_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_RPG_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_RPG_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_SLOTS, SeekOrigin.Begin); // Gauss
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GAUSS_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GAUSS_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GAUSS_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GAUSS_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_SHOCK_RATE, SeekOrigin.Begin); // Shock Rifle
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_SHOCK_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_SLOTS, SeekOrigin.Begin); // Grenade Launcher
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GRENADE_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GRENADE_RateOfFire = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_GRENADE_AMMO, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_GRENADE_Ammo = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_SLOTS, SeekOrigin.Begin); // Minigun
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_MINIGUN_Slots = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_DAMAGE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_MINIGUN_Damage = iData;
-                        fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_RATE, SeekOrigin.Begin);
-                        fsFile.Read(bData, 0, bData.Length);
-                        iData = BitConverter.ToInt32(bData, 0);
-                        i_UPGRADE_MINIGUN_RateOfFire = iData;
+                        i_UPGRADE_AXE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MEELE_DAMAGE); // Meele
+                        i_UPGRADE_AXE_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MEELE_RATE);
+
+                        i_UPGRADE_AXE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_SLOTS); // Ancient Axe
+                        i_UPGRADE_AXE_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_DAMAGE);
+                        i_UPGRADE_AXE_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_RATE);
+
+                        i_UPGRADE_PISTOL_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_SLOTS); // Pistol
+                        i_UPGRADE_PISTOL_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_DAMAGE);
+                        i_UPGRADE_PISTOL_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_RATE);
+                        i_UPGRADE_PISTOL_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_AMMO);
+                        i_UPGRADE_PISTOL_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_UNIQUE);
+
+                        i_UPGRADE_BLASTER_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_SLOTS); // Blaster
+                        i_UPGRADE_BLASTER_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_DAMAGE);
+                        i_UPGRADE_BLASTER_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_RATE);
+
+                        i_UPGRADE_PYTHON_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_SLOTS); // Python
+                        i_UPGRADE_PYTHON_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_DAMAGE);
+                        i_UPGRADE_PYTHON_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_RATE);
+                        i_UPGRADE_PYTHON_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_AMMO);
+                        i_UPGRADE_PYTHON_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_UNIQUE);
+
+                        i_UPGRADE_AKIMBO_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_SLOTS); // Akimbo
+                        i_UPGRADE_AKIMBO_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_DAMAGE);
+                        i_UPGRADE_AKIMBO_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_RATE);
+                        i_UPGRADE_AKIMBO_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_AMMO);
+                        i_UPGRADE_AKIMBO_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_UNIQUE);
+
+                        i_UPGRADE_SMG_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_SLOTS); // Submachine Gun
+                        i_UPGRADE_SMG_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_DAMAGE);
+                        i_UPGRADE_SMG_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_RATE);
+                        i_UPGRADE_SMG_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_AMMO);
+
+                        i_UPGRADE_SHOTGUN_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_SLOTS); // Shotgun
+                        i_UPGRADE_SHOTGUN_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_DAMAGE);
+                        i_UPGRADE_SHOTGUN_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_RATE);
+                        i_UPGRADE_SHOTGUN_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_AMMO);
+                        i_UPGRADE_SHOTGUN_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_UNIQUE);
+
+                        i_UPGRADE_CROSSBOW_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_SLOTS); // Crossbow
+                        i_UPGRADE_CROSSBOW_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_DAMAGE);
+                        i_UPGRADE_CROSSBOW_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_RATE);
+                        i_UPGRADE_CROSSBOW_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_AMMO);
+                        i_UPGRADE_CROSSBOW_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_UNIQUE);
+
+                        i_UPGRADE_ASSAULT_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_SLOTS); // Assault Rifle
+                        i_UPGRADE_ASSAULT_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_DAMAGE);
+                        i_UPGRADE_ASSAULT_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_RATE);
+                        i_UPGRADE_ASSAULT_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_AMMO);
+
+                        i_UPGRADE_SAW_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_SLOTS); // SAW
+                        i_UPGRADE_SAW_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_DAMAGE);
+                        i_UPGRADE_SAW_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_RATE);
+                        i_UPGRADE_SAW_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_AMMO);
+
+                        i_UPGRADE_SNIPER_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_SLOTS); // Sniper Rifle
+                        i_UPGRADE_SNIPER_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_DAMAGE);
+                        i_UPGRADE_SNIPER_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_RATE);
+                        i_UPGRADE_SNIPER_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_AMMO);
+
+                        i_UPGRADE_RPG_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_RPG_SLOTS); // Rocket Launcher
+                        i_UPGRADE_RPG_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_RPG_DAMAGE);
+
+                        i_UPGRADE_GAUSS_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_SLOTS); // Gauss
+                        i_UPGRADE_GAUSS_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_DAMAGE);
+                        i_UPGRADE_GAUSS_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_RATE);
+
+                        i_UPGRADE_SHOCK_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOCK_RATE); // Shock Rifle
+
+                        i_UPGRADE_GRENADE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_SLOTS); // Grenade Launcher
+                        i_UPGRADE_GRENADE_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_RATE);
+                        i_UPGRADE_GRENADE_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_AMMO);
+
+                        i_UPGRADE_MINIGUN_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_SLOTS); // Minigun
+                        i_UPGRADE_MINIGUN_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_DAMAGE);
+                        i_UPGRADE_MINIGUN_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_RATE);
 
                         // Ammo
                         i_AMMO_Shotgun = ConvertAndLoad(fsFile, ADDRESS_AMMO_BUCKSHOT);
@@ -1196,6 +817,12 @@ namespace BDefSaveEditor
                         i_AMMO_Satchel = ConvertAndLoad(fsFile, ADDRESS_AMMO_SATCHEL);
                         i_AMMO_Grenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_HANDGRENADE);
                         i_AMMO_GLauncher = ConvertAndLoad(fsFile, ADDRESS_AMMO_GRENADELAUNCHER);
+
+                        // Powers
+                        i_POWER_First = ConvertAndLoad(fsFile, ADDRESS_POWERS_FIRST);
+                        i_POWER_Second = ConvertAndLoad(fsFile, ADDRESS_POWERS_SECOND);
+                        i_POWER_Third = ConvertAndLoad(fsFile, ADDRESS_POWERS_THIRD);
+                        i_POWER_Fourth = ConvertAndLoad(fsFile, ADDRESS_POWERS_FOURTH);
 
                         // Controls
                         comboMode.Enabled = true;
@@ -1219,6 +846,7 @@ namespace BDefSaveEditor
                         buttonTasks.Enabled = true;
                         buttonInventory.Enabled = true;
                         buttonUpgrades.Enabled = true;
+                        buttonSkills.Enabled = true;
                         buttonSave.Enabled = true;
                     }
                     else
@@ -1244,6 +872,7 @@ namespace BDefSaveEditor
                         buttonTasks.Enabled = false;
                         buttonInventory.Enabled = false;
                         buttonUpgrades.Enabled = false;
+                        buttonSkills.Enabled = false;
                         buttonSave.Enabled = false;
 
                         labelFile.Text = "No file opened";
@@ -1275,6 +904,7 @@ namespace BDefSaveEditor
                 buttonTasks.Enabled = false;
                 buttonInventory.Enabled = false;
                 buttonUpgrades.Enabled = false;
+                buttonSkills.Enabled = false;
                 buttonSave.Enabled = false;
 
                 MessageBox.Show("Unable to load file.\n" + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1352,87 +982,54 @@ namespace BDefSaveEditor
                     uint uiData = 0;
 
                     // Gamemode
-                    fsFile.Seek(ADDRESS_GAMEMODE, SeekOrigin.Begin);
-                    iData = comboMode.SelectedIndex + 1;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_GAMEMODE, comboMode.SelectedIndex + 1);
 
                     // Class
-                    fsFile.Seek(ADDRESS_CLASS, SeekOrigin.Begin);
-                    iData = comboClass.SelectedIndex + 1;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_CLASS, comboClass.SelectedIndex + 1);
 
                     // Wave
-                    fsFile.Seek(ADDRESS_WAVE, SeekOrigin.Begin);
-                    iData = (int)boxWave.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_WAVE, (int)boxWave.Value);
 
                     // Legerity
-                    fsFile.Seek(ADDRESS_LEGERITY, SeekOrigin.Begin);
-                    iData = (int)boxLegerity.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_LEGERITY, (int)boxLegerity.Value);
 
                     // Precision
-                    fsFile.Seek(ADDRESS_PRECISION, SeekOrigin.Begin);
-                    iData = (int)boxPrecision.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_PRECISION, (int)boxPrecision.Value);
 
                     // Toughness
-                    fsFile.Seek(ADDRESS_TOUGHNESS, SeekOrigin.Begin);
-                    iData = (int)boxToughness.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_TOUGHNESS, (int)boxToughness.Value);
 
                     // Sorcery
-                    fsFile.Seek(ADDRESS_SORCERY, SeekOrigin.Begin);
-                    iData = (int)boxSorcery.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_SORCERY, (int)boxSorcery.Value);
 
                     // Ability Points
-                    fsFile.Seek(ADDRESS_AP, SeekOrigin.Begin);
-                    iData = (int)boxAP.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_AP, (int)boxAP.Value);
 
                     // Kills
-                    fsFile.Seek(ADDRESS_KILLS, SeekOrigin.Begin);
-                    iData = (int)boxKills.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_KILLS, (int)boxKills.Value);
 
                     // Money
-                    fsFile.Seek(ADDRESS_MONEY, SeekOrigin.Begin);
-                    iData = (int)boxMoney.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_MONEY, (int)boxMoney.Value);
 
                     // Salvage
-                    fsFile.Seek(ADDRESS_SALVAGE, SeekOrigin.Begin);
-                    iData = (int)boxSalvage.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_SALVAGE, (int)boxSalvage.Value);
 
                     // Souls
-                    fsFile.Seek(ADDRESS_SOULS, SeekOrigin.Begin);
-                    iData = (int)boxSouls.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_SOULS, (int)boxSouls.Value);
 
                     // Health Kits
-                    fsFile.Seek(ADDRESS_HPKITS, SeekOrigin.Begin);
-                    iData = (int)boxHPKits.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_HPKITS, (int)boxHPKits.Value);
 
                     // Mana Kits
-                    fsFile.Seek(ADDRESS_MPKITS, SeekOrigin.Begin);
-                    iData = (int)boxMPKits.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_MPKITS, (int)boxMPKits.Value);
 
                     // Total Experience
-                    fsFile.Seek(ADDRESS_XP, SeekOrigin.Begin);
-                    iData = (int)boxXP.Value;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_XP, (int)boxXP.Value);
 
                     // Long Jump
-                    fsFile.Seek(ADDRESS_LONGJUMP, SeekOrigin.Begin);
-                    iData = Convert.ToInt32(checkLJ.Checked);
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_LONGJUMP, Convert.ToInt32(checkLJ.Checked));
 
                     // Weapons
-                    fsFile.Seek(ADDRESS_WEAPONS, SeekOrigin.Begin);
                     if (b_WPN_Melee) uiData += W_MELEE;
                     if (b_WPN_Axe) uiData += W_AXE;
                     if (b_WPN_Pistol) uiData += W_PISTOL;
@@ -1457,424 +1054,185 @@ namespace BDefSaveEditor
                     iData = Convert.ToInt32(uiData);
                     iData += (1 << 22); // W_GESTURES
                     if (b_WPN_Suit) iData += (1 << 31); // W_SUIT
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_WEAPONS, iData);
 
                     // Tasks
-                    fsFile.Seek(ADDRESS_TASK_NUMBER, SeekOrigin.Begin); // Task number
-                    iData = i_TASK_Number;
-                    ConvertAndSave(fsFile, iData);
-
-                    fsFile.Seek(ADDRESS_TASK_TYPE, SeekOrigin.Begin); // Task type
-                    iData = i_TASK_Type + 1;
-                    ConvertAndSave(fsFile, iData);
-
-                    fsFile.Seek(ADDRESS_TASK_REMAIN, SeekOrigin.Begin); // Task remain
-                    iData = i_TASK_Remain;
-                    ConvertAndSave(fsFile, iData);
-
-                    fsFile.Seek(ADDRESS_TASK_EVENT, SeekOrigin.Begin); // Event task
-                    iData = i_TASK_Event;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_TASK_NUMBER, i_TASK_Number); // Task number
+                    ConvertAndSave(fsFile, ADDRESS_TASK_TYPE, i_TASK_Type + 1); // Task type
+                    ConvertAndSave(fsFile, ADDRESS_TASK_REMAIN, i_TASK_Remain); // Task remain
+                    ConvertAndSave(fsFile, ADDRESS_TASK_EVENT, i_TASK_Event); // Event task
 
                     // Inventory
-                    fsFile.Seek(ADDRESS_HELMET_COLOR, SeekOrigin.Begin); // Helmet
-                    iData = i_HELMET_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_HELMET_ITEMID, SeekOrigin.Begin);
-                    iData = i_HELMET_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_HELMET_DEFENSE, SeekOrigin.Begin);
-                    iData = i_HELMET_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_HELMET_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_HELMET_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_HELMET_UPGRADES, SeekOrigin.Begin);
-                    iData = i_HELMET_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_HELMET_COLOR, i_HELMET_Color); // Helmet
+                    ConvertAndSave(fsFile, ADDRESS_HELMET_ITEMID, i_HELMET_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_HELMET_DEFENSE, i_HELMET_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_HELMET_ATTRIBUTE, i_HELMET_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_HELMET_UPGRADES, i_HELMET_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ARMOR_COLOR, SeekOrigin.Begin); // Armor
-                    iData = i_ARMOR_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ARMOR_ITEMID, SeekOrigin.Begin);
-                    iData = i_ARMOR_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ARMOR_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ARMOR_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ARMOR_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ARMOR_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ARMOR_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ARMOR_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ARMOR_COLOR, i_ARMOR_Color); // Armor
+                    ConvertAndSave(fsFile, ADDRESS_ARMOR_ITEMID, i_ARMOR_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ARMOR_DEFENSE, i_ARMOR_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ARMOR_ATTRIBUTE, i_ARMOR_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ARMOR_UPGRADES, i_ARMOR_Upgrades);
 
-                    fsFile.Seek(ADDRESS_TRINKET_COLOR, SeekOrigin.Begin); // Trinket
-                    iData = i_TRINKET_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_TRINKET_ITEMID, SeekOrigin.Begin);
-                    iData = i_TRINKET_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_TRINKET_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_TRINKET_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_TRINKET_UPGRADES, SeekOrigin.Begin);
-                    iData = i_TRINKET_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_TRINKET_COLOR, i_TRINKET_Color); // Trinket
+                    ConvertAndSave(fsFile, ADDRESS_TRINKET_ITEMID, i_TRINKET_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_TRINKET_ATTRIBUTE, i_TRINKET_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_TRINKET_UPGRADES, i_TRINKET_Upgrades);
 
-                    fsFile.Seek(ADDRESS_GEM_COLOR, SeekOrigin.Begin); // Gem
-                    iData = i_GEM_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_GEM_ITEMID, SeekOrigin.Begin);
-                    iData = i_GEM_ItemID;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_GEM_COLOR, i_GEM_Color); // Gem
+                    ConvertAndSave(fsFile, ADDRESS_GEM_ITEMID, i_GEM_ItemID);
 
-                    fsFile.Seek(ADDRESS_ITEM1_COLOR, SeekOrigin.Begin); // Bag Slot 1
-                    iData = i_ITEM1_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM1_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM1_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM1_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM1_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM1_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM1_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM1_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM1_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM1_COLOR, i_ITEM1_Color); // Bag Slot 1
+                    ConvertAndSave(fsFile, ADDRESS_ITEM1_ITEMID, i_ITEM1_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM1_DEFENSE, i_ITEM1_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM1_ATTRIBUTE, i_ITEM1_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM1_UPGRADES, i_ITEM1_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM2_COLOR, SeekOrigin.Begin); // Bag Slot 2
-                    iData = i_ITEM2_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM2_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM2_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM2_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM2_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM2_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM2_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM2_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM2_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM2_COLOR, i_ITEM2_Color); // Bag Slot 2
+                    ConvertAndSave(fsFile, ADDRESS_ITEM2_ITEMID, i_ITEM2_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM2_DEFENSE, i_ITEM2_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM2_ATTRIBUTE, i_ITEM2_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM2_UPGRADES, i_ITEM2_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM3_COLOR, SeekOrigin.Begin); // Bag Slot 3
-                    iData = i_ITEM3_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM3_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM3_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM3_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM3_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM3_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM3_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM3_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM3_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM3_COLOR, i_ITEM3_Color); // Bag Slot 3
+                    ConvertAndSave(fsFile, ADDRESS_ITEM3_ITEMID, i_ITEM3_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM3_DEFENSE, i_ITEM3_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM3_ATTRIBUTE, i_ITEM3_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM3_UPGRADES, i_ITEM3_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM4_COLOR, SeekOrigin.Begin); // Bag Slot 4
-                    iData = i_ITEM4_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM4_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM4_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM4_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM4_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM4_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM4_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM4_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM4_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM4_COLOR, i_ITEM4_Color); // Bag Slot 4
+                    ConvertAndSave(fsFile, ADDRESS_ITEM4_ITEMID, i_ITEM4_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM4_DEFENSE, i_ITEM4_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM4_ATTRIBUTE, i_ITEM4_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM4_UPGRADES, i_ITEM4_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM5_COLOR, SeekOrigin.Begin); // Bag Slot 5
-                    iData = i_ITEM5_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM5_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM5_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM5_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM5_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM5_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM5_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM5_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM5_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM5_COLOR, i_ITEM5_Color); // Bag Slot 5
+                    ConvertAndSave(fsFile, ADDRESS_ITEM5_ITEMID, i_ITEM5_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM5_DEFENSE, i_ITEM5_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM5_ATTRIBUTE, i_ITEM5_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM5_UPGRADES, i_ITEM5_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM6_COLOR, SeekOrigin.Begin); // Bag Slot 6
-                    iData = i_ITEM6_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM6_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM6_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM6_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM6_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM6_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM6_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM6_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM6_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM6_COLOR, i_ITEM6_Color); // Bag Slot 6
+                    ConvertAndSave(fsFile, ADDRESS_ITEM6_ITEMID, i_ITEM6_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM6_DEFENSE, i_ITEM6_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM6_ATTRIBUTE, i_ITEM6_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM6_UPGRADES, i_ITEM6_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM7_COLOR, SeekOrigin.Begin); // Bag Slot 7
-                    iData = i_ITEM7_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM7_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM7_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM7_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM7_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM7_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM7_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM7_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM7_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM7_COLOR, i_ITEM7_Color); // Bag Slot 7
+                    ConvertAndSave(fsFile, ADDRESS_ITEM7_ITEMID, i_ITEM7_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM7_DEFENSE, i_ITEM7_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM7_ATTRIBUTE, i_ITEM7_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM7_UPGRADES, i_ITEM7_Upgrades);
 
-                    fsFile.Seek(ADDRESS_ITEM8_COLOR, SeekOrigin.Begin); // Bag Slot 8
-                    iData = i_ITEM8_Color;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM8_ITEMID, SeekOrigin.Begin);
-                    iData = i_ITEM8_ItemID;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM8_DEFENSE, SeekOrigin.Begin);
-                    iData = i_ITEM8_Defense;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM8_ATTRIBUTE, SeekOrigin.Begin);
-                    iData = i_ITEM8_Attribute;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_ITEM8_UPGRADES, SeekOrigin.Begin);
-                    iData = i_ITEM8_Upgrades;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM8_COLOR, i_ITEM8_Color); // Bag Slot 8
+                    ConvertAndSave(fsFile, ADDRESS_ITEM8_ITEMID, i_ITEM8_ItemID);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM8_DEFENSE, i_ITEM8_Defense);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM8_ATTRIBUTE, i_ITEM8_Attribute);
+                    ConvertAndSave(fsFile, ADDRESS_ITEM8_UPGRADES, i_ITEM8_Upgrades);
 
                     // Weapon Upgrades
-                    fsFile.Seek(ADDRESS_UPGRADE_MEELE_DAMAGE, SeekOrigin.Begin); // Meele
-                    iData = i_UPGRADE_MEELE_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_MEELE_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_MEELE_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MEELE_DAMAGE, i_UPGRADE_MEELE_Damage); // Meele
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MEELE_RATE, i_UPGRADE_MEELE_RateOfFire);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_AXE_SLOTS, SeekOrigin.Begin); // Ancient Axe
-                    iData = i_UPGRADE_AXE_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AXE_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AXE_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AXE_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AXE_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_SLOTS, i_UPGRADE_AXE_Slots); // Ancient Axe
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_DAMAGE, i_UPGRADE_AXE_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_RATE, i_UPGRADE_AXE_RateOfFire);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_SLOTS, SeekOrigin.Begin); // Pistol
-                    iData = i_UPGRADE_PISTOL_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PISTOL_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PISTOL_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PISTOL_Ammo;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PISTOL_UNIQUE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PISTOL_Unique;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_SLOTS, i_UPGRADE_PISTOL_Slots); // Pistol
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_DAMAGE, i_UPGRADE_PISTOL_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_RATE, i_UPGRADE_PISTOL_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_AMMO, i_UPGRADE_PISTOL_Ammo);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_UNIQUE, i_UPGRADE_PISTOL_Unique);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_SLOTS, SeekOrigin.Begin); // Blaster
-                    iData = i_UPGRADE_BLASTER_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_BLASTER_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_BLASTER_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_BLASTER_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_SLOTS, i_UPGRADE_BLASTER_Slots); // Blaster
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_DAMAGE, i_UPGRADE_BLASTER_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_RATE, i_UPGRADE_BLASTER_RateOfFire);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_SLOTS, SeekOrigin.Begin); // Python
-                    iData = i_UPGRADE_PYTHON_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PYTHON_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PYTHON_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PYTHON_Ammo;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_PYTHON_UNIQUE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_PYTHON_Unique;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_SLOTS, i_UPGRADE_PYTHON_Slots); // Python
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_DAMAGE, i_UPGRADE_PYTHON_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_RATE, i_UPGRADE_PYTHON_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_AMMO, i_UPGRADE_PYTHON_Ammo);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_UNIQUE, i_UPGRADE_PYTHON_Unique);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_SLOTS, SeekOrigin.Begin); // Akimbo
-                    iData = i_UPGRADE_AKIMBO_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AKIMBO_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AKIMBO_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AKIMBO_Ammo;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_AKIMBO_UNIQUE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_AKIMBO_Unique;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_SLOTS, i_UPGRADE_AKIMBO_Slots); // Akimbo
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_DAMAGE, i_UPGRADE_AKIMBO_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_RATE, i_UPGRADE_AKIMBO_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_AMMO, i_UPGRADE_AKIMBO_Ammo);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_UNIQUE, i_UPGRADE_AKIMBO_Unique);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_SMG_SLOTS, SeekOrigin.Begin); // Submachine Gun
-                    iData = i_UPGRADE_SMG_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SMG_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SMG_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SMG_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SMG_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SMG_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SMG_Ammo;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_SLOTS, i_UPGRADE_SMG_Slots); // Submachine Gun
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_DAMAGE, i_UPGRADE_SMG_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_RATE, i_UPGRADE_SMG_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_AMMO, i_UPGRADE_SMG_Ammo);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_SLOTS, SeekOrigin.Begin); // Shotgun
-                    iData = i_UPGRADE_SHOTGUN_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SHOTGUN_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SHOTGUN_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SHOTGUN_Ammo;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOTGUN_UNIQUE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SHOTGUN_Unique;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_SLOTS, i_UPGRADE_SHOTGUN_Slots); // Shotgun
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_DAMAGE, i_UPGRADE_SHOTGUN_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_RATE, i_UPGRADE_SHOTGUN_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_AMMO, i_UPGRADE_SHOTGUN_Ammo);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_UNIQUE, i_UPGRADE_SHOTGUN_Unique);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_SLOTS, SeekOrigin.Begin); // Crossbow
-                    iData = i_UPGRADE_CROSSBOW_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_CROSSBOW_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_CROSSBOW_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_CROSSBOW_Ammo;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_CROSSBOW_UNIQUE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_CROSSBOW_Unique;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_SLOTS, i_UPGRADE_CROSSBOW_Slots); // Crossbow
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_DAMAGE, i_UPGRADE_CROSSBOW_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_RATE, i_UPGRADE_CROSSBOW_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_AMMO, i_UPGRADE_CROSSBOW_Ammo);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_UNIQUE, i_UPGRADE_CROSSBOW_Unique);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_SLOTS, SeekOrigin.Begin); // Assault Rifle
-                    iData = i_UPGRADE_ASSAULT_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_ASSAULT_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_ASSAULT_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_ASSAULT_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_ASSAULT_Ammo;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_SLOTS, i_UPGRADE_ASSAULT_Slots); // Assault Rifle
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_DAMAGE, i_UPGRADE_ASSAULT_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_RATE, i_UPGRADE_ASSAULT_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_AMMO, i_UPGRADE_ASSAULT_Ammo);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_SAW_SLOTS, SeekOrigin.Begin); // SAW
-                    iData = i_UPGRADE_SAW_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SAW_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SAW_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SAW_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SAW_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SAW_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SAW_Ammo;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_SLOTS, i_UPGRADE_SAW_Slots); // SAW
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_DAMAGE, i_UPGRADE_SAW_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_RATE, i_UPGRADE_SAW_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_AMMO, i_UPGRADE_SAW_Ammo);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_SLOTS, SeekOrigin.Begin); // Sniper Rifle
-                    iData = i_UPGRADE_SNIPER_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SNIPER_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SNIPER_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_SNIPER_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_SNIPER_Ammo;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_SLOTS, i_UPGRADE_SNIPER_Slots); // Sniper Rifle
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_DAMAGE, i_UPGRADE_SNIPER_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_RATE, i_UPGRADE_SNIPER_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_AMMO, i_UPGRADE_SNIPER_Ammo);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_RPG_SLOTS, SeekOrigin.Begin); // RPG
-                    iData = i_UPGRADE_RPG_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_RPG_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_RPG_Damage;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_RPG_SLOTS, i_UPGRADE_RPG_Slots); // RPG
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_RPG_DAMAGE, i_UPGRADE_RPG_Damage);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_SLOTS, SeekOrigin.Begin); // Gauss Rifle
-                    iData = i_UPGRADE_GAUSS_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_GAUSS_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_GAUSS_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_GAUSS_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_SLOTS, i_UPGRADE_GAUSS_Slots); // Gauss Rifle
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_DAMAGE, i_UPGRADE_GAUSS_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_RATE, i_UPGRADE_GAUSS_RateOfFire);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_SHOCK_RATE, SeekOrigin.Begin); // Shock Rifle
-                    iData = i_UPGRADE_SHOCK_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOCK_RATE, i_UPGRADE_SHOCK_RateOfFire); // Shock Rifle
 
-                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_SLOTS, SeekOrigin.Begin); // Grenade Launcher
-                    iData = i_UPGRADE_GRENADE_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_GRENADE_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_GRENADE_AMMO, SeekOrigin.Begin);
-                    iData = i_UPGRADE_GRENADE_Ammo;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_SLOTS, i_UPGRADE_GRENADE_Slots); // Grenade Launcher
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_RATE, i_UPGRADE_GRENADE_RateOfFire);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_AMMO, i_UPGRADE_GRENADE_Ammo);
 
-                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_SLOTS, SeekOrigin.Begin); // Minigun
-                    iData = i_UPGRADE_MINIGUN_Slots;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_DAMAGE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_MINIGUN_Damage;
-                    ConvertAndSave(fsFile, iData);
-                    fsFile.Seek(ADDRESS_UPGRADE_MINIGUN_RATE, SeekOrigin.Begin);
-                    iData = i_UPGRADE_MINIGUN_RateOfFire;
-                    ConvertAndSave(fsFile, iData);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_SLOTS, i_UPGRADE_MINIGUN_Slots); // Minigun
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_DAMAGE, i_UPGRADE_MINIGUN_Damage);
+                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_RATE, i_UPGRADE_MINIGUN_RateOfFire);
 
                     // Ammo
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_BUCKSHOT, i_AMMO_Shotgun);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_9MM, i_AMMO_9mm);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SHOCK, i_AMMO_Shock);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SAW, i_AMMO_SAW);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SNIPER, i_AMMO_Sniper);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_ARGRENADE, i_AMMO_ARGrenade);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_FLAME, i_AMMO_Flame);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_MINIGUN, i_AMMO_Minigun);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_PYTHON, i_AMMO_357);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_GAUSS, i_AMMO_Gauss);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_RPG, i_AMMO_RPG);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_CROSSBOW, i_AMMO_Crossbow);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_TRIPMINE, i_AMMO_Tripmine);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_SATCHEL, i_AMMO_Satchel);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_HANDGRENADE, i_AMMO_Grenade);
-                    ConvertAndSaveNew(fsFile, ADDRESS_AMMO_GRENADELAUNCHER, i_AMMO_GLauncher);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_BUCKSHOT, i_AMMO_Shotgun);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_9MM, i_AMMO_9mm);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_SHOCK, i_AMMO_Shock);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_SAW, i_AMMO_SAW);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_SNIPER, i_AMMO_Sniper);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_ARGRENADE, i_AMMO_ARGrenade);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_FLAME, i_AMMO_Flame);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_MINIGUN, i_AMMO_Minigun);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_PYTHON, i_AMMO_357);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_GAUSS, i_AMMO_Gauss);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_RPG, i_AMMO_RPG);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_CROSSBOW, i_AMMO_Crossbow);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_TRIPMINE, i_AMMO_Tripmine);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_SATCHEL, i_AMMO_Satchel);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_HANDGRENADE, i_AMMO_Grenade);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_GRENADELAUNCHER, i_AMMO_GLauncher);
+
+                    // Powers
+                    ConvertAndSave(fsFile, ADDRESS_POWERS_FIRST, i_POWER_First);
+                    ConvertAndSave(fsFile, ADDRESS_POWERS_SECOND, i_POWER_Second);
+                    ConvertAndSave(fsFile, ADDRESS_POWERS_THIRD, i_POWER_Third);
+                    ConvertAndSave(fsFile, ADDRESS_POWERS_FOURTH, i_POWER_Fourth);
 
                     // End
                     MessageBox.Show("Save file updated.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1894,18 +1252,8 @@ namespace BDefSaveEditor
             fsFile.Read(bData, 0, bData.Length);
             return BitConverter.ToInt32(bData, 0);
         }
-
-        private void ConvertAndSave(FileStream fsFile, int iData)
+        private void ConvertAndSave(FileStream fsFile, int iAddress, int iData)
         {
-            fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
-            fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
-            fsFile.WriteByte(BitConverter.GetBytes(iData)[2]);
-            fsFile.WriteByte(BitConverter.GetBytes(iData)[3]);
-        }
-
-        private void ConvertAndSaveNew(FileStream fsFile, int iAddress, int iData)
-        {
-            // Testing if we can make the code even cleaner for save
             fsFile.Seek(iAddress, SeekOrigin.Begin);
             fsFile.WriteByte(BitConverter.GetBytes(iData)[0]);
             fsFile.WriteByte(BitConverter.GetBytes(iData)[1]);
@@ -2150,6 +1498,11 @@ namespace BDefSaveEditor
             upgradesForm.Text = "Minigun";
             upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MINIGUN);
             upgradesForm.ShowDialog();
+        }
+
+        private void buttonSkills_Click(object sender, EventArgs e)
+        {
+            powersForm.ShowDialog();
         }
     }
 }

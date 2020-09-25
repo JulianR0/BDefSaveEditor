@@ -112,6 +112,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PowersForm.resx">
+      <DependentUpon>PowersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpgradesForm.resx">
       <DependentUpon>UpgradesForm.cs</DependentUpon>
     </EmbeddedResource>

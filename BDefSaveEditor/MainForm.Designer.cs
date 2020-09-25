@@ -770,6 +770,7 @@
             this.buttonSkills.TabIndex = 121;
             this.buttonSkills.Text = "Powers";
             this.buttonSkills.UseVisualStyleBackColor = true;
+            this.buttonSkills.Click += new System.EventHandler(this.buttonSkills_Click);
             // 
             // buttonAbout
             // 
@@ -972,7 +973,6 @@
             // 
             // Main
             // 
-            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 303);
@@ -1057,9 +1057,7 @@
         private System.Windows.Forms.NumericUpDown boxWave;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label labelMode;
-        private System.Windows.Forms.ComboBox comboMode;
         private System.Windows.Forms.Label labelClass;
-        private System.Windows.Forms.ComboBox comboClass;
         private System.Windows.Forms.NumericUpDown boxLevel;
         private System.Windows.Forms.Label labelLevel;
         private System.Windows.Forms.Label labelAbilities;
@@ -1135,6 +1133,8 @@
         private System.Windows.Forms.ToolStripMenuItem cmu4_GrenadeLauncher;
         private System.Windows.Forms.ToolStripMenuItem cmu4_Minigun;
         private System.Windows.Forms.ToolStripMenuItem cmu3_Sniper;
+        public System.Windows.Forms.ComboBox comboClass;
+        private System.Windows.Forms.ComboBox comboMode;
     }
 }
 

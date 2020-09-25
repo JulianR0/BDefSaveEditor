@@ -70,10 +70,10 @@
             this.linkLabel.LinkColor = System.Drawing.Color.Blue;
             this.linkLabel.Location = new System.Drawing.Point(50, 31);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(113, 13);
+            this.linkLabel.Size = new System.Drawing.Size(282, 13);
             this.linkLabel.TabIndex = 4;
             this.linkLabel.TabStop = true;
-            this.linkLabel.Text = "Visit GitHub repository.";
+            this.linkLabel.Text = "This program is free software. Click to visit its source code.";
             this.linkLabel.VisitedLinkColor = System.Drawing.Color.Blue;
             this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
