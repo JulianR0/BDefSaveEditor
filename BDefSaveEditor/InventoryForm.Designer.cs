@@ -39,6 +39,7 @@
             this.labelItemName = new System.Windows.Forms.Label();
             this.labelItemDescription = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.labelDurationNote = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.boxDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxAttribute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxUpgrades)).BeginInit();
@@ -154,12 +155,24 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // labelDurationNote
+            // 
+            this.labelDurationNote.AutoSize = true;
+            this.labelDurationNote.Location = new System.Drawing.Point(12, 102);
+            this.labelDurationNote.Name = "labelDurationNote";
+            this.labelDurationNote.Size = new System.Drawing.Size(295, 26);
+            this.labelDurationNote.TabIndex = 11;
+            this.labelDurationNote.Text = "Custom potion duration isn\'t saved once it goes into your belt.\r\nDuration will re" +
+    "set to default if left unused.";
+            this.labelDurationNote.Visible = false;
+            // 
             // InventoryForm
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 148);
+            this.Controls.Add(this.labelDurationNote);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelItemDescription);
             this.Controls.Add(this.labelItemName);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Label labelItemName;
         private System.Windows.Forms.Label labelItemDescription;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Label labelDurationNote;
     }
 }

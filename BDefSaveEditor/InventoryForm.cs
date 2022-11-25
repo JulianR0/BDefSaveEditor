@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BDefSaveEditor
@@ -23,12 +16,17 @@ namespace BDefSaveEditor
             0x0A,
             0x0B,
             0x0C,
+            0x0D,
+            0x0E,
             0x14,
             0x15,
             0x16,
             0x1E,
             0x1F,
-            0x20
+            0x20,
+            0x21,
+            0x22,
+            0x23
         };
 
         int[] HELMET_Colors =
@@ -40,10 +38,15 @@ namespace BDefSaveEditor
             1, // Blue
             1,
             1,
+            1,
+            1,
             2, // Green
             2,
             2,
             3, // Brown
+            3,
+            3,
+            3,
             3,
             3
         };
@@ -57,6 +60,8 @@ namespace BDefSaveEditor
             0x32,
             0x33,
             0x34,
+            0x35,
+            0x36,
             0x3C,
             0x3D,
             0x3E,
@@ -64,7 +69,8 @@ namespace BDefSaveEditor
             0x47,
             0x48,
             0x49,
-            0x4A
+            0x4A,
+            0x4B
         };
 
         int[] ARMOR_Colors =
@@ -76,9 +82,12 @@ namespace BDefSaveEditor
             1,
             1,
             1,
+            1,
+            1,
             2,
             2,
             2,
+            3,
             3,
             3,
             3,
@@ -93,6 +102,7 @@ namespace BDefSaveEditor
             0x5B,
             0x5C,
             0x5D,
+            0x5E,
             0x64,
             0x65,
             0x66,
@@ -101,7 +111,8 @@ namespace BDefSaveEditor
             0x70,
             0x71,
             0x72,
-            0x73
+            0x73,
+            0x74
         };
 
         int[] TRINKET_Colors =
@@ -111,9 +122,11 @@ namespace BDefSaveEditor
             1,
             1,
             1,
+            1,
             2,
             2,
             2,
+            3,
             3,
             3,
             3,
@@ -153,18 +166,25 @@ namespace BDefSaveEditor
             0x0A,
             0x0B,
             0x0C,
+            0x0D,
+            0x0E,
             0x14,
             0x15,
             0x16,
             0x1E,
             0x1F,
             0x20,
+            0x21,
+            0x22,
+            0x23,
             0x28, // Armors
             0x29,
             0x2A,
             0x32,
             0x33,
             0x34,
+            0x35,
+            0x36,
             0x3C,
             0x3D,
             0x3E,
@@ -173,10 +193,12 @@ namespace BDefSaveEditor
             0x48,
             0x49,
             0x4A,
+            0x4B,
             0x5A, // Trinkets
             0x5B,
             0x5C,
             0x5D,
+            0x5E,
             0x64,
             0x65,
             0x66,
@@ -186,6 +208,7 @@ namespace BDefSaveEditor
             0x71,
             0x72,
             0x73,
+            0x74,
             0x78, // Gems
             0x79,
             0x7A,
@@ -198,7 +221,14 @@ namespace BDefSaveEditor
             0x85,
             0x86,
             0x8C, // Charms
-            0x8D
+            0x8D,
+            0x96, // Potions
+            0x97,
+            0x98,
+            0x99,
+            0x9A,
+            0x9B,
+            0x9C
         };
 
         int[] ITEM_Colors =
@@ -210,9 +240,14 @@ namespace BDefSaveEditor
             1,
             1,
             1,
+            1,
+            1,
             2,
             2,
             2,
+            3,
+            3,
+            3,
             3,
             3,
             3,
@@ -222,16 +257,6 @@ namespace BDefSaveEditor
             1,
             1,
             1,
-            2,
-            2,
-            2,
-            3,
-            3,
-            3,
-            3,
-            3,
-            1,
-            1,
             1,
             1,
             2,
@@ -243,19 +268,40 @@ namespace BDefSaveEditor
             3,
             3,
             3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
+            1,
+            1,
+            1,
+            1,
+            1,
             2,
             2,
+            2,
             3,
             3,
             3,
             3,
-            3
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
         };
 
         public InventoryForm(Main link)
@@ -275,12 +321,17 @@ namespace BDefSaveEditor
                 "Gold Helmet",
                 "Helmet of Knowledge",
                 "Helmet of Thrift",
+                "Saver's Casque",
+                "Medic's Hat",
                 "Rainbow Helmet",
                 "Sunny Tiara",
                 "Defenders Helmet",
-                "Gargantuas Delight",
+                "Gargantua's Delight",
                 "Thief Diadem",
-                "Demonic Eye"
+                "Demonic Eye",
+                "Crown of Throns",
+                "Hood of Alucard",
+                "Fool's Crest"
             };
 
             comboItem.Items.Clear();
@@ -298,14 +349,17 @@ namespace BDefSaveEditor
                 "Bat Armor",
                 "Young Mage Robe",
                 "Light Plate",
+                "Porcupine Vest",
+                "Timberman's Jacket",
                 "Rainbow Armor",
                 "Sunny Robe",
                 "Defenders Hauberk",
                 "Vampire Shell",
-                "Elder Mage Cuirass",
-                "Scavenger",
+                "Cuirass of Elder Mage",
+                "Alchemist Shroud",
                 "Hypochondriac",
-                "Juggernaut"
+                "Juggernaut",
+                "Trickster"
             };
 
             comboItem.Items.Clear();
@@ -321,6 +375,7 @@ namespace BDefSaveEditor
                 "Bear Amulet",
                 "Soldier Ring",
                 "Lynx Amulet",
+                "Lead Ring",
                 "Rainbow Amulet",
                 "Sunny Amulet",
                 "Defenders Amulet",
@@ -329,7 +384,8 @@ namespace BDefSaveEditor
                 "Golden Tag",
                 "Speed Bracelet",
                 "Holy Relic",
-                "Blood Drop"
+                "Blood Drop",
+                "Energy Seed"
             };
 
             comboItem.Items.Clear();
@@ -364,30 +420,39 @@ namespace BDefSaveEditor
                 "Gold Helmet",
                 "Helmet of Knowledge",
                 "Helmet of Thrift",
+                "Saver's Casque",
+                "Medic's Hat",
                 "Rainbow Helmet",
                 "Sunny Tiara",
                 "Defenders Helmet",
-                "Gargantuas Delight",
+                "Gargantua's Delight",
                 "Thief Diadem",
                 "Demonic Eye",
+                "Crown of Thorns",
+                "Hood of Alucard",
+                "Fool's Crest",
                 "Leather Armor",
                 "Mail Vest",
                 "Hardened Armor",
                 "Bat Armor",
                 "Young Mage Robe",
                 "Light Plate",
+                "Porcupine Vest",
+                "Timberman's Jacket",
                 "Rainbow Armor",
                 "Sunny Robe",
                 "Defenders Hauberk",
                 "Vampire Shell",
-                "Elder Mage Cuirass",
-                "Scavenger",
+                "Cuirass of Elder Mage",
+                "Alchemist Shroud",
                 "Hypochondriac",
                 "Juggernaut",
+                "Trickster",
                 "Mage Ring",
                 "Bear Amulet",
                 "Soldier Ring",
                 "Lynx Amulet",
+                "Lead Ring",
                 "Rainbow Amulet",
                 "Sunny Amulet",
                 "Defenders Amulet",
@@ -397,6 +462,7 @@ namespace BDefSaveEditor
                 "Speed Bracelet",
                 "Holy Relic",
                 "Blood Drop",
+                "Energy Seed",
                 "Ruby",
                 "Emerald",
                 "Sapphire",
@@ -409,7 +475,14 @@ namespace BDefSaveEditor
                 "Armor Attribute Scroll",
                 "Trinket Attribute Scroll",
                 "Christmas Joy",
-                "Corrupted Lantern"
+                "Corrupted Lantern",
+                "Green Potion",
+                "Magenta Potion",
+                "Yellow Potion",
+                "Blue Potion",
+                "Grey Potion",
+                "Pink Potion",
+                "Cyan Potion"
             };
 
             comboItem.Items.Clear();
@@ -429,30 +502,39 @@ namespace BDefSaveEditor
                 case 0x0A: szItemName = "Gold Helmet"; break;
                 case 0x0B: szItemName = "Helmet of Knowledge"; break;
                 case 0x0C: szItemName = "Helmet of Thrift"; break;
+                case 0x0D: szItemName = "Saver's Casque"; break;
+                case 0x0E: szItemName = "Medic's Hat"; break;
                 case 0x14: szItemName = "Rainbow Helmet"; break;
                 case 0x15: szItemName = "Sunny Tiara"; break;
                 case 0x16: szItemName = "Defenders Helmet"; break;
                 case 0x1E: szItemName = "Gargantuas Delight"; break;
                 case 0x1F: szItemName = "Thief Diadem"; break;
                 case 0x20: szItemName = "Demonic Eye"; break;
+                case 0x21: szItemName = "Crown of Thorns"; break;
+                case 0x22: szItemName = "Hood of Alucard"; break;
+                case 0x23: szItemName = "Fool's Crest"; break;
                 case 0x28: szItemName = "Leather Armor"; break; // Armors
                 case 0x29: szItemName = "Mail Vest"; break;
                 case 0x2A: szItemName = "Hardened Armor"; break;
                 case 0x32: szItemName = "Bat Armor"; break;
                 case 0x33: szItemName = "Young Mage Robe"; break;
                 case 0x34: szItemName = "Light Plate"; break;
+                case 0x35: szItemName = "Porcupine Vest"; break;
+                case 0x36: szItemName = "Timberman's Jacket"; break;
                 case 0x3C: szItemName = "Rainbow Armor"; break;
                 case 0x3D: szItemName = "Sunny Robe"; break;
                 case 0x3E: szItemName = "Defenders Hauberk"; break;
                 case 0x46: szItemName = "Vampire Shell"; break;
-                case 0x47: szItemName = "Elder Mage Cuirass"; break;
-                case 0x48: szItemName = "Scavenger"; break;
+                case 0x47: szItemName = "Cuirass of Elder Mage"; break;
+                case 0x48: szItemName = "Alchemist Shroud"; break;
                 case 0x49: szItemName = "Hypochondriac"; break;
                 case 0x4A: szItemName = "Juggernaut"; break;
+                case 0x4B: szItemName = "Trickster"; break;
                 case 0x5A: szItemName = "Mage Ring"; break; // Trinkets
                 case 0x5B: szItemName = "Bear Amulet"; break;
                 case 0x5C: szItemName = "Soldier Ring"; break;
                 case 0x5D: szItemName = "Lynx Amulet"; break;
+                case 0x5E: szItemName = "Lead Ring"; break;
                 case 0x64: szItemName = "Rainbow Amulet"; break;
                 case 0x65: szItemName = "Sunny Amulet"; break;
                 case 0x66: szItemName = "Defenders Amulet"; break;
@@ -462,6 +544,7 @@ namespace BDefSaveEditor
                 case 0x71: szItemName = "Speed Bracelet"; break;
                 case 0x72: szItemName = "Holy Relic"; break;
                 case 0x73: szItemName = "Blood Drop"; break;
+                case 0x74: szItemName = "Energy Seed"; break;
                 case 0x78: szItemName = "Ruby"; break; // Gems
                 case 0x79: szItemName = "Emerald"; break;
                 case 0x7A: szItemName = "Sapphire"; break;
@@ -475,6 +558,13 @@ namespace BDefSaveEditor
                 case 0x86: szItemName = "Trinket Attribute Scroll"; break;
                 case 0x8C: szItemName = "Christmas Joy"; break; // Charms
                 case 0x8D: szItemName = "Corrupted Lantern"; break;
+                case 0x96: szItemName = "Green Potion"; break; // Potions
+                case 0x97: szItemName = "Magenta Potion"; break; // Potions
+                case 0x98: szItemName = "Yellow Potion"; break; // Potions
+                case 0x99: szItemName = "Blue Potion"; break; // Potions
+                case 0x9A: szItemName = "Grey Potion"; break; // Potions
+                case 0x9B: szItemName = "Pink Potion"; break; // Potions
+                case 0x9C: szItemName = "Cyan Potion"; break; // Potions
                 default: szItemName = "BAD ITEM"; break;
             }
 
@@ -494,30 +584,39 @@ namespace BDefSaveEditor
                 case 0x0A: szItemDescription = "10% chance to steal ${0} on kill"; break;
                 case 0x0B: szItemDescription = "10% chance to gain ({0} * level) XP on kill"; break;
                 case 0x0C: szItemDescription = "Items sell price increased by {0}%"; break;
+                case 0x0D: szItemDescription = "Wall shop prices are lower by {0}%"; break;
+                case 0x0E: szItemDescription = "Medical kits heal +{0} HP more"; break;
                 case 0x14: szItemDescription = "+{0} HP"; break;
                 case 0x15: szItemDescription = "+{0} MP"; break;
                 case 0x16: szItemDescription = "Enhanced defense"; break;
                 case 0x1E: szItemDescription = "10% chance to stomp when struck"; break;
                 case 0x1F: szItemDescription = "20% chance to steal ${0} on kill"; break;
                 case 0x20: szItemDescription = "+{0}% to critical hit damage"; break;
+                case 0x21: szItemDescription = "+{0}% to Thorns"; break;
+                case 0x22: szItemDescription = "+{0}% to melee lifesteal"; break;
+                case 0x23: szItemDescription = "10% chance to heal {0} HP when struck"; break;
                 case 0x28: szItemDescription = "No magic attributes"; break; // Armors
                 case 0x29: szItemDescription = "No magic attributes"; break;
                 case 0x2A: szItemDescription = "No magic attributes"; break;
                 case 0x32: szItemDescription = "10% chance to steal {0} HP on striking"; break;
                 case 0x33: szItemDescription = "10% chance to steal {0} MP on striking"; break;
                 case 0x34: szItemDescription = "+{0} to run speed"; break;
+                case 0x35: szItemDescription = "+{0} to Thorns"; break;
+                case 0x36: szItemDescription = "25% chance to deal +{0} melee damage"; break;
                 case 0x3C: szItemDescription = "+{0} HP"; break;
                 case 0x3D: szItemDescription = "+{0} HP"; break;
                 case 0x3E: szItemDescription = "Enhanced defense"; break;
                 case 0x46: szItemDescription = "20% chance to steal {0} HP on striking"; break;
-                case 0x47: szItemDescription = "20% chance to steal {0} HP on striking"; break;
-                case 0x48: szItemDescription = "+{0} more salvage"; break;
+                case 0x47: szItemDescription = "20% chance to steal {0} MP on striking"; break;
+                case 0x48: szItemDescription = "+{0} increased potion duration"; break;
                 case 0x49: szItemDescription = "+{0} belt capacity"; break;
                 case 0x4A: szItemDescription = "-{0}% move speed"; break;
+                case 0x4B: szItemDescription = "{0}% chance to negate damage"; break;
                 case 0x5A: szItemDescription = "+{0} to Sorcery"; break; // Trinkets
                 case 0x5B: szItemDescription = "+{0} to Toughness"; break;
                 case 0x5C: szItemDescription = "+{0} to Precision"; break;
                 case 0x5D: szItemDescription = "+{0} to Legerity"; break;
+                case 0x5E: szItemDescription = "-{0} HP"; break;
                 case 0x64: szItemDescription = "+{0} HP"; break;
                 case 0x65: szItemDescription = "+{0} MP"; break;
                 case 0x66: szItemDescription = "+{0} to Toughness"; break;
@@ -525,12 +624,13 @@ namespace BDefSaveEditor
                 case 0x6F: szItemDescription = "+{0} to Toughness"; break;
                 case 0x70: szItemDescription = "+{0} to Precision"; break;
                 case 0x71: szItemDescription = "+{0} to Legerity"; break;
-                case 0x72: szItemDescription = "+4 MP/s regeneration"; break;
+                case 0x72: szItemDescription = "Highest MP regeneration rate"; break;
                 case 0x73: szItemDescription = "+{0} HP regeneration"; break;
+                case 0x74: szItemDescription = "Absorbs damage by draining MP"; break;
                 case 0x78: szItemDescription = "Grants you Obscurity spell"; break; // Gems
                 case 0x79: szItemDescription = "Grants you Generosity spell"; break;
                 case 0x7A: szItemDescription = "Grants you Sacrifice spell"; break;
-                case 0x7B: szItemDescription = "Grants you Knockback spell"; break;
+                case 0x7B: szItemDescription = "Grants you Electronova spell"; break;
                 case 0x7C: szItemDescription = "Grants you Pulverize spell"; break;
                 case 0x7D: szItemDescription = "Grants you Salvation spell"; break;
                 case 0x82: szItemDescription = "Increases defense of equipped helmet by {0}"; break; // Upgrade Kits
@@ -540,6 +640,13 @@ namespace BDefSaveEditor
                 case 0x86: szItemDescription = "Increases magic attribute of equipped trinket by {0}"; break;
                 case 0x8C: szItemDescription = "Grants you colorful visual effect"; break; // Charms
                 case 0x8D: szItemDescription = "Grants you dark animated trail"; break;
+                case 0x96: szItemDescription = "Increases your run speed"; break; // Potions
+                case 0x97: szItemDescription = "Doubles your damage"; break;
+                case 0x98: szItemDescription = "Increases your Thorns"; break;
+                case 0x99: szItemDescription = "Boosts your mana regeneration"; break;
+                case 0x9A: szItemDescription = "Gives you Invulnerability perk"; break;
+                case 0x9B: szItemDescription = "Gives you Enchantement perk"; break;
+                case 0x9C: szItemDescription = "Gives you Instagib perk"; break;
                 default: szItemDescription = "Invalid item index!"; break;
             }
 
@@ -761,7 +868,7 @@ namespace BDefSaveEditor
                     boxUpgrades.Enabled = false;
                     boxUpgrades.Value = 0;
                 }
-                
+
                 // Attribute disabled items
                 if (HELMET_IDs[comboItemIndex] == 0x16 || HELMET_IDs[comboItemIndex] == 0x1E)
                 {
@@ -833,7 +940,7 @@ namespace BDefSaveEditor
                 }
 
                 // Attribute disabled items
-                if (TRINKET_IDs[comboItemIndex] == 0x72)
+                if (TRINKET_IDs[comboItemIndex] == 0x72 || TRINKET_IDs[comboItemIndex] == 0x74)
                 {
                     boxAttribute.Enabled = false;
                     boxAttribute.Value = 0;
@@ -865,6 +972,8 @@ namespace BDefSaveEditor
                 boxDefense.Enabled = true;
                 boxAttribute.Enabled = true;
                 boxUpgrades.Enabled = true;
+                labelAttribute.Text = "Attribute";
+                labelDurationNote.Visible = false;
 
                 if (ITEM_IDs[comboItemIndex] == 0x00) // No item
                 {
@@ -887,7 +996,7 @@ namespace BDefSaveEditor
                 }
 
                 // Defense disabled items
-                if (ITEM_IDs[comboItemIndex] >= 0x5A && ITEM_IDs[comboItemIndex] <= 0x8D)
+                if (ITEM_IDs[comboItemIndex] >= 0x5A && ITEM_IDs[comboItemIndex] <= 0x9C)
                 {
                     boxDefense.Value = 0;
                     boxDefense.Enabled = false;
@@ -898,6 +1007,7 @@ namespace BDefSaveEditor
                     ITEM_IDs[comboItemIndex] == 0x1E || 
                     ITEM_IDs[comboItemIndex] == 0x3E || 
                     ITEM_IDs[comboItemIndex] == 0x72 || 
+                    ITEM_IDs[comboItemIndex] == 0x74 ||
                     ITEM_IDs[comboItemIndex] >= 0x78 && ITEM_IDs[comboItemIndex] <= 0x7D || 
                     ITEM_IDs[comboItemIndex] == 0x8C || 
                     ITEM_IDs[comboItemIndex] == 0x8D)
@@ -907,10 +1017,17 @@ namespace BDefSaveEditor
                 }
 
                 // Upgrade disabled items
-                if (ITEM_IDs[comboItemIndex] == 0x72 || ITEM_IDs[comboItemIndex] >= 0x78 && ITEM_IDs[comboItemIndex] <= 0x8D)
+                if (ITEM_IDs[comboItemIndex] == 0x72 || ITEM_IDs[comboItemIndex] == 0x74 || ITEM_IDs[comboItemIndex] >= 0x78 && ITEM_IDs[comboItemIndex] <= 0x9C)
                 {
                     boxUpgrades.Enabled = false;
                     boxUpgrades.Value = 0;
+                }
+
+                // Attribute renaming for potions
+                if (ITEM_IDs[comboItemIndex] >= 0x96 && ITEM_IDs[comboItemIndex] <= 0x9C)
+                {
+                    labelAttribute.Text = "Duration";
+                    labelDurationNote.Visible = true;
                 }
             }
         }
