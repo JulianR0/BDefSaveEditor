@@ -54,8 +54,10 @@ namespace BDefSaveEditor
             mainForm.i_TASK_Type = comboTaskType.SelectedIndex;
             mainForm.i_TASK_Remain = (int)boxTaskProgress.Value;
             
+            /* No event active right now
             if (boxTaskEvent.Enabled)
                 mainForm.i_TASK_Event = (int)boxTaskEvent.Value;
+            */
 
             this.Close();
         }
@@ -66,6 +68,7 @@ namespace BDefSaveEditor
             comboTaskType.SelectedIndex = mainForm.i_TASK_Type;
             boxTaskProgress.Value = mainForm.i_TASK_Remain;
 
+            /* No event active right now
             if (mainForm.i_TASK_Event > 31)
             {
                 boxTaskEvent.Value = 31;
@@ -78,6 +81,7 @@ namespace BDefSaveEditor
                 boxTaskEvent.Enabled = true;
                 labelEventProgress.Text = "Candies collected";
             }
+            */
         }
 
         private void comboTaskType_SelectedIndexChanged(object sender, EventArgs e)

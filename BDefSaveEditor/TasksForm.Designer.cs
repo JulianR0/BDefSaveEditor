@@ -161,6 +161,7 @@
             // 
             // boxTaskEvent
             // 
+            this.boxTaskEvent.Enabled = false;
             this.boxTaskEvent.Location = new System.Drawing.Point(60, 124);
             this.boxTaskEvent.Maximum = new decimal(new int[] {
             31,
@@ -176,9 +177,9 @@
             this.labelEventProgress.AutoSize = true;
             this.labelEventProgress.Location = new System.Drawing.Point(107, 126);
             this.labelEventProgress.Name = "labelEventProgress";
-            this.labelEventProgress.Size = new System.Drawing.Size(91, 13);
+            this.labelEventProgress.Size = new System.Drawing.Size(83, 13);
             this.labelEventProgress.TabIndex = 10;
-            this.labelEventProgress.Text = "Candies collected";
+            this.labelEventProgress.Text = "No active event";
             // 
             // buttonOK
             // 
