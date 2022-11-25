@@ -473,6 +473,8 @@
             this.boxMoney.Name = "boxMoney";
             this.boxMoney.Size = new System.Drawing.Size(80, 20);
             this.boxMoney.TabIndex = 10;
+            this.toolTip.SetToolTip(this.boxMoney, "The max money you can hold is tied to your level.\r\n\r\nLevel 01-09 = $5000 MAX\r\nLev" +
+        "el 10-29 = $50000 MAX\r\nLevel 30+ = $100000 MAX");
             // 
             // labelHPKits
             // 

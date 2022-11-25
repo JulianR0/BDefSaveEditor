@@ -539,7 +539,7 @@ namespace BDefSaveEditor
                         // Total Experience
                         iData = ConvertAndLoad(fsFile, ADDRESS_XP);
                         boxXP.Value = iData;
-                        boxLevel.Value = XPToLevel(iData);
+                        boxLevel.Value = XPToLevel(iData) + 1;
 
                         // Long Jump
                         checkLJ.Checked = Convert.ToBoolean(ConvertAndLoad(fsFile, ADDRESS_LONGJUMP));
@@ -788,7 +788,7 @@ namespace BDefSaveEditor
                 if (arrXPLevels[index] >= iXP)
                     break; // This is the player's current level
             }
-            return index + 1;
+            return index;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -1163,7 +1163,7 @@ namespace BDefSaveEditor
 
         private void boxXP_Leave(object sender, EventArgs e)
         {
-            boxLevel.Value = XPToLevel(Convert.ToInt32(boxXP.Value));
+            boxLevel.Value = XPToLevel(Convert.ToInt32(boxXP.Value + 1));
         }
 
         private void buttonSkills_Click(object sender, EventArgs e)

@@ -277,7 +277,7 @@ namespace BDefSaveEditor
                     case 1: // Rushing
                         {
                             label4Info.Text = "Basic damage reduction of Rush skill is increased.\n\n";
-                            label4Info.Text += "Damage reduction: 100%";
+                            label4Info.Text += "Damage reduction: 99%";
                             break;
                         }
                     case 2: // Religious
@@ -289,7 +289,7 @@ namespace BDefSaveEditor
                     case 3: // Provident
                         {
                             label4Info.Text = "Builder technical skills improvement.\n\nAllows you to build more turrets.\n\n";
-                            label4Info.Text += "Amount: +1 turret per 10 builder levels (from level 40)";
+                            label4Info.Text += "Amount: 3 turrets.\nBonus: +1 turret per 10 builder levels (from level 40)";
                             break;
                         }
                 }
