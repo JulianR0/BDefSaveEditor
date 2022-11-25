@@ -62,10 +62,6 @@
             this.boxKills = new System.Windows.Forms.NumericUpDown();
             this.labelMoney = new System.Windows.Forms.Label();
             this.boxMoney = new System.Windows.Forms.NumericUpDown();
-            this.labelSalvage = new System.Windows.Forms.Label();
-            this.boxSalvage = new System.Windows.Forms.NumericUpDown();
-            this.labelSouls = new System.Windows.Forms.Label();
-            this.boxSouls = new System.Windows.Forms.NumericUpDown();
             this.labelHPKits = new System.Windows.Forms.Label();
             this.labelMPKits = new System.Windows.Forms.Label();
             this.labelXP = new System.Windows.Forms.Label();
@@ -73,7 +69,6 @@
             this.buttonWeapons = new System.Windows.Forms.Button();
             this.buttonTasks = new System.Windows.Forms.Button();
             this.buttonInventory = new System.Windows.Forms.Button();
-            this.buttonUpgrades = new System.Windows.Forms.Button();
             this.contextMenuInventory = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -92,30 +87,8 @@
             this.tsmSlot8 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSkills = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
-            this.contextMenuUpgrades = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmuTitle = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.cmuCategory1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu1_Meele = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu1_Axe = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmuCategory2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu2_Pistol = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu2_Blaster = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu2_Python = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu2_Akimbo = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmuCategory3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_SMG = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_Shotgun = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_Crossbow = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_ARifle = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_SAW = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu3_Sniper = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmuCategory4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu4_RPGLauncher = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu4_Gauss = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu4_SRifle = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu4_GrenadeLauncher = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmu4_Minigun = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelBelt = new System.Windows.Forms.Label();
+            this.comboBelt = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.boxWave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxLegerity)).BeginInit();
@@ -127,11 +100,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxAP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxKills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxMoney)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boxSalvage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boxSouls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxXP)).BeginInit();
             this.contextMenuInventory.SuspendLayout();
-            this.contextMenuUpgrades.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOpen
@@ -504,50 +474,6 @@
             this.boxMoney.Size = new System.Drawing.Size(80, 20);
             this.boxMoney.TabIndex = 10;
             // 
-            // labelSalvage
-            // 
-            this.labelSalvage.AutoSize = true;
-            this.labelSalvage.Location = new System.Drawing.Point(184, 148);
-            this.labelSalvage.Name = "labelSalvage";
-            this.labelSalvage.Size = new System.Drawing.Size(49, 13);
-            this.labelSalvage.TabIndex = 110;
-            this.labelSalvage.Text = "Salvage:";
-            // 
-            // boxSalvage
-            // 
-            this.boxSalvage.Enabled = false;
-            this.boxSalvage.Location = new System.Drawing.Point(187, 164);
-            this.boxSalvage.Maximum = new decimal(new int[] {
-            16777215,
-            0,
-            0,
-            0});
-            this.boxSalvage.Name = "boxSalvage";
-            this.boxSalvage.Size = new System.Drawing.Size(80, 20);
-            this.boxSalvage.TabIndex = 11;
-            // 
-            // labelSouls
-            // 
-            this.labelSouls.AutoSize = true;
-            this.labelSouls.Location = new System.Drawing.Point(270, 148);
-            this.labelSouls.Name = "labelSouls";
-            this.labelSouls.Size = new System.Drawing.Size(36, 13);
-            this.labelSouls.TabIndex = 111;
-            this.labelSouls.Text = "Souls:";
-            // 
-            // boxSouls
-            // 
-            this.boxSouls.Enabled = false;
-            this.boxSouls.Location = new System.Drawing.Point(273, 164);
-            this.boxSouls.Maximum = new decimal(new int[] {
-            16777215,
-            0,
-            0,
-            0});
-            this.boxSouls.Name = "boxSouls";
-            this.boxSouls.Size = new System.Drawing.Size(80, 20);
-            this.boxSouls.TabIndex = 12;
-            // 
             // labelHPKits
             // 
             this.labelHPKits.AutoSize = true;
@@ -624,18 +550,6 @@
             this.buttonInventory.Text = "Inventory";
             this.buttonInventory.UseVisualStyleBackColor = true;
             this.buttonInventory.Click += new System.EventHandler(this.buttonInventory_Click);
-            // 
-            // buttonUpgrades
-            // 
-            this.buttonUpgrades.Enabled = false;
-            this.buttonUpgrades.Location = new System.Drawing.Point(221, 271);
-            this.buttonUpgrades.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonUpgrades.Name = "buttonUpgrades";
-            this.buttonUpgrades.Size = new System.Drawing.Size(67, 23);
-            this.buttonUpgrades.TabIndex = 119;
-            this.buttonUpgrades.Text = "Upgrades";
-            this.buttonUpgrades.UseVisualStyleBackColor = true;
-            this.buttonUpgrades.Click += new System.EventHandler(this.buttonUpgrades_Click);
             // 
             // contextMenuInventory
             // 
@@ -783,202 +697,41 @@
             this.buttonAbout.UseVisualStyleBackColor = true;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
-            // contextMenuUpgrades
+            // labelBelt
             // 
-            this.contextMenuUpgrades.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmuTitle,
-            this.toolStripSeparator2,
-            this.cmuCategory1,
-            this.cmuCategory2,
-            this.cmuCategory3,
-            this.cmuCategory4});
-            this.contextMenuUpgrades.Name = "contextMenuUpgrades";
-            this.contextMenuUpgrades.Size = new System.Drawing.Size(179, 120);
+            this.labelBelt.AutoSize = true;
+            this.labelBelt.Location = new System.Drawing.Point(184, 148);
+            this.labelBelt.Name = "labelBelt";
+            this.labelBelt.Size = new System.Drawing.Size(28, 13);
+            this.labelBelt.TabIndex = 110;
+            this.labelBelt.Text = "Belt:";
             // 
-            // cmuTitle
+            // comboBelt
             // 
-            this.cmuTitle.Enabled = false;
-            this.cmuTitle.Name = "cmuTitle";
-            this.cmuTitle.Size = new System.Drawing.Size(178, 22);
-            this.cmuTitle.Text = "Edit Upgrades";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
-            // 
-            // cmuCategory1
-            // 
-            this.cmuCategory1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmu1_Meele,
-            this.cmu1_Axe});
-            this.cmuCategory1.Name = "cmuCategory1";
-            this.cmuCategory1.Size = new System.Drawing.Size(178, 22);
-            this.cmuCategory1.Text = "Weapon Category 1";
-            // 
-            // cmu1_Meele
-            // 
-            this.cmu1_Meele.Name = "cmu1_Meele";
-            this.cmu1_Meele.Size = new System.Drawing.Size(137, 22);
-            this.cmu1_Meele.Text = "Meele";
-            this.cmu1_Meele.Click += new System.EventHandler(this.cmu1_Meele_Click);
-            // 
-            // cmu1_Axe
-            // 
-            this.cmu1_Axe.Name = "cmu1_Axe";
-            this.cmu1_Axe.Size = new System.Drawing.Size(137, 22);
-            this.cmu1_Axe.Text = "Ancient Axe";
-            this.cmu1_Axe.Click += new System.EventHandler(this.cmu1_Axe_Click);
-            // 
-            // cmuCategory2
-            // 
-            this.cmuCategory2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmu2_Pistol,
-            this.cmu2_Blaster,
-            this.cmu2_Python,
-            this.cmu2_Akimbo});
-            this.cmuCategory2.Name = "cmuCategory2";
-            this.cmuCategory2.Size = new System.Drawing.Size(178, 22);
-            this.cmuCategory2.Text = "Weapon Category 2";
-            // 
-            // cmu2_Pistol
-            // 
-            this.cmu2_Pistol.Name = "cmu2_Pistol";
-            this.cmu2_Pistol.Size = new System.Drawing.Size(116, 22);
-            this.cmu2_Pistol.Text = "Pistol";
-            this.cmu2_Pistol.Click += new System.EventHandler(this.cmu2_Pistol_Click);
-            // 
-            // cmu2_Blaster
-            // 
-            this.cmu2_Blaster.Name = "cmu2_Blaster";
-            this.cmu2_Blaster.Size = new System.Drawing.Size(116, 22);
-            this.cmu2_Blaster.Text = "Blaster";
-            this.cmu2_Blaster.Click += new System.EventHandler(this.cmu2_Blaster_Click);
-            // 
-            // cmu2_Python
-            // 
-            this.cmu2_Python.Name = "cmu2_Python";
-            this.cmu2_Python.Size = new System.Drawing.Size(116, 22);
-            this.cmu2_Python.Text = "Python";
-            this.cmu2_Python.Click += new System.EventHandler(this.cmu2_Python_Click);
-            // 
-            // cmu2_Akimbo
-            // 
-            this.cmu2_Akimbo.Name = "cmu2_Akimbo";
-            this.cmu2_Akimbo.Size = new System.Drawing.Size(116, 22);
-            this.cmu2_Akimbo.Text = "Akimbo";
-            this.cmu2_Akimbo.Click += new System.EventHandler(this.cmu2_Akimbo_Click);
-            // 
-            // cmuCategory3
-            // 
-            this.cmuCategory3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmu3_SMG,
-            this.cmu3_Shotgun,
-            this.cmu3_Crossbow,
-            this.cmu3_ARifle,
-            this.cmu3_SAW,
-            this.cmu3_Sniper});
-            this.cmuCategory3.Name = "cmuCategory3";
-            this.cmuCategory3.Size = new System.Drawing.Size(178, 22);
-            this.cmuCategory3.Text = "Weapon Category 3";
-            // 
-            // cmu3_SMG
-            // 
-            this.cmu3_SMG.Name = "cmu3_SMG";
-            this.cmu3_SMG.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_SMG.Text = "Submachine Gun";
-            this.cmu3_SMG.Click += new System.EventHandler(this.cmu3_SMG_Click);
-            // 
-            // cmu3_Shotgun
-            // 
-            this.cmu3_Shotgun.Name = "cmu3_Shotgun";
-            this.cmu3_Shotgun.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_Shotgun.Text = "Shotgun";
-            this.cmu3_Shotgun.Click += new System.EventHandler(this.cmu3_Shotgun_Click);
-            // 
-            // cmu3_Crossbow
-            // 
-            this.cmu3_Crossbow.Name = "cmu3_Crossbow";
-            this.cmu3_Crossbow.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_Crossbow.Text = "Crossbow";
-            this.cmu3_Crossbow.Click += new System.EventHandler(this.cmu3_Crossbow_Click);
-            // 
-            // cmu3_ARifle
-            // 
-            this.cmu3_ARifle.Name = "cmu3_ARifle";
-            this.cmu3_ARifle.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_ARifle.Text = "Assault Rifle";
-            this.cmu3_ARifle.Click += new System.EventHandler(this.cmu3_ARifle_Click);
-            // 
-            // cmu3_SAW
-            // 
-            this.cmu3_SAW.Name = "cmu3_SAW";
-            this.cmu3_SAW.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_SAW.Text = "Squad Automatic Weapon";
-            this.cmu3_SAW.Click += new System.EventHandler(this.cmu3_SAW_Click);
-            // 
-            // cmu3_Sniper
-            // 
-            this.cmu3_Sniper.Name = "cmu3_Sniper";
-            this.cmu3_Sniper.Size = new System.Drawing.Size(213, 22);
-            this.cmu3_Sniper.Text = "Sniper Rifle";
-            this.cmu3_Sniper.Click += new System.EventHandler(this.cmu3_Sniper_Click);
-            // 
-            // cmuCategory4
-            // 
-            this.cmuCategory4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmu4_RPGLauncher,
-            this.cmu4_Gauss,
-            this.cmu4_SRifle,
-            this.cmu4_GrenadeLauncher,
-            this.cmu4_Minigun});
-            this.cmuCategory4.Name = "cmuCategory4";
-            this.cmuCategory4.Size = new System.Drawing.Size(178, 22);
-            this.cmuCategory4.Text = "Weapon Category 4";
-            // 
-            // cmu4_RPGLauncher
-            // 
-            this.cmu4_RPGLauncher.Name = "cmu4_RPGLauncher";
-            this.cmu4_RPGLauncher.Size = new System.Drawing.Size(212, 22);
-            this.cmu4_RPGLauncher.Text = "Rocket-Propelled Grenade";
-            this.cmu4_RPGLauncher.Click += new System.EventHandler(this.cmu4_RPGLauncher_Click);
-            // 
-            // cmu4_Gauss
-            // 
-            this.cmu4_Gauss.Name = "cmu4_Gauss";
-            this.cmu4_Gauss.Size = new System.Drawing.Size(212, 22);
-            this.cmu4_Gauss.Text = "Gauss Rifle";
-            this.cmu4_Gauss.Click += new System.EventHandler(this.cmu4_Gauss_Click);
-            // 
-            // cmu4_SRifle
-            // 
-            this.cmu4_SRifle.Name = "cmu4_SRifle";
-            this.cmu4_SRifle.Size = new System.Drawing.Size(212, 22);
-            this.cmu4_SRifle.Text = "Shock Rifle";
-            this.cmu4_SRifle.Click += new System.EventHandler(this.cmu4_SRifle_Click);
-            // 
-            // cmu4_GrenadeLauncher
-            // 
-            this.cmu4_GrenadeLauncher.Name = "cmu4_GrenadeLauncher";
-            this.cmu4_GrenadeLauncher.Size = new System.Drawing.Size(212, 22);
-            this.cmu4_GrenadeLauncher.Text = "Grenade Launcher";
-            this.cmu4_GrenadeLauncher.Click += new System.EventHandler(this.cmu4_GrenadeLauncher_Click);
-            // 
-            // cmu4_Minigun
-            // 
-            this.cmu4_Minigun.Name = "cmu4_Minigun";
-            this.cmu4_Minigun.Size = new System.Drawing.Size(212, 22);
-            this.cmu4_Minigun.Text = "Minigun";
-            this.cmu4_Minigun.Click += new System.EventHandler(this.cmu4_Minigun_Click);
+            this.comboBelt.Enabled = false;
+            this.comboBelt.FormattingEnabled = true;
+            this.comboBelt.Items.AddRange(new object[] {
+            "Nothing (No potion)",
+            "Green (Increased move speed)",
+            "Magenta (Double damage)",
+            "Yellow (Increased thorns)",
+            "Blue (Mana regeneration)",
+            "Grey (Invulnerability)",
+            "Pink (Enchantement)",
+            "Cyan (Instagib)"});
+            this.comboBelt.Location = new System.Drawing.Point(187, 163);
+            this.comboBelt.Name = "comboBelt";
+            this.comboBelt.Size = new System.Drawing.Size(166, 21);
+            this.comboBelt.TabIndex = 122;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 303);
+            this.Controls.Add(this.comboBelt);
             this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.buttonSkills);
-            this.Controls.Add(this.buttonUpgrades);
             this.Controls.Add(this.buttonInventory);
             this.Controls.Add(this.buttonTasks);
             this.Controls.Add(this.buttonWeapons);
@@ -989,10 +742,7 @@
             this.Controls.Add(this.labelMPKits);
             this.Controls.Add(this.boxHPKits);
             this.Controls.Add(this.labelHPKits);
-            this.Controls.Add(this.boxSouls);
-            this.Controls.Add(this.labelSouls);
-            this.Controls.Add(this.boxSalvage);
-            this.Controls.Add(this.labelSalvage);
+            this.Controls.Add(this.labelBelt);
             this.Controls.Add(this.boxMoney);
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.boxKills);
@@ -1037,11 +787,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxAP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxKills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxMoney)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boxSalvage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boxSouls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxXP)).EndInit();
             this.contextMenuInventory.ResumeLayout(false);
-            this.contextMenuUpgrades.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1076,10 +823,6 @@
         private System.Windows.Forms.NumericUpDown boxKills;
         private System.Windows.Forms.Label labelMoney;
         private System.Windows.Forms.NumericUpDown boxMoney;
-        private System.Windows.Forms.Label labelSalvage;
-        private System.Windows.Forms.NumericUpDown boxSalvage;
-        private System.Windows.Forms.Label labelSouls;
-        private System.Windows.Forms.NumericUpDown boxSouls;
         private System.Windows.Forms.Label labelHPKits;
         private System.Windows.Forms.NumericUpDown boxHPKits;
         private System.Windows.Forms.Label labelMPKits;
@@ -1090,7 +833,6 @@
         private System.Windows.Forms.Button buttonWeapons;
         private System.Windows.Forms.Button buttonTasks;
         private System.Windows.Forms.Button buttonInventory;
-        private System.Windows.Forms.Button buttonUpgrades;
         private System.Windows.Forms.ContextMenuStrip contextMenuInventory;
         private System.Windows.Forms.ToolStripMenuItem tsmTitle;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -1109,32 +851,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmHelmet;
         private System.Windows.Forms.Button buttonSkills;
         private System.Windows.Forms.Button buttonAbout;
-        private System.Windows.Forms.ContextMenuStrip contextMenuUpgrades;
-        private System.Windows.Forms.ToolStripMenuItem cmuTitle;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem cmuCategory1;
-        private System.Windows.Forms.ToolStripMenuItem cmuCategory2;
-        private System.Windows.Forms.ToolStripMenuItem cmuCategory3;
-        private System.Windows.Forms.ToolStripMenuItem cmuCategory4;
-        private System.Windows.Forms.ToolStripMenuItem cmu1_Meele;
-        private System.Windows.Forms.ToolStripMenuItem cmu1_Axe;
-        private System.Windows.Forms.ToolStripMenuItem cmu2_Pistol;
-        private System.Windows.Forms.ToolStripMenuItem cmu2_Blaster;
-        private System.Windows.Forms.ToolStripMenuItem cmu2_Python;
-        private System.Windows.Forms.ToolStripMenuItem cmu2_Akimbo;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_SMG;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_Shotgun;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_Crossbow;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_ARifle;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_SAW;
-        private System.Windows.Forms.ToolStripMenuItem cmu4_RPGLauncher;
-        private System.Windows.Forms.ToolStripMenuItem cmu4_Gauss;
-        private System.Windows.Forms.ToolStripMenuItem cmu4_SRifle;
-        private System.Windows.Forms.ToolStripMenuItem cmu4_GrenadeLauncher;
-        private System.Windows.Forms.ToolStripMenuItem cmu4_Minigun;
-        private System.Windows.Forms.ToolStripMenuItem cmu3_Sniper;
         public System.Windows.Forms.ComboBox comboClass;
         private System.Windows.Forms.ComboBox comboMode;
+        private System.Windows.Forms.Label labelBelt;
+        public System.Windows.Forms.ComboBox comboBelt;
     }
 }
 

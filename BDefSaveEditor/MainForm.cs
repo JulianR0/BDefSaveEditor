@@ -13,158 +13,147 @@ namespace BDefSaveEditor
         const int ADDRESS_XP = 0x018;
         const int ADDRESS_LEGERITY = 0x01C;
         const int ADDRESS_PRECISION = 0x020;
-        const int ADDRESS_WEAPONS = 0x02C;
         const int ADDRESS_TOUGHNESS = 0x024;
         const int ADDRESS_SORCERY = 0x028;
-        const int ADDRESS_MONEY = 0x0B4;
-        const int ADDRESS_SALVAGE = 0x0B8;
-        const int ADDRESS_SOULS = 0x0BC;
-        const int ADDRESS_HPKITS = 0x0C0;
-        const int ADDRESS_MPKITS = 0x0C4;
-        const int ADDRESS_AP = 0x0C8;
-        const int ADDRESS_GAMEMODE = 0x0F8;
-        const int ADDRESS_TASK_NUMBER = 0x0DC;
-        const int ADDRESS_TASK_TYPE = 0x0E0;
-        const int ADDRESS_TASK_REMAIN = 0x0E4;
-        const int ADDRESS_TASK_EVENT = 0x0F4;
-        const int ADDRESS_LONGJUMP = 0x170;
-        const int ADDRESS_HELMET_COLOR = 0x174;
-        const int ADDRESS_HELMET_ITEMID = 0x178;
-        const int ADDRESS_HELMET_DEFENSE = 0x17C;
-        const int ADDRESS_HELMET_ATTRIBUTE = 0x180;
-        const int ADDRESS_HELMET_UPGRADES = 0x184;
-        const int ADDRESS_ARMOR_COLOR = 0x188;
-        const int ADDRESS_ARMOR_ITEMID = 0x18C;
-        const int ADDRESS_ARMOR_DEFENSE = 0x190;
-        const int ADDRESS_ARMOR_ATTRIBUTE = 0x194;
-        const int ADDRESS_ARMOR_UPGRADES = 0x198;
-        const int ADDRESS_TRINKET_COLOR = 0x19C;
-        const int ADDRESS_TRINKET_ITEMID = 0x1A0;
-        const int ADDRESS_TRINKET_ATTRIBUTE = 0x1A8;
-        const int ADDRESS_TRINKET_UPGRADES = 0x1AC;
-        const int ADDRESS_GEM_COLOR = 0x1B0;
-        const int ADDRESS_GEM_ITEMID = 0x1B4;
-        const int ADDRESS_ITEM1_COLOR = 0x1C4;
-        const int ADDRESS_ITEM1_ITEMID = 0x1C8;
-        const int ADDRESS_ITEM1_DEFENSE = 0x1CC;
-        const int ADDRESS_ITEM1_ATTRIBUTE = 0x1D0;
-        const int ADDRESS_ITEM1_UPGRADES = 0x1D4;
-        const int ADDRESS_ITEM2_COLOR = 0x1D8;
-        const int ADDRESS_ITEM2_ITEMID = 0x1DC;
-        const int ADDRESS_ITEM2_DEFENSE = 0x1E0;
-        const int ADDRESS_ITEM2_ATTRIBUTE = 0x1E4;
-        const int ADDRESS_ITEM2_UPGRADES = 0x1E8;
-        const int ADDRESS_ITEM3_COLOR = 0x1EC;
-        const int ADDRESS_ITEM3_ITEMID = 0x1F0;
-        const int ADDRESS_ITEM3_DEFENSE = 0x1F4;
-        const int ADDRESS_ITEM3_ATTRIBUTE = 0x1F8;
-        const int ADDRESS_ITEM3_UPGRADES = 0x1FC;
-        const int ADDRESS_ITEM4_COLOR = 0x200;
-        const int ADDRESS_ITEM4_ITEMID = 0x204;
-        const int ADDRESS_ITEM4_DEFENSE = 0x208;
-        const int ADDRESS_ITEM4_ATTRIBUTE = 0x20C;
-        const int ADDRESS_ITEM4_UPGRADES = 0x210;
-        const int ADDRESS_ITEM5_COLOR = 0x214;
-        const int ADDRESS_ITEM5_ITEMID = 0x218;
-        const int ADDRESS_ITEM5_DEFENSE = 0x21C;
-        const int ADDRESS_ITEM5_ATTRIBUTE = 0x220;
-        const int ADDRESS_ITEM5_UPGRADES = 0x224;
-        const int ADDRESS_ITEM6_COLOR = 0x228;
-        const int ADDRESS_ITEM6_ITEMID = 0x22C;
-        const int ADDRESS_ITEM6_DEFENSE = 0x230;
-        const int ADDRESS_ITEM6_ATTRIBUTE = 0x234;
-        const int ADDRESS_ITEM6_UPGRADES = 0x238;
-        const int ADDRESS_ITEM7_COLOR = 0x23C;
-        const int ADDRESS_ITEM7_ITEMID = 0x240;
-        const int ADDRESS_ITEM7_DEFENSE = 0x244;
-        const int ADDRESS_ITEM7_ATTRIBUTE = 0x248;
-        const int ADDRESS_ITEM7_UPGRADES = 0x24C;
-        const int ADDRESS_ITEM8_COLOR = 0x250;
-        const int ADDRESS_ITEM8_ITEMID = 0x254;
-        const int ADDRESS_ITEM8_DEFENSE = 0x258;
-        const int ADDRESS_ITEM8_ATTRIBUTE = 0x25C;
-        const int ADDRESS_ITEM8_UPGRADES = 0x260;
-        const int ADDRESS_UPGRADE_MEELE_DAMAGE = 0x29C;
-        const int ADDRESS_UPGRADE_MEELE_RATE = 0x2A8;
-        const int ADDRESS_UPGRADE_AXE_SLOTS = 0x2CC;
-        const int ADDRESS_UPGRADE_AXE_DAMAGE = 0x2D0;
-        const int ADDRESS_UPGRADE_AXE_RATE = 0x2DC;
-        const int ADDRESS_UPGRADE_PISTOL_SLOTS = 0x300;
-        const int ADDRESS_UPGRADE_PISTOL_DAMAGE = 0x304;
-        const int ADDRESS_UPGRADE_PISTOL_RATE = 0x310;
-        const int ADDRESS_UPGRADE_PISTOL_AMMO = 0x31C;
-        const int ADDRESS_UPGRADE_PISTOL_UNIQUE = 0x328;
-        const int ADDRESS_UPGRADE_BLASTER_SLOTS = 0x334;
-        const int ADDRESS_UPGRADE_BLASTER_DAMAGE = 0x338;
-        const int ADDRESS_UPGRADE_BLASTER_RATE = 0x344;
-        const int ADDRESS_UPGRADE_PYTHON_SLOTS = 0x368;
-        const int ADDRESS_UPGRADE_PYTHON_DAMAGE = 0x36C;
-        const int ADDRESS_UPGRADE_PYTHON_RATE = 0x378;
-        const int ADDRESS_UPGRADE_PYTHON_AMMO = 0x384;
-        const int ADDRESS_UPGRADE_PYTHON_UNIQUE = 0x390;
-        const int ADDRESS_UPGRADE_AKIMBO_SLOTS = 0x39C;
-        const int ADDRESS_UPGRADE_AKIMBO_DAMAGE = 0x3A0;
-        const int ADDRESS_UPGRADE_AKIMBO_RATE = 0x3AC;
-        const int ADDRESS_UPGRADE_AKIMBO_AMMO = 0x3B8;
-        const int ADDRESS_UPGRADE_AKIMBO_UNIQUE = 0x3C4;
-        const int ADDRESS_UPGRADE_SMG_SLOTS = 0x3D0;
-        const int ADDRESS_UPGRADE_SMG_DAMAGE = 0x3D4;
-        const int ADDRESS_UPGRADE_SMG_RATE = 0x3E0;
-        const int ADDRESS_UPGRADE_SMG_AMMO = 0x3EC;
-        const int ADDRESS_UPGRADE_SHOTGUN_SLOTS = 0x404;
-        const int ADDRESS_UPGRADE_SHOTGUN_DAMAGE = 0x408;
-        const int ADDRESS_UPGRADE_SHOTGUN_RATE = 0x414;
-        const int ADDRESS_UPGRADE_SHOTGUN_AMMO = 0x420;
-        const int ADDRESS_UPGRADE_SHOTGUN_UNIQUE = 0x42C;
-        const int ADDRESS_UPGRADE_CROSSBOW_SLOTS = 0x438;
-        const int ADDRESS_UPGRADE_CROSSBOW_DAMAGE = 0x43C;
-        const int ADDRESS_UPGRADE_CROSSBOW_RATE = 0x448;
-        const int ADDRESS_UPGRADE_CROSSBOW_AMMO = 0x454;
-        const int ADDRESS_UPGRADE_CROSSBOW_UNIQUE = 0x460;
-        const int ADDRESS_UPGRADE_ASSAULT_SLOTS = 0x46C;
-        const int ADDRESS_UPGRADE_ASSAULT_DAMAGE = 0x470;
-        const int ADDRESS_UPGRADE_ASSAULT_RATE = 0x47C;
-        const int ADDRESS_UPGRADE_ASSAULT_AMMO = 0x488;
-        const int ADDRESS_UPGRADE_SAW_SLOTS = 0x4A0;
-        const int ADDRESS_UPGRADE_SAW_DAMAGE = 0x4A4;
-        const int ADDRESS_UPGRADE_SAW_RATE = 0x4B0;
-        const int ADDRESS_UPGRADE_SAW_AMMO = 0x4BC;
-        const int ADDRESS_UPGRADE_SNIPER_SLOTS = 0x4D4;
-        const int ADDRESS_UPGRADE_SNIPER_DAMAGE = 0x4D8;
-        const int ADDRESS_UPGRADE_SNIPER_RATE = 0x4E4;
-        const int ADDRESS_UPGRADE_SNIPER_AMMO = 0x4F0;
-        const int ADDRESS_UPGRADE_RPG_SLOTS = 0x508;
-        const int ADDRESS_UPGRADE_RPG_DAMAGE = 0x50C;
-        const int ADDRESS_UPGRADE_GAUSS_SLOTS = 0x53C;
-        const int ADDRESS_UPGRADE_GAUSS_DAMAGE = 0x540;
-        const int ADDRESS_UPGRADE_GAUSS_RATE = 0x54C;
-        const int ADDRESS_UPGRADE_SHOCK_RATE = 0x580;
-        const int ADDRESS_UPGRADE_GRENADE_SLOTS = 0x5A4;
-        const int ADDRESS_UPGRADE_GRENADE_RATE = 0x5B4;
-        const int ADDRESS_UPGRADE_GRENADE_AMMO = 0x5C0;
-        const int ADDRESS_UPGRADE_MINIGUN_SLOTS = 0x60C;
-        const int ADDRESS_UPGRADE_MINIGUN_DAMAGE = 0x610;
-        const int ADDRESS_UPGRADE_MINIGUN_RATE = 0x61C;
-        const int ADDRESS_AMMO_BUCKSHOT = 0x038;
-        const int ADDRESS_AMMO_9MM = 0x03C;
-        const int ADDRESS_AMMO_SHOCK = 0x040;
-        const int ADDRESS_AMMO_SAW = 0x044;
-        const int ADDRESS_AMMO_SNIPER = 0x048;
-        const int ADDRESS_AMMO_ARGRENADE = 0x04C;
-        const int ADDRESS_AMMO_FLAME = 0x050;
-        const int ADDRESS_AMMO_MINIGUN = 0x054;
-        const int ADDRESS_AMMO_PYTHON = 0x058;
-        const int ADDRESS_AMMO_GAUSS = 0x05C;
-        const int ADDRESS_AMMO_RPG = 0x060;
-        const int ADDRESS_AMMO_CROSSBOW = 0x064;
-        const int ADDRESS_AMMO_TRIPMINE = 0x068;
-        const int ADDRESS_AMMO_SATCHEL = 0x06C;
-        const int ADDRESS_AMMO_HANDGRENADE = 0x070;
-        const int ADDRESS_AMMO_GRENADELAUNCHER = 0x074;
-        const int ADDRESS_POWERS_FIRST = 0x0CC;
-        const int ADDRESS_POWERS_SECOND = 0x0D0;
-        const int ADDRESS_POWERS_THIRD = 0x0D4;
-        const int ADDRESS_POWERS_FOURTH = 0x0D8;
+        const int ADDRESS_WEAPONS = 0x02C;
+        const int ADDRESS_TIER_MELEE = 0x038;
+        const int ADDRESS_TIER_AXE = 0x03C;
+        const int ADDRESS_TIER_PISTOL = 0x040;
+        const int ADDRESS_TIER_BLASTER = 0x044;
+        const int ADDRESS_TIER_PYTHON = 0x048;
+        const int ADDRESS_TIER_AKIMBO = 0x04C;
+        const int ADDRESS_TIER_MP5 = 0x050;
+        const int ADDRESS_TIER_SHOTGUN = 0x054;
+        const int ADDRESS_TIER_CROSSBOW = 0x058;
+        const int ADDRESS_TIER_ASSAULT = 0x05C;
+        const int ADDRESS_TIER_SAW = 0x060;
+        const int ADDRESS_TIER_SNIPER = 0x064;
+        const int ADDRESS_TIER_RPG = 0x068;
+        const int ADDRESS_TIER_GAUSS = 0x06C;
+        const int ADDRESS_TIER_SHOCK = 0x070;
+        const int ADDRESS_TIER_GL = 0x074;
+        const int ADDRESS_TIER_FLAME = 0x078;
+        const int ADDRESS_TIER_MINIGUN = 0x07C;
+        const int ADDRESS_TIER_HANDGRENADE = 0x080;
+        const int ADDRESS_TIER_TRIPMINE = 0x084;
+        const int ADDRESS_TIER_SATCHEL = 0x088;
+        const int ADDRESS_TIER_RAILGUN = 0x090;
+        const int ADDRESS_TIER_PLASMAGUN = 0x094;
+        const int ADDRESS_MELEE_CLIP = 0x0B8; // keep at -1
+        const int ADDRESS_AXE_CLIP = 0x0BC; // -1
+        const int ADDRESS_PISTOL_CLIP = 0x0C0;
+        const int ADDRESS_BLASTER_CLIP = 0x0C4; // -1
+        const int ADDRESS_PYTHON_CLIP = 0x0C8;
+        const int ADDRESS_AKIMBO_CLIP = 0x0CC;
+        const int ADDRESS_MP5_CLIP = 0x0D0;
+        const int ADDRESS_SHOTGUN_CLIP = 0x0D4;
+        const int ADDRESS_CROSSBOW_CLIP = 0x0D8;
+        const int ADDRESS_ASSAULT_CLIP = 0x0DC;
+        const int ADDRESS_SAW_CLIP = 0x0E0;
+        const int ADDRESS_SNIPER_CLIP = 0x0E4;
+        const int ADDRESS_RPG_CLIP = 0x0E8;
+        const int ADDRESS_GAUSS_CLIP = 0x0EC; // -1
+        const int ADDRESS_SHOCK_CLIP = 0x0F0; // -1
+        const int ADDRESS_GL_CLIP = 0x0F4;
+        const int ADDRESS_FLAME_CLIP = 0x0F8; // -1
+        const int ADDRESS_MINIGUN_CLIP = 0x0FC; // -1
+        const int ADDRESS_HANDGRENADE_CLIP = 0x100; // -1
+        const int ADDRESS_TRIPMINE_CLIP = 0x104; // -1
+        const int ADDRESS_SATCHEL_CLIP = 0x108; // -1
+        const int ADDRESS_GESTURES_CLIP = 0x10C; // ???
+        const int ADDRESS_RAILGUN_CLIP = 0x110;
+        const int ADDRESS_PLASMAGUN_CLIP = 0x114;
+        const int ADDRESS_AMMO_BUCKSHOT = 0x138;
+        const int ADDRESS_AMMO_9MM = 0x13C; // shared by mp5/akimbo
+        const int ADDRESS_AMMO_SHOCK = 0x140;
+        const int ADDRESS_AMMO_PLASMA = 0x144;
+        const int ADDRESS_AMMO_QUARK = 0x148;
+        const int ADDRESS_AMMO_SAW = 0x14C; // shared by assault rifle
+        const int ADDRESS_AMMO_SNIPER = 0x150;
+        const int ADDRESS_AMMO_ARGRENADES = 0x154; // shared by grenade launcher
+        const int ADDRESS_AMMO_FLAME = 0x158;
+        const int ADDRESS_AMMO_MINIGUN = 0x15C;
+        const int ADDRESS_AMMO_PYTHON = 0x160;
+        const int ADDRESS_AMMO_GAUSS = 0x164;
+        const int ADDRESS_AMMO_RPG = 0x168;
+        const int ADDRESS_AMMO_CROSSBOW = 0x16C;
+        const int ADDRESS_AMMO_TRIPMINE = 0x170;
+        const int ADDRESS_AMMO_SATCHEL = 0x174;
+        const int ADDRESS_AMMO_HANDGRENADE = 0x178;
+        const int ADDRESS_MONEY = 0x1B4;
+        const int ADDRESS_HPKITS = 0x1C0;
+        const int ADDRESS_MPKITS = 0x1C4;
+        const int ADDRESS_AP = 0x1C8;
+        const int ADDRESS_POWERS_FIRST = 0x1CC;
+        const int ADDRESS_POWERS_SECOND = 0x1D0;
+        const int ADDRESS_POWERS_THIRD = 0x1D4;
+        const int ADDRESS_POWERS_FOURTH = 0x1D8;
+        const int ADDRESS_TASK_NUMBER = 0x1DC;
+        const int ADDRESS_TASK_TYPE = 0x1E0;
+        const int ADDRESS_TASK_REMAIN = 0x1E4;
+        //const int ADDRESS_TASK_EVENT = 0x???; // No event is active, I can't find the new address.
+        const int ADDRESS_GAMEMODE = 0x21C;
+        const int ADDRESS_COLLECTION_GARG = 0x220;
+        const int ADDRESS_COLLECTION_PENTA = 0x224;
+        const int ADDRESS_COLLECTION_TROOPER = 0x228;
+        const int ADDRESS_LONGJUMP = 0x270;
+        const int ADDRESS_POTION = 0x274;
+        const int ADDRESS_HELMET_COLOR = 0x31C;
+        const int ADDRESS_HELMET_ITEMID = 0x320;
+        const int ADDRESS_HELMET_DEFENSE = 0x324;
+        const int ADDRESS_HELMET_ATTRIBUTE = 0x328;
+        const int ADDRESS_HELMET_UPGRADES = 0x32C;
+        const int ADDRESS_ARMOR_COLOR = 0x330;
+        const int ADDRESS_ARMOR_ITEMID = 0x334;
+        const int ADDRESS_ARMOR_DEFENSE = 0x338;
+        const int ADDRESS_ARMOR_ATTRIBUTE = 0x33C;
+        const int ADDRESS_ARMOR_UPGRADES = 0x340;
+        const int ADDRESS_TRINKET_COLOR = 0x344;
+        const int ADDRESS_TRINKET_ITEMID = 0x348;
+        const int ADDRESS_TRINKET_ATTRIBUTE = 0x350;
+        const int ADDRESS_TRINKET_UPGRADES = 0x354;
+        const int ADDRESS_GEM_COLOR = 0x358;
+        const int ADDRESS_GEM_ITEMID = 0x35C;
+        const int ADDRESS_ITEM1_COLOR = 0x36C;
+        const int ADDRESS_ITEM1_ITEMID = 0x370;
+        const int ADDRESS_ITEM1_DEFENSE = 0x374;
+        const int ADDRESS_ITEM1_ATTRIBUTE = 0x378;
+        const int ADDRESS_ITEM1_UPGRADES = 0x37C;
+        const int ADDRESS_ITEM2_COLOR = 0x380;
+        const int ADDRESS_ITEM2_ITEMID = 0x384;
+        const int ADDRESS_ITEM2_DEFENSE = 0x388;
+        const int ADDRESS_ITEM2_ATTRIBUTE = 0x38C;
+        const int ADDRESS_ITEM2_UPGRADES = 0x390;
+        const int ADDRESS_ITEM3_COLOR = 0x394;
+        const int ADDRESS_ITEM3_ITEMID = 0x398;
+        const int ADDRESS_ITEM3_DEFENSE = 0x39C;
+        const int ADDRESS_ITEM3_ATTRIBUTE = 0x3A0;
+        const int ADDRESS_ITEM3_UPGRADES = 0x3A4;
+        const int ADDRESS_ITEM4_COLOR = 0x3A8;
+        const int ADDRESS_ITEM4_ITEMID = 0x3AC;
+        const int ADDRESS_ITEM4_DEFENSE = 0x3B0;
+        const int ADDRESS_ITEM4_ATTRIBUTE = 0x3B4;
+        const int ADDRESS_ITEM4_UPGRADES = 0x3B8;
+        const int ADDRESS_ITEM5_COLOR = 0x3BC;
+        const int ADDRESS_ITEM5_ITEMID = 0x3C0;
+        const int ADDRESS_ITEM5_DEFENSE = 0x3C4;
+        const int ADDRESS_ITEM5_ATTRIBUTE = 0x3C8;
+        const int ADDRESS_ITEM5_UPGRADES = 0x3CC;
+        const int ADDRESS_ITEM6_COLOR = 0x3D0;
+        const int ADDRESS_ITEM6_ITEMID = 0x3D4;
+        const int ADDRESS_ITEM6_DEFENSE = 0x3D8;
+        const int ADDRESS_ITEM6_ATTRIBUTE = 0x3DC;
+        const int ADDRESS_ITEM6_UPGRADES = 0x3E0;
+        const int ADDRESS_ITEM7_COLOR = 0x3E4;
+        const int ADDRESS_ITEM7_ITEMID = 0x3E8;
+        const int ADDRESS_ITEM7_DEFENSE = 0x3EC;
+        const int ADDRESS_ITEM7_ATTRIBUTE = 0x3F0;
+        const int ADDRESS_ITEM7_UPGRADES = 0x3F4;
+        const int ADDRESS_ITEM8_COLOR = 0x3F8;
+        const int ADDRESS_ITEM8_ITEMID = 0x3FC;
+        const int ADDRESS_ITEM8_DEFENSE = 0x400;
+        const int ADDRESS_ITEM8_ATTRIBUTE = 0x404;
+        const int ADDRESS_ITEM8_UPGRADES = 0x408;
 
         const uint W_MELEE = (1 << 1);
         const uint W_AXE = (1 << 2);
@@ -187,6 +176,9 @@ namespace BDefSaveEditor
         const uint W_HANDGRENADE = (1 << 19);
         const uint W_TRIPMINE = (1 << 20);
         const uint W_SATCHEL = (1 << 21);
+        const uint W_GESTURES = (1 << 22);
+        const uint W_RAILGUN = (1 << 23);
+        const uint W_PLASMAGUN = (1 << 24);
         const uint W_SUIT = 0x80000000; // (1 << 31)
 
         // It would be better if the XP formula could be reverse engineered
@@ -303,12 +295,14 @@ namespace BDefSaveEditor
         public bool b_WPN_GL;
         public bool b_WPN_Flame;
         public bool b_WPN_Minigun;
+        public bool b_WPN_Railgun;
+        public bool b_WPN_Plasmagun;
         public bool b_WPN_Suit;
 
         public int i_TASK_Number;
         public int i_TASK_Type;
         public int i_TASK_Remain;
-        public int i_TASK_Event;
+        //public int i_TASK_Event;
 
         public int i_HELMET_Color;
         public int i_HELMET_ItemID;
@@ -378,84 +372,6 @@ namespace BDefSaveEditor
         public int i_ITEM8_Attribute;
         public int i_ITEM8_Upgrades;
 
-        public int i_UPGRADE_MEELE_Damage;
-        public int i_UPGRADE_MEELE_RateOfFire;
-
-        public int i_UPGRADE_AXE_Slots;
-        public int i_UPGRADE_AXE_Damage;
-        public int i_UPGRADE_AXE_RateOfFire;
-
-        public int i_UPGRADE_PISTOL_Slots;
-        public int i_UPGRADE_PISTOL_Damage;
-        public int i_UPGRADE_PISTOL_RateOfFire;
-        public int i_UPGRADE_PISTOL_Ammo;
-        public int i_UPGRADE_PISTOL_Unique;
-
-        public int i_UPGRADE_BLASTER_Slots;
-        public int i_UPGRADE_BLASTER_Damage;
-        public int i_UPGRADE_BLASTER_RateOfFire;
-
-        public int i_UPGRADE_PYTHON_Slots;
-        public int i_UPGRADE_PYTHON_Damage;
-        public int i_UPGRADE_PYTHON_RateOfFire;
-        public int i_UPGRADE_PYTHON_Ammo;
-        public int i_UPGRADE_PYTHON_Unique;
-
-        public int i_UPGRADE_AKIMBO_Slots;
-        public int i_UPGRADE_AKIMBO_Damage;
-        public int i_UPGRADE_AKIMBO_RateOfFire;
-        public int i_UPGRADE_AKIMBO_Ammo;
-        public int i_UPGRADE_AKIMBO_Unique;
-
-        public int i_UPGRADE_SMG_Slots;
-        public int i_UPGRADE_SMG_Damage;
-        public int i_UPGRADE_SMG_RateOfFire;
-        public int i_UPGRADE_SMG_Ammo;
-
-        public int i_UPGRADE_SHOTGUN_Slots;
-        public int i_UPGRADE_SHOTGUN_Damage;
-        public int i_UPGRADE_SHOTGUN_RateOfFire;
-        public int i_UPGRADE_SHOTGUN_Ammo;
-        public int i_UPGRADE_SHOTGUN_Unique;
-
-        public int i_UPGRADE_CROSSBOW_Slots;
-        public int i_UPGRADE_CROSSBOW_Damage;
-        public int i_UPGRADE_CROSSBOW_RateOfFire;
-        public int i_UPGRADE_CROSSBOW_Ammo;
-        public int i_UPGRADE_CROSSBOW_Unique;
-
-        public int i_UPGRADE_ASSAULT_Slots;
-        public int i_UPGRADE_ASSAULT_Damage;
-        public int i_UPGRADE_ASSAULT_RateOfFire;
-        public int i_UPGRADE_ASSAULT_Ammo;
-
-        public int i_UPGRADE_SAW_Slots;
-        public int i_UPGRADE_SAW_Damage;
-        public int i_UPGRADE_SAW_RateOfFire;
-        public int i_UPGRADE_SAW_Ammo;
-
-        public int i_UPGRADE_SNIPER_Slots;
-        public int i_UPGRADE_SNIPER_Damage;
-        public int i_UPGRADE_SNIPER_RateOfFire;
-        public int i_UPGRADE_SNIPER_Ammo;
-
-        public int i_UPGRADE_RPG_Slots;
-        public int i_UPGRADE_RPG_Damage;
-
-        public int i_UPGRADE_GAUSS_Slots;
-        public int i_UPGRADE_GAUSS_Damage;
-        public int i_UPGRADE_GAUSS_RateOfFire;
-
-        public int i_UPGRADE_SHOCK_RateOfFire;
-
-        public int i_UPGRADE_GRENADE_Slots;
-        public int i_UPGRADE_GRENADE_RateOfFire;
-        public int i_UPGRADE_GRENADE_Ammo;
-
-        public int i_UPGRADE_MINIGUN_Slots;
-        public int i_UPGRADE_MINIGUN_Damage;
-        public int i_UPGRADE_MINIGUN_RateOfFire;
-
         public int i_AMMO_Shotgun;
         public int i_AMMO_9mm;
         public int i_AMMO_Shock;
@@ -471,7 +387,8 @@ namespace BDefSaveEditor
         public int i_AMMO_Tripmine;
         public int i_AMMO_Satchel;
         public int i_AMMO_Grenade;
-        public int i_AMMO_GLauncher;
+        public int i_AMMO_Railgun;
+        public int i_AMMO_Plasmagun;
 
         public int i_POWER_First;
         public int i_POWER_Second;
@@ -481,7 +398,6 @@ namespace BDefSaveEditor
         WeaponsForm weaponForm;
         TasksForm taskForm;
         InventoryForm inventoryForm;
-        UpgradesForm upgradesForm;
         PowersForm powersForm;
 
         public Main()
@@ -490,7 +406,6 @@ namespace BDefSaveEditor
             weaponForm = new WeaponsForm(this);
             taskForm = new TasksForm(this);
             inventoryForm = new InventoryForm(this);
-            upgradesForm = new UpgradesForm(this);
             powersForm = new PowersForm(this);
         }
 
@@ -514,6 +429,8 @@ namespace BDefSaveEditor
             b_WPN_GL = false;
             b_WPN_Flame = false;
             b_WPN_Minigun = false;
+            b_WPN_Railgun = false;
+            b_WPN_Plasmagun = false;
             b_WPN_Suit = false;
         }
 
@@ -599,11 +516,8 @@ namespace BDefSaveEditor
                         // Money
                         boxMoney.Value = ConvertAndLoad(fsFile, ADDRESS_MONEY);
 
-                        // Salvage
-                        boxSalvage.Value = ConvertAndLoad(fsFile, ADDRESS_SALVAGE);
-
-                        // Souls
-                        boxSouls.Value = ConvertAndLoad(fsFile, ADDRESS_SOULS);
+                        // Belt
+                        comboBelt.SelectedIndex = ConvertAndLoad(fsFile, ADDRESS_POTION);
 
                         // Health Kits
                         boxHPKits.Value = ConvertAndLoad(fsFile, ADDRESS_HPKITS);
@@ -624,31 +538,33 @@ namespace BDefSaveEditor
                         fsFile.Read(bData, 0, bData.Length);
                         uint uiData = BitConverter.ToUInt32(bData, 0);
                         /* uint uiData = Convert.ToUInt32(ConvertAndLoad(fsFile, ADDRESS_WEAPONS)); fails */
-                        uiCheck = uiData; if ((uiCheck &= W_MELEE) == W_MELEE) b_WPN_Melee = true; // Bad way of doing bitwise check!
-                        uiCheck = uiData; if ((uiCheck &= W_AXE) == W_AXE) b_WPN_Axe = true;
-                        uiCheck = uiData; if ((uiCheck &= W_PISTOL) == W_PISTOL) b_WPN_Pistol = true;
-                        uiCheck = uiData; if ((uiCheck &= W_BLASTER) == W_BLASTER) b_WPN_Blaster = true;
-                        uiCheck = uiData; if ((uiCheck &= W_357) == W_357) b_WPN_357 = true;
-                        uiCheck = uiData; if ((uiCheck &= W_AKIMBO) == W_AKIMBO) b_WPN_Akimbo = true;
-                        uiCheck = uiData; if ((uiCheck &= W_MP5) == W_MP5) b_WPN_MP5 = true;
-                        uiCheck = uiData; if ((uiCheck &= W_SHOTGUN) == W_SHOTGUN) b_WPN_Shotgun = true;
-                        uiCheck = uiData; if ((uiCheck &= W_CROSSBOW) == W_CROSSBOW) b_WPN_Crossbow = true;
-                        uiCheck = uiData; if ((uiCheck &= W_ASSAULT) == W_ASSAULT) b_WPN_Assault = true;
-                        uiCheck = uiData; if ((uiCheck &= W_SAW) == W_SAW) b_WPN_SAW = true;
-                        uiCheck = uiData; if ((uiCheck &= W_SNIPER) == W_SNIPER) b_WPN_Sniper = true;
-                        uiCheck = uiData; if ((uiCheck &= W_RPG) == W_RPG) b_WPN_RPG = true;
-                        uiCheck = uiData; if ((uiCheck &= W_GAUSS) == W_GAUSS) b_WPN_Gauss = true;
-                        uiCheck = uiData; if ((uiCheck &= W_SHOCK) == W_SHOCK) b_WPN_Shock = true;
-                        uiCheck = uiData; if ((uiCheck &= W_GL) == W_GL) b_WPN_GL = true;
-                        uiCheck = uiData; if ((uiCheck &= W_FLAME) == W_FLAME) b_WPN_Flame = true;
-                        uiCheck = uiData; if ((uiCheck &= W_MINIGUN) == W_MINIGUN) b_WPN_Minigun = true;
-                        uiCheck = uiData; if ((uiCheck &= W_SUIT) == W_SUIT) b_WPN_Suit = true;
+                        uiCheck = uiData; if ((uiCheck & W_MELEE) != 0) b_WPN_Melee = true;
+                        uiCheck = uiData; if ((uiCheck & W_AXE) != 0) b_WPN_Axe = true;
+                        uiCheck = uiData; if ((uiCheck & W_PISTOL) != 0) b_WPN_Pistol = true;
+                        uiCheck = uiData; if ((uiCheck & W_BLASTER) != 0) b_WPN_Blaster = true;
+                        uiCheck = uiData; if ((uiCheck & W_357) != 0) b_WPN_357 = true;
+                        uiCheck = uiData; if ((uiCheck & W_AKIMBO) != 0) b_WPN_Akimbo = true;
+                        uiCheck = uiData; if ((uiCheck & W_MP5) != 0) b_WPN_MP5 = true;
+                        uiCheck = uiData; if ((uiCheck & W_SHOTGUN) != 0) b_WPN_Shotgun = true;
+                        uiCheck = uiData; if ((uiCheck & W_CROSSBOW) != 0) b_WPN_Crossbow = true;
+                        uiCheck = uiData; if ((uiCheck & W_ASSAULT) != 0) b_WPN_Assault = true;
+                        uiCheck = uiData; if ((uiCheck & W_SAW) != 0) b_WPN_SAW = true;
+                        uiCheck = uiData; if ((uiCheck & W_SNIPER) != 0) b_WPN_Sniper = true;
+                        uiCheck = uiData; if ((uiCheck & W_RPG) != 0) b_WPN_RPG = true;
+                        uiCheck = uiData; if ((uiCheck & W_GAUSS) != 0) b_WPN_Gauss = true;
+                        uiCheck = uiData; if ((uiCheck & W_SHOCK) != 0) b_WPN_Shock = true;
+                        uiCheck = uiData; if ((uiCheck & W_GL) != 0) b_WPN_GL = true;
+                        uiCheck = uiData; if ((uiCheck & W_FLAME) != 0) b_WPN_Flame = true;
+                        uiCheck = uiData; if ((uiCheck & W_MINIGUN) != 0) b_WPN_Minigun = true;
+                        uiCheck = uiData; if ((uiCheck & W_RAILGUN) != 0) b_WPN_Railgun = true;
+                        uiCheck = uiData; if ((uiCheck & W_PLASMAGUN) != 0) b_WPN_Plasmagun = true;
+                        uiCheck = uiData; if ((uiCheck & W_SUIT) != 0) b_WPN_Suit = true;
                         
                         // Tasks
                         i_TASK_Number = ConvertAndLoad(fsFile, ADDRESS_TASK_NUMBER); // Task number
                         i_TASK_Type = ConvertAndLoad(fsFile, ADDRESS_TASK_TYPE) - 1; // Task type
                         i_TASK_Remain = ConvertAndLoad(fsFile, ADDRESS_TASK_REMAIN); // Task remain
-                        i_TASK_Event = ConvertAndLoad(fsFile, ADDRESS_TASK_EVENT); // Event task
+                        //i_TASK_Event = ConvertAndLoad(fsFile, ADDRESS_TASK_EVENT); // Event task
 
                         // Inventory
                         i_HELMET_Color = ConvertAndLoad(fsFile, ADDRESS_HELMET_COLOR); // Helmet
@@ -721,92 +637,13 @@ namespace BDefSaveEditor
 
                         UpdateInventoryMenu();
 
-                        // Weapon Upgrades
-                        i_UPGRADE_AXE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MEELE_DAMAGE); // Meele
-                        i_UPGRADE_AXE_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MEELE_RATE);
-
-                        i_UPGRADE_AXE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_SLOTS); // Ancient Axe
-                        i_UPGRADE_AXE_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_DAMAGE);
-                        i_UPGRADE_AXE_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AXE_RATE);
-
-                        i_UPGRADE_PISTOL_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_SLOTS); // Pistol
-                        i_UPGRADE_PISTOL_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_DAMAGE);
-                        i_UPGRADE_PISTOL_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_RATE);
-                        i_UPGRADE_PISTOL_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_AMMO);
-                        i_UPGRADE_PISTOL_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PISTOL_UNIQUE);
-
-                        i_UPGRADE_BLASTER_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_SLOTS); // Blaster
-                        i_UPGRADE_BLASTER_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_DAMAGE);
-                        i_UPGRADE_BLASTER_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_BLASTER_RATE);
-
-                        i_UPGRADE_PYTHON_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_SLOTS); // Python
-                        i_UPGRADE_PYTHON_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_DAMAGE);
-                        i_UPGRADE_PYTHON_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_RATE);
-                        i_UPGRADE_PYTHON_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_AMMO);
-                        i_UPGRADE_PYTHON_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_PYTHON_UNIQUE);
-
-                        i_UPGRADE_AKIMBO_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_SLOTS); // Akimbo
-                        i_UPGRADE_AKIMBO_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_DAMAGE);
-                        i_UPGRADE_AKIMBO_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_RATE);
-                        i_UPGRADE_AKIMBO_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_AMMO);
-                        i_UPGRADE_AKIMBO_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_AKIMBO_UNIQUE);
-
-                        i_UPGRADE_SMG_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_SLOTS); // Submachine Gun
-                        i_UPGRADE_SMG_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_DAMAGE);
-                        i_UPGRADE_SMG_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_RATE);
-                        i_UPGRADE_SMG_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SMG_AMMO);
-
-                        i_UPGRADE_SHOTGUN_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_SLOTS); // Shotgun
-                        i_UPGRADE_SHOTGUN_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_DAMAGE);
-                        i_UPGRADE_SHOTGUN_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_RATE);
-                        i_UPGRADE_SHOTGUN_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_AMMO);
-                        i_UPGRADE_SHOTGUN_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOTGUN_UNIQUE);
-
-                        i_UPGRADE_CROSSBOW_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_SLOTS); // Crossbow
-                        i_UPGRADE_CROSSBOW_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_DAMAGE);
-                        i_UPGRADE_CROSSBOW_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_RATE);
-                        i_UPGRADE_CROSSBOW_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_AMMO);
-                        i_UPGRADE_CROSSBOW_Unique = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_CROSSBOW_UNIQUE);
-
-                        i_UPGRADE_ASSAULT_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_SLOTS); // Assault Rifle
-                        i_UPGRADE_ASSAULT_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_DAMAGE);
-                        i_UPGRADE_ASSAULT_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_RATE);
-                        i_UPGRADE_ASSAULT_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_ASSAULT_AMMO);
-
-                        i_UPGRADE_SAW_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_SLOTS); // SAW
-                        i_UPGRADE_SAW_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_DAMAGE);
-                        i_UPGRADE_SAW_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_RATE);
-                        i_UPGRADE_SAW_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SAW_AMMO);
-
-                        i_UPGRADE_SNIPER_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_SLOTS); // Sniper Rifle
-                        i_UPGRADE_SNIPER_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_DAMAGE);
-                        i_UPGRADE_SNIPER_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_RATE);
-                        i_UPGRADE_SNIPER_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SNIPER_AMMO);
-
-                        i_UPGRADE_RPG_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_RPG_SLOTS); // Rocket Launcher
-                        i_UPGRADE_RPG_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_RPG_DAMAGE);
-
-                        i_UPGRADE_GAUSS_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_SLOTS); // Gauss
-                        i_UPGRADE_GAUSS_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_DAMAGE);
-                        i_UPGRADE_GAUSS_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GAUSS_RATE);
-
-                        i_UPGRADE_SHOCK_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_SHOCK_RATE); // Shock Rifle
-
-                        i_UPGRADE_GRENADE_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_SLOTS); // Grenade Launcher
-                        i_UPGRADE_GRENADE_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_RATE);
-                        i_UPGRADE_GRENADE_Ammo = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_GRENADE_AMMO);
-
-                        i_UPGRADE_MINIGUN_Slots = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_SLOTS); // Minigun
-                        i_UPGRADE_MINIGUN_Damage = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_DAMAGE);
-                        i_UPGRADE_MINIGUN_RateOfFire = ConvertAndLoad(fsFile, ADDRESS_UPGRADE_MINIGUN_RATE);
-
                         // Ammo
                         i_AMMO_Shotgun = ConvertAndLoad(fsFile, ADDRESS_AMMO_BUCKSHOT);
                         i_AMMO_9mm = ConvertAndLoad(fsFile, ADDRESS_AMMO_9MM);
                         i_AMMO_Shock = ConvertAndLoad(fsFile, ADDRESS_AMMO_SHOCK); if (i_AMMO_Shock < 1) i_AMMO_Shock = 1;
                         i_AMMO_SAW = ConvertAndLoad(fsFile, ADDRESS_AMMO_SAW);
                         i_AMMO_Sniper = ConvertAndLoad(fsFile, ADDRESS_AMMO_SNIPER);
-                        i_AMMO_ARGrenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_ARGRENADE);
+                        i_AMMO_ARGrenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_ARGRENADES);
                         i_AMMO_Flame = ConvertAndLoad(fsFile, ADDRESS_AMMO_FLAME);
                         i_AMMO_Minigun = ConvertAndLoad(fsFile, ADDRESS_AMMO_MINIGUN);
                         i_AMMO_357 = ConvertAndLoad(fsFile, ADDRESS_AMMO_PYTHON);
@@ -816,7 +653,6 @@ namespace BDefSaveEditor
                         i_AMMO_Tripmine = ConvertAndLoad(fsFile, ADDRESS_AMMO_TRIPMINE);
                         i_AMMO_Satchel = ConvertAndLoad(fsFile, ADDRESS_AMMO_SATCHEL);
                         i_AMMO_Grenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_HANDGRENADE);
-                        i_AMMO_GLauncher = ConvertAndLoad(fsFile, ADDRESS_AMMO_GRENADELAUNCHER);
 
                         // Powers
                         i_POWER_First = ConvertAndLoad(fsFile, ADDRESS_POWERS_FIRST);
@@ -835,8 +671,7 @@ namespace BDefSaveEditor
                         boxAP.Enabled = true;
                         boxKills.Enabled = true;
                         boxMoney.Enabled = true;
-                        boxSalvage.Enabled = true;
-                        boxSouls.Enabled = true;
+                        comboBelt.Enabled = true;
                         boxHPKits.Enabled = true;
                         boxMPKits.Enabled = true;
                         boxXP.Enabled = true;
@@ -845,7 +680,6 @@ namespace BDefSaveEditor
                         buttonWeapons.Enabled = true;
                         buttonTasks.Enabled = true;
                         buttonInventory.Enabled = true;
-                        buttonUpgrades.Enabled = true;
                         buttonSkills.Enabled = true;
                         buttonSave.Enabled = true;
                     }
@@ -861,8 +695,7 @@ namespace BDefSaveEditor
                         boxAP.Enabled = false;
                         boxKills.Enabled = false;
                         boxMoney.Enabled = false;
-                        boxSalvage.Enabled = false;
-                        boxSouls.Enabled = false;
+                        comboBelt.Enabled = false;
                         boxHPKits.Enabled = false;
                         boxMPKits.Enabled = false;
                         boxXP.Enabled = false;
@@ -871,7 +704,6 @@ namespace BDefSaveEditor
                         buttonWeapons.Enabled = false;
                         buttonTasks.Enabled = false;
                         buttonInventory.Enabled = false;
-                        buttonUpgrades.Enabled = false;
                         buttonSkills.Enabled = false;
                         buttonSave.Enabled = false;
 
@@ -893,8 +725,7 @@ namespace BDefSaveEditor
                 boxAP.Enabled = false;
                 boxKills.Enabled = false;
                 boxMoney.Enabled = false;
-                boxSalvage.Enabled = false;
-                boxSouls.Enabled = false;
+                comboBelt.Enabled = false;
                 boxHPKits.Enabled = false;
                 boxMPKits.Enabled = false;
                 boxXP.Enabled = false;
@@ -903,7 +734,6 @@ namespace BDefSaveEditor
                 buttonWeapons.Enabled = false;
                 buttonTasks.Enabled = false;
                 buttonInventory.Enabled = false;
-                buttonUpgrades.Enabled = false;
                 buttonSkills.Enabled = false;
                 buttonSave.Enabled = false;
 
@@ -923,47 +753,9 @@ namespace BDefSaveEditor
             return index + 1;
         }
 
-        public void UpdateUpgradesContextItems()
-        {
-            cmu1_Meele.Enabled = false;
-            cmu1_Axe.Enabled = false;
-            cmu2_Pistol.Enabled = false;
-            cmu2_Blaster.Enabled = false;
-            cmu2_Python.Enabled = false;
-            cmu2_Akimbo.Enabled = false;
-            cmu3_SMG.Enabled = false;
-            cmu3_Shotgun.Enabled = false;
-            cmu3_Crossbow.Enabled = false;
-            cmu3_ARifle.Enabled = false;
-            cmu3_SAW.Enabled = false;
-            cmu3_Sniper.Enabled = false;
-            cmu4_RPGLauncher.Enabled = false;
-            cmu4_Gauss.Enabled = false;
-            cmu4_SRifle.Enabled = false;
-            cmu4_GrenadeLauncher.Enabled = false;
-            cmu4_Minigun.Enabled = false;
-            
-            if (b_WPN_Melee) cmu1_Meele.Enabled = true;
-            if (b_WPN_Axe) cmu1_Axe.Enabled = true;
-            if (b_WPN_Pistol) cmu2_Pistol.Enabled = true;
-            if (b_WPN_Blaster) cmu2_Blaster.Enabled = true;
-            if (b_WPN_357) cmu2_Python.Enabled = true;
-            if (b_WPN_Akimbo) cmu2_Akimbo.Enabled = true;
-            if (b_WPN_MP5) cmu3_SMG.Enabled = true;
-            if (b_WPN_Shotgun) cmu3_Shotgun.Enabled = true;
-            if (b_WPN_Crossbow) cmu3_Crossbow.Enabled = true;
-            if (b_WPN_Assault) cmu3_ARifle.Enabled = true;
-            if (b_WPN_SAW) cmu3_SAW.Enabled = true;
-            if (b_WPN_Sniper) cmu3_Sniper.Enabled = true;
-            if (b_WPN_RPG) cmu4_RPGLauncher.Enabled = true;
-            if (b_WPN_Gauss) cmu4_Gauss.Enabled = true;
-            if (b_WPN_Shock) cmu4_SRifle.Enabled = true;
-            if (b_WPN_GL) cmu4_GrenadeLauncher.Enabled = true;
-            if (b_WPN_Minigun) cmu4_Minigun.Enabled = true;
-        }
-
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            /* This is supposedly fixed now...?
             if (boxXP.Value == boxXP.Maximum)
             {
                 DialogResult drWarning;
@@ -971,6 +763,7 @@ namespace BDefSaveEditor
                 if (drWarning == DialogResult.No)
                     return;
             }
+            */
 
             string szFilePath = openFileDialog.FileName;
 
@@ -1011,11 +804,8 @@ namespace BDefSaveEditor
                     // Money
                     ConvertAndSave(fsFile, ADDRESS_MONEY, (int)boxMoney.Value);
 
-                    // Salvage
-                    ConvertAndSave(fsFile, ADDRESS_SALVAGE, (int)boxSalvage.Value);
-
-                    // Souls
-                    ConvertAndSave(fsFile, ADDRESS_SOULS, (int)boxSouls.Value);
+                    // Belt
+                    ConvertAndSave(fsFile, ADDRESS_POTION, comboBelt.SelectedIndex);
 
                     // Health Kits
                     ConvertAndSave(fsFile, ADDRESS_HPKITS, (int)boxHPKits.Value);
@@ -1051,8 +841,10 @@ namespace BDefSaveEditor
                     if (i_AMMO_Tripmine > 0) uiData += W_TRIPMINE;
                     if (i_AMMO_Satchel > 0) uiData += W_SATCHEL;
                     if (i_AMMO_Grenade > 0) uiData += W_HANDGRENADE;
+                    if (i_AMMO_Railgun > 0) uiData += W_RAILGUN;
+                    if (i_AMMO_Plasmagun > 0) uiData += W_PLASMAGUN;
                     iData = Convert.ToInt32(uiData);
-                    iData += (1 << 22); // W_GESTURES
+                    iData += (int)W_GESTURES;
                     if (b_WPN_Suit) iData += (1 << 31); // W_SUIT
                     ConvertAndSave(fsFile, ADDRESS_WEAPONS, iData);
 
@@ -1060,7 +852,7 @@ namespace BDefSaveEditor
                     ConvertAndSave(fsFile, ADDRESS_TASK_NUMBER, i_TASK_Number); // Task number
                     ConvertAndSave(fsFile, ADDRESS_TASK_TYPE, i_TASK_Type + 1); // Task type
                     ConvertAndSave(fsFile, ADDRESS_TASK_REMAIN, i_TASK_Remain); // Task remain
-                    ConvertAndSave(fsFile, ADDRESS_TASK_EVENT, i_TASK_Event); // Event task
+                    //ConvertAndSave(fsFile, ADDRESS_TASK_EVENT, i_TASK_Event); // Event task
 
                     // Inventory
                     ConvertAndSave(fsFile, ADDRESS_HELMET_COLOR, i_HELMET_Color); // Helmet
@@ -1131,92 +923,13 @@ namespace BDefSaveEditor
                     ConvertAndSave(fsFile, ADDRESS_ITEM8_ATTRIBUTE, i_ITEM8_Attribute);
                     ConvertAndSave(fsFile, ADDRESS_ITEM8_UPGRADES, i_ITEM8_Upgrades);
 
-                    // Weapon Upgrades
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MEELE_DAMAGE, i_UPGRADE_MEELE_Damage); // Meele
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MEELE_RATE, i_UPGRADE_MEELE_RateOfFire);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_SLOTS, i_UPGRADE_AXE_Slots); // Ancient Axe
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_DAMAGE, i_UPGRADE_AXE_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AXE_RATE, i_UPGRADE_AXE_RateOfFire);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_SLOTS, i_UPGRADE_PISTOL_Slots); // Pistol
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_DAMAGE, i_UPGRADE_PISTOL_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_RATE, i_UPGRADE_PISTOL_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_AMMO, i_UPGRADE_PISTOL_Ammo);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PISTOL_UNIQUE, i_UPGRADE_PISTOL_Unique);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_SLOTS, i_UPGRADE_BLASTER_Slots); // Blaster
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_DAMAGE, i_UPGRADE_BLASTER_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_BLASTER_RATE, i_UPGRADE_BLASTER_RateOfFire);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_SLOTS, i_UPGRADE_PYTHON_Slots); // Python
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_DAMAGE, i_UPGRADE_PYTHON_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_RATE, i_UPGRADE_PYTHON_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_AMMO, i_UPGRADE_PYTHON_Ammo);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_PYTHON_UNIQUE, i_UPGRADE_PYTHON_Unique);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_SLOTS, i_UPGRADE_AKIMBO_Slots); // Akimbo
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_DAMAGE, i_UPGRADE_AKIMBO_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_RATE, i_UPGRADE_AKIMBO_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_AMMO, i_UPGRADE_AKIMBO_Ammo);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_AKIMBO_UNIQUE, i_UPGRADE_AKIMBO_Unique);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_SLOTS, i_UPGRADE_SMG_Slots); // Submachine Gun
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_DAMAGE, i_UPGRADE_SMG_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_RATE, i_UPGRADE_SMG_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SMG_AMMO, i_UPGRADE_SMG_Ammo);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_SLOTS, i_UPGRADE_SHOTGUN_Slots); // Shotgun
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_DAMAGE, i_UPGRADE_SHOTGUN_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_RATE, i_UPGRADE_SHOTGUN_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_AMMO, i_UPGRADE_SHOTGUN_Ammo);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOTGUN_UNIQUE, i_UPGRADE_SHOTGUN_Unique);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_SLOTS, i_UPGRADE_CROSSBOW_Slots); // Crossbow
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_DAMAGE, i_UPGRADE_CROSSBOW_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_RATE, i_UPGRADE_CROSSBOW_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_AMMO, i_UPGRADE_CROSSBOW_Ammo);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_CROSSBOW_UNIQUE, i_UPGRADE_CROSSBOW_Unique);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_SLOTS, i_UPGRADE_ASSAULT_Slots); // Assault Rifle
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_DAMAGE, i_UPGRADE_ASSAULT_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_RATE, i_UPGRADE_ASSAULT_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_ASSAULT_AMMO, i_UPGRADE_ASSAULT_Ammo);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_SLOTS, i_UPGRADE_SAW_Slots); // SAW
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_DAMAGE, i_UPGRADE_SAW_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_RATE, i_UPGRADE_SAW_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SAW_AMMO, i_UPGRADE_SAW_Ammo);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_SLOTS, i_UPGRADE_SNIPER_Slots); // Sniper Rifle
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_DAMAGE, i_UPGRADE_SNIPER_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_RATE, i_UPGRADE_SNIPER_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SNIPER_AMMO, i_UPGRADE_SNIPER_Ammo);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_RPG_SLOTS, i_UPGRADE_RPG_Slots); // RPG
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_RPG_DAMAGE, i_UPGRADE_RPG_Damage);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_SLOTS, i_UPGRADE_GAUSS_Slots); // Gauss Rifle
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_DAMAGE, i_UPGRADE_GAUSS_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GAUSS_RATE, i_UPGRADE_GAUSS_RateOfFire);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_SHOCK_RATE, i_UPGRADE_SHOCK_RateOfFire); // Shock Rifle
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_SLOTS, i_UPGRADE_GRENADE_Slots); // Grenade Launcher
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_RATE, i_UPGRADE_GRENADE_RateOfFire);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_GRENADE_AMMO, i_UPGRADE_GRENADE_Ammo);
-
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_SLOTS, i_UPGRADE_MINIGUN_Slots); // Minigun
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_DAMAGE, i_UPGRADE_MINIGUN_Damage);
-                    ConvertAndSave(fsFile, ADDRESS_UPGRADE_MINIGUN_RATE, i_UPGRADE_MINIGUN_RateOfFire);
-
                     // Ammo
                     ConvertAndSave(fsFile, ADDRESS_AMMO_BUCKSHOT, i_AMMO_Shotgun);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_9MM, i_AMMO_9mm);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_SHOCK, i_AMMO_Shock);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_SAW, i_AMMO_SAW);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_SNIPER, i_AMMO_Sniper);
-                    ConvertAndSave(fsFile, ADDRESS_AMMO_ARGRENADE, i_AMMO_ARGrenade);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_ARGRENADES, i_AMMO_ARGrenade);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_FLAME, i_AMMO_Flame);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_MINIGUN, i_AMMO_Minigun);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_PYTHON, i_AMMO_357);
@@ -1226,7 +939,6 @@ namespace BDefSaveEditor
                     ConvertAndSave(fsFile, ADDRESS_AMMO_TRIPMINE, i_AMMO_Tripmine);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_SATCHEL, i_AMMO_Satchel);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_HANDGRENADE, i_AMMO_Grenade);
-                    ConvertAndSave(fsFile, ADDRESS_AMMO_GRENADELAUNCHER, i_AMMO_GLauncher);
 
                     // Powers
                     ConvertAndSave(fsFile, ADDRESS_POWERS_FIRST, i_POWER_First);
@@ -1374,130 +1086,6 @@ namespace BDefSaveEditor
         private void boxXP_Leave(object sender, EventArgs e)
         {
             boxLevel.Value = XPToLevel(Convert.ToInt32(boxXP.Value));
-        }
-
-        private void buttonUpgrades_Click(object sender, EventArgs e)
-        {
-            contextMenuUpgrades.Show(MousePosition);
-        }
-
-        private void cmu1_Meele_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Meele";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MEELE);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu1_Axe_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Ancient Axe";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.AXE);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu2_Pistol_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Pistol";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.PISTOL);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu2_Blaster_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Blaster";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.BLASTER);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu2_Python_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Python";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.PYTHON);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu2_Akimbo_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Akimbo";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.AKIMBO);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_SMG_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Submachine Gun";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SMG);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_Shotgun_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Shotgun";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SHOTGUN);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_Crossbow_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Crossbow";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.CROSSBOW);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_ARifle_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Assault Rifle";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.ASSAULT);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_SAW_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Squad Automatic Weapon";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SAW);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu3_Sniper_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Sniper Rifle";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SNIPER);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu4_RPGLauncher_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Rocket-Propelled Grenade";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.ROCKET);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu4_Gauss_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Gauss Rifle";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.GAUSS);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu4_SRifle_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Shock Rifle";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.SHOCK);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu4_GrenadeLauncher_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Grenade Launcher";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.GRENADE);
-            upgradesForm.ShowDialog();
-        }
-
-        private void cmu4_Minigun_Click(object sender, EventArgs e)
-        {
-            upgradesForm.Text = "Minigun";
-            upgradesForm.InitUpgradeMenu(UpgradesForm.e_Selector.MINIGUN);
-            upgradesForm.ShowDialog();
         }
 
         private void buttonSkills_Click(object sender, EventArgs e)
