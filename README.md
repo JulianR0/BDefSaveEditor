@@ -38,27 +38,27 @@ The underworld mode is an unreleased game mode containing only zombies. To acces
 
 You are now in underworld.
 
-### Why I can't edit the upgrades of X weapon?
+### Upgrades are not how I remember them...
 
-You cannot edit the upgrades of a weapon that the player does not have. Add them first by using "Edit Weapons".
+The old "Weapon Upgrades" has been temporalily disabled. This new update introduced tier upgrades, which are accessible from the "Weapons" menu.
 
-### The Flamethrower seems to be missing from the upgrades list.
+### Disabled, does that mean it can still be accessed via save tinkering?
 
-Although there is data in the save file that stores this weapon upgrades, editing them has no effect whatsoever in-game. That's why is omitted, so you don't see a dialog box with "No effect" written all over it.
+It could be posible that the code that handles the old weapon upgrades is still present into the game, but any data referencing them has been removed from the save file. Meaning it is not possible to re-enable the old weapon upgrades with this tool.
 
-### A weapon upgrade has a maximum of 0, yet it can be modified. I'm confused!
+### Why do I lose the money I added from here?
 
-A maximum of 0 means: That specific upgrade cannot be done through normal means, yet changing it with the editor has it's effect in-game. For example, the python weapon has a max ammo upgrade of 0, yet, if you increase the number you will see in-game that the maximum clip ammo capacity has increased. This also applies true to weapons that do not appear in the in-game upgrades menu, such as the Meele weapon or Shock Rifle.
+The amount of money you can hold on your character is now tied to your level. For your first 10 levels, you can hold a maximum of $5000. As your level increases, this limit will go up to fit later waves.
 
 ### You can cheat the "Hero" achievement with this. &@#? you!
 
-~~You cannot reach level 90 legally anyway so who cares.~~ Actually, it is possible to legally reach the maximum level in the underworld mode with ease, but this mode is not oficially released so it doesn't count. Trying in other gamemodes however requires you to be lucky with the RNG to have a flamethrower (or have Igniting bolts, althrough that's much slower), and you must be Rushing class with the 100% damage reduction upgrade. It's the ONLY LEGAL WAY to get the achievement.
+On older days, I would say: ~~You cannot reach level 90 legally anyway so who cares.~~ Times have changed. Base Defense got an update that now made this possible to achieve.
 
-YOU CAN'T OTHERWISE. Impossible to get that far enough normally to reach that level. One word: Houndeyes. Even with a 99% damage reduction on softcore, they still instakill.
+So yes, I agree with you. You can just edit your level to 89 then climb your way to the final ladder, and call it a day. But in the end, complaining that you can do this with this tool is the same as complaining that S.A.M. exists. Yeah, you know what program I'm talking about.
 
-That's bullshit.
+Look, I get it. Reaching level 90, even if now humanly possible, is still a tedious and time-consuming task. Perhaps it was intended to be that way, it's not meant to be an achievement you can get easily. But I did not create this tool for that purpose.
 
-As a bonus point, even you SOMEHOW where to reach level 90, the game does NOT know what to do afterwards! The total XP on your character will immediately jump to 541,996,392 XP, which is theorically **Level 91**. The game does not know how to handle such data, and so, the next time you want to continue from your glorious max level character, the game will be permanently stuck once it tries to read the save file contents. The only way to fix it (if you don't have this editor) is to delete the save file. Yay bugs!
+Tools by itself are neither good or bad, it's the person wielding it that decides how said tool should be used.
 
 ### Why free software?
 
@@ -66,7 +66,7 @@ Simply put, information is meant to be free. Also, I believe that the game needs
 
 ### The interface sucks!
 
-I don't blame you for it. I built this program to learn the very basics of .NET and C#. I might focus on a better interface in the future, but I don't make any promises.
+I don't blame you for it. I built this program to learn the very basics of .NET and C#. I might focus on a better interface in the future, but can't make any promises.
 
 ### The coding sucks!
 
@@ -74,6 +74,6 @@ Again, I don't blame you. Being a novice programmer myself I'm bound to write ho
 
 ### Can i haz Atheist achievement with dis? :3
 
-No.
+Yes, but I'm not telling you how.
 
-Even I don't know how to get that achievement.
+It's supposed to be a hidden achievement, after all.
