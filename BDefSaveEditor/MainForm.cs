@@ -39,30 +39,17 @@ namespace BDefSaveEditor
         const int ADDRESS_TIER_SATCHEL = 0x088;
         const int ADDRESS_TIER_RAILGUN = 0x090;
         const int ADDRESS_TIER_PLASMAGUN = 0x094;
-        const int ADDRESS_MELEE_CLIP = 0x0B8; // keep at -1
+        const int ADDRESS_MELEE_CLIP = 0x0B8; // keep the clip of these at -1
         const int ADDRESS_AXE_CLIP = 0x0BC; // -1
-        const int ADDRESS_PISTOL_CLIP = 0x0C0;
         const int ADDRESS_BLASTER_CLIP = 0x0C4; // -1
-        const int ADDRESS_PYTHON_CLIP = 0x0C8;
-        const int ADDRESS_AKIMBO_CLIP = 0x0CC;
-        const int ADDRESS_MP5_CLIP = 0x0D0;
-        const int ADDRESS_SHOTGUN_CLIP = 0x0D4;
-        const int ADDRESS_CROSSBOW_CLIP = 0x0D8;
-        const int ADDRESS_ASSAULT_CLIP = 0x0DC;
-        const int ADDRESS_SAW_CLIP = 0x0E0;
-        const int ADDRESS_SNIPER_CLIP = 0x0E4;
-        const int ADDRESS_RPG_CLIP = 0x0E8;
         const int ADDRESS_GAUSS_CLIP = 0x0EC; // -1
         const int ADDRESS_SHOCK_CLIP = 0x0F0; // -1
-        const int ADDRESS_GL_CLIP = 0x0F4;
         const int ADDRESS_FLAME_CLIP = 0x0F8; // -1
         const int ADDRESS_MINIGUN_CLIP = 0x0FC; // -1
         const int ADDRESS_HANDGRENADE_CLIP = 0x100; // -1
         const int ADDRESS_TRIPMINE_CLIP = 0x104; // -1
         const int ADDRESS_SATCHEL_CLIP = 0x108; // -1
         const int ADDRESS_GESTURES_CLIP = 0x10C; // ???
-        const int ADDRESS_RAILGUN_CLIP = 0x110;
-        const int ADDRESS_PLASMAGUN_CLIP = 0x114;
         const int ADDRESS_AMMO_BUCKSHOT = 0x138;
         const int ADDRESS_AMMO_9MM = 0x13C; // shared by mp5/akimbo
         const int ADDRESS_AMMO_SHOCK = 0x140;
@@ -390,6 +377,30 @@ namespace BDefSaveEditor
         public int i_AMMO_Railgun;
         public int i_AMMO_Plasmagun;
 
+        public int i_TIER_Melee;
+        public int i_TIER_Axe;
+        public int i_TIER_Blaster;
+        public int i_TIER_Shotgun;
+        public int i_TIER_Pistol;
+        public int i_TIER_MP5;
+        public int i_TIER_Shock;
+        public int i_TIER_Assault;
+        public int i_TIER_SAW;
+        public int i_TIER_Sniper;
+        public int i_TIER_Flame;
+        public int i_TIER_Minigun;
+        public int i_TIER_357;
+        public int i_TIER_Akimbo;
+        public int i_TIER_Gauss;
+        public int i_TIER_RPG;
+        public int i_TIER_GL;
+        public int i_TIER_Crossbow;
+        public int i_TIER_Tripmine;
+        public int i_TIER_Satchel;
+        public int i_TIER_Grenade;
+        public int i_TIER_Railgun;
+        public int i_TIER_Plasmagun;
+
         public int i_POWER_First;
         public int i_POWER_Second;
         public int i_POWER_Third;
@@ -653,6 +664,33 @@ namespace BDefSaveEditor
                         i_AMMO_Tripmine = ConvertAndLoad(fsFile, ADDRESS_AMMO_TRIPMINE);
                         i_AMMO_Satchel = ConvertAndLoad(fsFile, ADDRESS_AMMO_SATCHEL);
                         i_AMMO_Grenade = ConvertAndLoad(fsFile, ADDRESS_AMMO_HANDGRENADE);
+                        i_AMMO_Railgun = ConvertAndLoad(fsFile, ADDRESS_AMMO_QUARK);
+                        i_AMMO_Plasmagun = ConvertAndLoad(fsFile, ADDRESS_AMMO_PLASMA);
+
+                        // Upgrades
+                        i_TIER_Melee = ConvertAndLoad(fsFile, ADDRESS_TIER_MELEE);
+                        i_TIER_Axe = ConvertAndLoad(fsFile, ADDRESS_TIER_AXE);
+                        i_TIER_Blaster = ConvertAndLoad(fsFile, ADDRESS_TIER_BLASTER);
+                        i_TIER_Shotgun = ConvertAndLoad(fsFile, ADDRESS_TIER_SHOTGUN);
+                        i_TIER_Pistol = ConvertAndLoad(fsFile, ADDRESS_TIER_PISTOL);
+                        i_TIER_MP5 = ConvertAndLoad(fsFile, ADDRESS_TIER_MP5);
+                        i_TIER_Shock = ConvertAndLoad(fsFile, ADDRESS_TIER_SHOCK);
+                        i_TIER_Assault = ConvertAndLoad(fsFile, ADDRESS_TIER_ASSAULT);
+                        i_TIER_SAW = ConvertAndLoad(fsFile, ADDRESS_TIER_SAW);
+                        i_TIER_Sniper = ConvertAndLoad(fsFile, ADDRESS_TIER_SNIPER);
+                        i_TIER_Flame = ConvertAndLoad(fsFile, ADDRESS_TIER_FLAME);
+                        i_TIER_Minigun = ConvertAndLoad(fsFile, ADDRESS_TIER_MINIGUN);
+                        i_TIER_357 = ConvertAndLoad(fsFile, ADDRESS_TIER_PYTHON);
+                        i_TIER_Akimbo = ConvertAndLoad(fsFile, ADDRESS_TIER_AKIMBO);
+                        i_TIER_Gauss = ConvertAndLoad(fsFile, ADDRESS_TIER_GAUSS);
+                        i_TIER_RPG = ConvertAndLoad(fsFile, ADDRESS_TIER_RPG);
+                        i_TIER_GL = ConvertAndLoad(fsFile, ADDRESS_TIER_GL);
+                        i_TIER_Crossbow = ConvertAndLoad(fsFile, ADDRESS_TIER_CROSSBOW);
+                        i_TIER_Tripmine = ConvertAndLoad(fsFile, ADDRESS_TIER_TRIPMINE);
+                        i_TIER_Satchel = ConvertAndLoad(fsFile, ADDRESS_TIER_SATCHEL);
+                        i_TIER_Grenade = ConvertAndLoad(fsFile, ADDRESS_TIER_HANDGRENADE);
+                        i_TIER_Railgun = ConvertAndLoad(fsFile, ADDRESS_TIER_RAILGUN);
+                        i_TIER_Plasmagun = ConvertAndLoad(fsFile, ADDRESS_TIER_PLASMAGUN);
 
                         // Powers
                         i_POWER_First = ConvertAndLoad(fsFile, ADDRESS_POWERS_FIRST);
@@ -848,6 +886,19 @@ namespace BDefSaveEditor
                     if (b_WPN_Suit) iData += (1 << 31); // W_SUIT
                     ConvertAndSave(fsFile, ADDRESS_WEAPONS, iData);
 
+                    // Keep the clip ammo of these weapons at -1
+                    ConvertAndSave(fsFile, ADDRESS_MELEE_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_AXE_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_BLASTER_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_GAUSS_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_SHOCK_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_FLAME_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_MINIGUN_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_HANDGRENADE_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_TRIPMINE_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_SATCHEL_CLIP, -1);
+                    ConvertAndSave(fsFile, ADDRESS_GESTURES_CLIP, -1);
+
                     // Tasks
                     ConvertAndSave(fsFile, ADDRESS_TASK_NUMBER, i_TASK_Number); // Task number
                     ConvertAndSave(fsFile, ADDRESS_TASK_TYPE, i_TASK_Type + 1); // Task type
@@ -939,6 +990,33 @@ namespace BDefSaveEditor
                     ConvertAndSave(fsFile, ADDRESS_AMMO_TRIPMINE, i_AMMO_Tripmine);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_SATCHEL, i_AMMO_Satchel);
                     ConvertAndSave(fsFile, ADDRESS_AMMO_HANDGRENADE, i_AMMO_Grenade);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_QUARK, i_AMMO_Railgun);
+                    ConvertAndSave(fsFile, ADDRESS_AMMO_PLASMA, i_AMMO_Plasmagun);
+
+                    // Upgrades
+                    ConvertAndSave(fsFile, ADDRESS_TIER_MELEE, i_TIER_Melee);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_AXE, i_TIER_Axe);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_BLASTER, i_TIER_Blaster);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_SHOTGUN, i_TIER_Shotgun);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_PISTOL, i_TIER_Pistol);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_MP5, i_TIER_MP5);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_SHOCK, i_TIER_Shock);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_ASSAULT, i_TIER_Assault);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_SAW, i_TIER_SAW);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_SNIPER, i_TIER_Sniper);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_FLAME, i_TIER_Flame);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_MINIGUN, i_TIER_Minigun);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_PYTHON, i_TIER_357);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_AKIMBO, i_TIER_Akimbo);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_GAUSS, i_TIER_Gauss);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_RPG, i_TIER_RPG);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_GL, i_TIER_GL);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_CROSSBOW, i_TIER_Crossbow);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_TRIPMINE, i_TIER_Tripmine);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_SATCHEL, i_TIER_Satchel);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_HANDGRENADE, i_TIER_Grenade);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_RAILGUN, i_TIER_Railgun);
+                    ConvertAndSave(fsFile, ADDRESS_TIER_PLASMAGUN, i_TIER_Plasmagun);
 
                     // Powers
                     ConvertAndSave(fsFile, ADDRESS_POWERS_FIRST, i_POWER_First);

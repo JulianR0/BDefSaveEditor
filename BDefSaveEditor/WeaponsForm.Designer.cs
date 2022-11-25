@@ -49,7 +49,15 @@
             this.checkBlaster = new System.Windows.Forms.CheckBox();
             this.checkSniper = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.upgradesBlaster = new System.Windows.Forms.NumericUpDown();
+            this.upgradesAxe = new System.Windows.Forms.NumericUpDown();
+            this.upgradesMelee = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkPlasmagun = new System.Windows.Forms.CheckBox();
+            this.numericPlasmagun = new System.Windows.Forms.NumericUpDown();
+            this.numericRailgun = new System.Windows.Forms.NumericUpDown();
+            this.checkRailgun = new System.Windows.Forms.CheckBox();
             this.numericGL = new System.Windows.Forms.NumericUpDown();
             this.numericRPG = new System.Windows.Forms.NumericUpDown();
             this.numericSniper = new System.Windows.Forms.NumericUpDown();
@@ -61,14 +69,24 @@
             this.numericPython = new System.Windows.Forms.NumericUpDown();
             this.numericAkimbo = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.upgradesPistol = new System.Windows.Forms.NumericUpDown();
             this.numericPistol = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.upgradesMinigun = new System.Windows.Forms.NumericUpDown();
+            this.upgradesFlame = new System.Windows.Forms.NumericUpDown();
+            this.upgradesShock = new System.Windows.Forms.NumericUpDown();
+            this.upgradesGauss = new System.Windows.Forms.NumericUpDown();
             this.numericMinigun = new System.Windows.Forms.NumericUpDown();
             this.numericFlame = new System.Windows.Forms.NumericUpDown();
             this.numericShock = new System.Windows.Forms.NumericUpDown();
             this.numericGauss = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.upgradesHandgrenade = new System.Windows.Forms.NumericUpDown();
+            this.upgradesSatchel = new System.Windows.Forms.NumericUpDown();
+            this.upgradesTripmine = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numericARGrenades = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,8 +96,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericTripmines = new System.Windows.Forms.NumericUpDown();
             this.numericSatchels = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.upgrades357 = new System.Windows.Forms.NumericUpDown();
+            this.upgradesAkimbo = new System.Windows.Forms.NumericUpDown();
+            this.upgradesMP5 = new System.Windows.Forms.NumericUpDown();
+            this.upgradesShotgun = new System.Windows.Forms.NumericUpDown();
+            this.upgradesCrossbow = new System.Windows.Forms.NumericUpDown();
+            this.upgradesAssault = new System.Windows.Forms.NumericUpDown();
+            this.upgradesSAW = new System.Windows.Forms.NumericUpDown();
+            this.upgradesSniper = new System.Windows.Forms.NumericUpDown();
+            this.upgradesRPG = new System.Windows.Forms.NumericUpDown();
+            this.upgradesGL = new System.Windows.Forms.NumericUpDown();
+            this.upgradesRailgun = new System.Windows.Forms.NumericUpDown();
+            this.upgradesPlasmagun = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesBlaster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAxe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMelee)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPlasmagun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRailgun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericGL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRPG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSniper)).BeginInit();
@@ -90,22 +126,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMP5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPython)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAkimbo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesPistol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPistol)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMinigun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesFlame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesShock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesGauss)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinigun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericFlame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericShock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericGauss)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesHandgrenade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSatchel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesTripmine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericARGrenades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericHandGrenades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTripmines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSatchels)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgrades357)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAkimbo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMP5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesShotgun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesCrossbow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAssault)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSAW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSniper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesRPG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesGL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesRailgun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesPlasmagun)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(385, 341);
+            this.buttonOK.Location = new System.Drawing.Point(500, 373);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 0;
@@ -238,7 +294,7 @@
             // checkAxe
             // 
             this.checkAxe.AutoSize = true;
-            this.checkAxe.Location = new System.Drawing.Point(4, 36);
+            this.checkAxe.Location = new System.Drawing.Point(4, 43);
             this.checkAxe.Margin = new System.Windows.Forms.Padding(1);
             this.checkAxe.Name = "checkAxe";
             this.checkAxe.Size = new System.Drawing.Size(83, 17);
@@ -293,7 +349,7 @@
             // checkSuit
             // 
             this.checkSuit.AutoSize = true;
-            this.checkSuit.Location = new System.Drawing.Point(4, 74);
+            this.checkSuit.Location = new System.Drawing.Point(4, 95);
             this.checkSuit.Margin = new System.Windows.Forms.Padding(1);
             this.checkSuit.Name = "checkSuit";
             this.checkSuit.Size = new System.Drawing.Size(71, 17);
@@ -304,7 +360,7 @@
             // checkBlaster
             // 
             this.checkBlaster.AutoSize = true;
-            this.checkBlaster.Location = new System.Drawing.Point(4, 55);
+            this.checkBlaster.Location = new System.Drawing.Point(4, 69);
             this.checkBlaster.Margin = new System.Windows.Forms.Padding(1);
             this.checkBlaster.Name = "checkBlaster";
             this.checkBlaster.Size = new System.Drawing.Size(58, 17);
@@ -325,19 +381,85 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.checkMelee);
             this.groupBox1.Controls.Add(this.checkAxe);
             this.groupBox1.Controls.Add(this.checkBlaster);
+            this.groupBox1.Controls.Add(this.upgradesBlaster);
+            this.groupBox1.Controls.Add(this.upgradesAxe);
+            this.groupBox1.Controls.Add(this.upgradesMelee);
             this.groupBox1.Controls.Add(this.checkSuit);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 94);
+            this.groupBox1.Size = new System.Drawing.Size(255, 124);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Essentials";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(195, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Upgrades";
+            // 
+            // upgradesBlaster
+            // 
+            this.upgradesBlaster.Location = new System.Drawing.Point(188, 68);
+            this.upgradesBlaster.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesBlaster.Name = "upgradesBlaster";
+            this.upgradesBlaster.Size = new System.Drawing.Size(60, 20);
+            this.upgradesBlaster.TabIndex = 38;
+            // 
+            // upgradesAxe
+            // 
+            this.upgradesAxe.Location = new System.Drawing.Point(188, 42);
+            this.upgradesAxe.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesAxe.Name = "upgradesAxe";
+            this.upgradesAxe.Size = new System.Drawing.Size(60, 20);
+            this.upgradesAxe.TabIndex = 38;
+            // 
+            // upgradesMelee
+            // 
+            this.upgradesMelee.Location = new System.Drawing.Point(188, 16);
+            this.upgradesMelee.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesMelee.Name = "upgradesMelee";
+            this.upgradesMelee.Size = new System.Drawing.Size(60, 20);
+            this.upgradesMelee.TabIndex = 38;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.upgradesPlasmagun);
+            this.groupBox2.Controls.Add(this.upgradesRailgun);
+            this.groupBox2.Controls.Add(this.upgradesGL);
+            this.groupBox2.Controls.Add(this.upgradesRPG);
+            this.groupBox2.Controls.Add(this.upgradesSniper);
+            this.groupBox2.Controls.Add(this.upgradesSAW);
+            this.groupBox2.Controls.Add(this.upgradesAssault);
+            this.groupBox2.Controls.Add(this.upgradesCrossbow);
+            this.groupBox2.Controls.Add(this.upgradesShotgun);
+            this.groupBox2.Controls.Add(this.upgradesMP5);
+            this.groupBox2.Controls.Add(this.upgradesAkimbo);
+            this.groupBox2.Controls.Add(this.upgrades357);
+            this.groupBox2.Controls.Add(this.checkPlasmagun);
+            this.groupBox2.Controls.Add(this.numericPlasmagun);
+            this.groupBox2.Controls.Add(this.numericRailgun);
+            this.groupBox2.Controls.Add(this.checkRailgun);
             this.groupBox2.Controls.Add(this.numericGL);
             this.groupBox2.Controls.Add(this.numericRPG);
             this.groupBox2.Controls.Add(this.numericSniper);
@@ -349,6 +471,7 @@
             this.groupBox2.Controls.Add(this.numericPython);
             this.groupBox2.Controls.Add(this.numericAkimbo);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.upgradesPistol);
             this.groupBox2.Controls.Add(this.numericPistol);
             this.groupBox2.Controls.Add(this.checkPistol);
             this.groupBox2.Controls.Add(this.check357);
@@ -361,16 +484,62 @@
             this.groupBox2.Controls.Add(this.checkAssault);
             this.groupBox2.Controls.Add(this.checkSAW);
             this.groupBox2.Controls.Add(this.checkRPG);
-            this.groupBox2.Location = new System.Drawing.Point(206, 12);
+            this.groupBox2.Location = new System.Drawing.Point(273, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(254, 304);
+            this.groupBox2.Size = new System.Drawing.Size(302, 355);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Normal Weapons";
             // 
+            // checkPlasmagun
+            // 
+            this.checkPlasmagun.AutoSize = true;
+            this.checkPlasmagun.Location = new System.Drawing.Point(4, 331);
+            this.checkPlasmagun.Margin = new System.Windows.Forms.Padding(1);
+            this.checkPlasmagun.Name = "checkPlasmagun";
+            this.checkPlasmagun.Size = new System.Drawing.Size(84, 17);
+            this.checkPlasmagun.TabIndex = 37;
+            this.checkPlasmagun.Text = "Plasma Rifle";
+            this.checkPlasmagun.UseVisualStyleBackColor = true;
+            // 
+            // numericPlasmagun
+            // 
+            this.numericPlasmagun.Location = new System.Drawing.Point(169, 328);
+            this.numericPlasmagun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numericPlasmagun.Name = "numericPlasmagun";
+            this.numericPlasmagun.Size = new System.Drawing.Size(60, 20);
+            this.numericPlasmagun.TabIndex = 36;
+            // 
+            // numericRailgun
+            // 
+            this.numericRailgun.Location = new System.Drawing.Point(169, 302);
+            this.numericRailgun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numericRailgun.Name = "numericRailgun";
+            this.numericRailgun.Size = new System.Drawing.Size(60, 20);
+            this.numericRailgun.TabIndex = 35;
+            // 
+            // checkRailgun
+            // 
+            this.checkRailgun.AutoSize = true;
+            this.checkRailgun.Location = new System.Drawing.Point(4, 305);
+            this.checkRailgun.Margin = new System.Windows.Forms.Padding(1);
+            this.checkRailgun.Name = "checkRailgun";
+            this.checkRailgun.Size = new System.Drawing.Size(91, 17);
+            this.checkRailgun.TabIndex = 34;
+            this.checkRailgun.Text = "Rail Handgun";
+            this.checkRailgun.UseVisualStyleBackColor = true;
+            // 
             // numericGL
             // 
-            this.numericGL.Location = new System.Drawing.Point(188, 278);
+            this.numericGL.Location = new System.Drawing.Point(169, 276);
             this.numericGL.Maximum = new decimal(new int[] {
             999,
             0,
@@ -379,10 +548,11 @@
             this.numericGL.Name = "numericGL";
             this.numericGL.Size = new System.Drawing.Size(60, 20);
             this.numericGL.TabIndex = 33;
+            this.numericGL.Leave += new System.EventHandler(this.numericGL_Leave);
             // 
             // numericRPG
             // 
-            this.numericRPG.Location = new System.Drawing.Point(188, 252);
+            this.numericRPG.Location = new System.Drawing.Point(169, 250);
             this.numericRPG.Maximum = new decimal(new int[] {
             999,
             0,
@@ -394,7 +564,7 @@
             // 
             // numericSniper
             // 
-            this.numericSniper.Location = new System.Drawing.Point(188, 227);
+            this.numericSniper.Location = new System.Drawing.Point(169, 225);
             this.numericSniper.Maximum = new decimal(new int[] {
             999,
             0,
@@ -406,7 +576,7 @@
             // 
             // numericSAW
             // 
-            this.numericSAW.Location = new System.Drawing.Point(188, 201);
+            this.numericSAW.Location = new System.Drawing.Point(169, 199);
             this.numericSAW.Maximum = new decimal(new int[] {
             999,
             0,
@@ -419,7 +589,7 @@
             // 
             // numericAssault
             // 
-            this.numericAssault.Location = new System.Drawing.Point(188, 175);
+            this.numericAssault.Location = new System.Drawing.Point(169, 173);
             this.numericAssault.Maximum = new decimal(new int[] {
             999,
             0,
@@ -432,7 +602,7 @@
             // 
             // numericCrossbow
             // 
-            this.numericCrossbow.Location = new System.Drawing.Point(188, 149);
+            this.numericCrossbow.Location = new System.Drawing.Point(169, 147);
             this.numericCrossbow.Maximum = new decimal(new int[] {
             999,
             0,
@@ -444,7 +614,7 @@
             // 
             // numericShotgun
             // 
-            this.numericShotgun.Location = new System.Drawing.Point(188, 123);
+            this.numericShotgun.Location = new System.Drawing.Point(169, 121);
             this.numericShotgun.Maximum = new decimal(new int[] {
             999,
             0,
@@ -456,7 +626,7 @@
             // 
             // numericMP5
             // 
-            this.numericMP5.Location = new System.Drawing.Point(188, 97);
+            this.numericMP5.Location = new System.Drawing.Point(169, 95);
             this.numericMP5.Maximum = new decimal(new int[] {
             999,
             0,
@@ -469,7 +639,7 @@
             // 
             // numericPython
             // 
-            this.numericPython.Location = new System.Drawing.Point(188, 45);
+            this.numericPython.Location = new System.Drawing.Point(169, 43);
             this.numericPython.Maximum = new decimal(new int[] {
             999,
             0,
@@ -481,7 +651,7 @@
             // 
             // numericAkimbo
             // 
-            this.numericAkimbo.Location = new System.Drawing.Point(188, 71);
+            this.numericAkimbo.Location = new System.Drawing.Point(169, 69);
             this.numericAkimbo.Maximum = new decimal(new int[] {
             999,
             0,
@@ -495,15 +665,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 0);
+            this.label1.Location = new System.Drawing.Point(176, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "BP Ammo";
             // 
+            // upgradesPistol
+            // 
+            this.upgradesPistol.Location = new System.Drawing.Point(235, 19);
+            this.upgradesPistol.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesPistol.Name = "upgradesPistol";
+            this.upgradesPistol.Size = new System.Drawing.Size(60, 20);
+            this.upgradesPistol.TabIndex = 22;
+            this.upgradesPistol.Leave += new System.EventHandler(this.pistolLeave);
+            // 
             // numericPistol
             // 
-            this.numericPistol.Location = new System.Drawing.Point(188, 19);
+            this.numericPistol.Location = new System.Drawing.Point(169, 19);
             this.numericPistol.Maximum = new decimal(new int[] {
             999,
             0,
@@ -516,6 +699,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.upgradesMinigun);
+            this.groupBox3.Controls.Add(this.upgradesFlame);
+            this.groupBox3.Controls.Add(this.upgradesShock);
+            this.groupBox3.Controls.Add(this.upgradesGauss);
             this.groupBox3.Controls.Add(this.numericMinigun);
             this.groupBox3.Controls.Add(this.numericFlame);
             this.groupBox3.Controls.Add(this.numericShock);
@@ -525,12 +713,69 @@
             this.groupBox3.Controls.Add(this.checkShock);
             this.groupBox3.Controls.Add(this.checkFlame);
             this.groupBox3.Controls.Add(this.checkMinigun);
-            this.groupBox3.Location = new System.Drawing.Point(12, 112);
+            this.groupBox3.Location = new System.Drawing.Point(12, 142);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(188, 121);
+            this.groupBox3.Size = new System.Drawing.Size(255, 124);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Special Weapons";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(195, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Upgrades";
+            // 
+            // upgradesMinigun
+            // 
+            this.upgradesMinigun.Location = new System.Drawing.Point(188, 94);
+            this.upgradesMinigun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesMinigun.Name = "upgradesMinigun";
+            this.upgradesMinigun.Size = new System.Drawing.Size(60, 20);
+            this.upgradesMinigun.TabIndex = 41;
+            // 
+            // upgradesFlame
+            // 
+            this.upgradesFlame.Location = new System.Drawing.Point(188, 68);
+            this.upgradesFlame.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesFlame.Name = "upgradesFlame";
+            this.upgradesFlame.Size = new System.Drawing.Size(60, 20);
+            this.upgradesFlame.TabIndex = 40;
+            // 
+            // upgradesShock
+            // 
+            this.upgradesShock.Location = new System.Drawing.Point(188, 42);
+            this.upgradesShock.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesShock.Name = "upgradesShock";
+            this.upgradesShock.Size = new System.Drawing.Size(60, 20);
+            this.upgradesShock.TabIndex = 39;
+            // 
+            // upgradesGauss
+            // 
+            this.upgradesGauss.Location = new System.Drawing.Point(188, 16);
+            this.upgradesGauss.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesGauss.Name = "upgradesGauss";
+            this.upgradesGauss.Size = new System.Drawing.Size(60, 20);
+            this.upgradesGauss.TabIndex = 38;
             // 
             // numericMinigun
             // 
@@ -601,6 +846,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.upgradesHandgrenade);
+            this.groupBox4.Controls.Add(this.upgradesSatchel);
+            this.groupBox4.Controls.Add(this.upgradesTripmine);
+            this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.numericARGrenades);
             this.groupBox4.Controls.Add(this.label6);
@@ -610,12 +859,57 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.numericTripmines);
             this.groupBox4.Controls.Add(this.numericSatchels);
-            this.groupBox4.Location = new System.Drawing.Point(12, 240);
+            this.groupBox4.Location = new System.Drawing.Point(12, 272);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(188, 124);
+            this.groupBox4.Size = new System.Drawing.Size(255, 124);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Explosives";
+            // 
+            // upgradesHandgrenade
+            // 
+            this.upgradesHandgrenade.Location = new System.Drawing.Point(188, 71);
+            this.upgradesHandgrenade.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesHandgrenade.Name = "upgradesHandgrenade";
+            this.upgradesHandgrenade.Size = new System.Drawing.Size(60, 20);
+            this.upgradesHandgrenade.TabIndex = 43;
+            // 
+            // upgradesSatchel
+            // 
+            this.upgradesSatchel.Location = new System.Drawing.Point(188, 45);
+            this.upgradesSatchel.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesSatchel.Name = "upgradesSatchel";
+            this.upgradesSatchel.Size = new System.Drawing.Size(60, 20);
+            this.upgradesSatchel.TabIndex = 43;
+            // 
+            // upgradesTripmine
+            // 
+            this.upgradesTripmine.Location = new System.Drawing.Point(188, 19);
+            this.upgradesTripmine.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesTripmine.Name = "upgradesTripmine";
+            this.upgradesTripmine.Size = new System.Drawing.Size(60, 20);
+            this.upgradesTripmine.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(195, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 43;
+            this.label9.Text = "Upgrades";
             // 
             // label7
             // 
@@ -637,6 +931,7 @@
             this.numericARGrenades.Name = "numericARGrenades";
             this.numericARGrenades.Size = new System.Drawing.Size(60, 20);
             this.numericARGrenades.TabIndex = 37;
+            this.numericARGrenades.Leave += new System.EventHandler(this.numericARGrenades_Leave);
             // 
             // label6
             // 
@@ -710,12 +1005,165 @@
             this.numericSatchels.Size = new System.Drawing.Size(60, 20);
             this.numericSatchels.TabIndex = 35;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(242, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 13);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Upgrades";
+            // 
+            // upgrades357
+            // 
+            this.upgrades357.Location = new System.Drawing.Point(235, 43);
+            this.upgrades357.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgrades357.Name = "upgrades357";
+            this.upgrades357.Size = new System.Drawing.Size(60, 20);
+            this.upgrades357.TabIndex = 38;
+            // 
+            // upgradesAkimbo
+            // 
+            this.upgradesAkimbo.Location = new System.Drawing.Point(235, 69);
+            this.upgradesAkimbo.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesAkimbo.Name = "upgradesAkimbo";
+            this.upgradesAkimbo.Size = new System.Drawing.Size(60, 20);
+            this.upgradesAkimbo.TabIndex = 38;
+            // 
+            // upgradesMP5
+            // 
+            this.upgradesMP5.Location = new System.Drawing.Point(235, 94);
+            this.upgradesMP5.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesMP5.Name = "upgradesMP5";
+            this.upgradesMP5.Size = new System.Drawing.Size(60, 20);
+            this.upgradesMP5.TabIndex = 38;
+            // 
+            // upgradesShotgun
+            // 
+            this.upgradesShotgun.Location = new System.Drawing.Point(235, 121);
+            this.upgradesShotgun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesShotgun.Name = "upgradesShotgun";
+            this.upgradesShotgun.Size = new System.Drawing.Size(60, 20);
+            this.upgradesShotgun.TabIndex = 38;
+            // 
+            // upgradesCrossbow
+            // 
+            this.upgradesCrossbow.Location = new System.Drawing.Point(235, 146);
+            this.upgradesCrossbow.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesCrossbow.Name = "upgradesCrossbow";
+            this.upgradesCrossbow.Size = new System.Drawing.Size(60, 20);
+            this.upgradesCrossbow.TabIndex = 38;
+            // 
+            // upgradesAssault
+            // 
+            this.upgradesAssault.Location = new System.Drawing.Point(235, 172);
+            this.upgradesAssault.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesAssault.Name = "upgradesAssault";
+            this.upgradesAssault.Size = new System.Drawing.Size(60, 20);
+            this.upgradesAssault.TabIndex = 38;
+            // 
+            // upgradesSAW
+            // 
+            this.upgradesSAW.Location = new System.Drawing.Point(235, 198);
+            this.upgradesSAW.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesSAW.Name = "upgradesSAW";
+            this.upgradesSAW.Size = new System.Drawing.Size(60, 20);
+            this.upgradesSAW.TabIndex = 38;
+            // 
+            // upgradesSniper
+            // 
+            this.upgradesSniper.Location = new System.Drawing.Point(235, 224);
+            this.upgradesSniper.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesSniper.Name = "upgradesSniper";
+            this.upgradesSniper.Size = new System.Drawing.Size(60, 20);
+            this.upgradesSniper.TabIndex = 38;
+            // 
+            // upgradesRPG
+            // 
+            this.upgradesRPG.Location = new System.Drawing.Point(235, 250);
+            this.upgradesRPG.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesRPG.Name = "upgradesRPG";
+            this.upgradesRPG.Size = new System.Drawing.Size(60, 20);
+            this.upgradesRPG.TabIndex = 38;
+            // 
+            // upgradesGL
+            // 
+            this.upgradesGL.Location = new System.Drawing.Point(235, 276);
+            this.upgradesGL.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesGL.Name = "upgradesGL";
+            this.upgradesGL.Size = new System.Drawing.Size(60, 20);
+            this.upgradesGL.TabIndex = 38;
+            // 
+            // upgradesRailgun
+            // 
+            this.upgradesRailgun.Location = new System.Drawing.Point(235, 302);
+            this.upgradesRailgun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesRailgun.Name = "upgradesRailgun";
+            this.upgradesRailgun.Size = new System.Drawing.Size(60, 20);
+            this.upgradesRailgun.TabIndex = 38;
+            // 
+            // upgradesPlasmagun
+            // 
+            this.upgradesPlasmagun.Location = new System.Drawing.Point(235, 328);
+            this.upgradesPlasmagun.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.upgradesPlasmagun.Name = "upgradesPlasmagun";
+            this.upgradesPlasmagun.Size = new System.Drawing.Size(60, 20);
+            this.upgradesPlasmagun.TabIndex = 38;
+            // 
             // WeaponsForm
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 375);
+            this.ClientSize = new System.Drawing.Size(586, 405);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -729,12 +1177,16 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Weapons";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClose);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesBlaster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAxe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMelee)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPlasmagun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRailgun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericGL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRPG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSniper)).EndInit();
@@ -745,19 +1197,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMP5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPython)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAkimbo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesPistol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPistol)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMinigun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesFlame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesShock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesGauss)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMinigun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericFlame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericShock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericGauss)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesHandgrenade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSatchel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesTripmine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericARGrenades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericHandGrenades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTripmines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSatchels)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgrades357)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAkimbo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesMP5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesShotgun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesCrossbow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesAssault)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSAW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesSniper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesRPG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesGL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesRailgun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upgradesPlasmagun)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -814,5 +1286,36 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericTripmines;
         private System.Windows.Forms.NumericUpDown numericSatchels;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown upgradesBlaster;
+        private System.Windows.Forms.NumericUpDown upgradesAxe;
+        private System.Windows.Forms.NumericUpDown upgradesMelee;
+        private System.Windows.Forms.CheckBox checkPlasmagun;
+        private System.Windows.Forms.NumericUpDown numericPlasmagun;
+        private System.Windows.Forms.NumericUpDown numericRailgun;
+        private System.Windows.Forms.CheckBox checkRailgun;
+        private System.Windows.Forms.NumericUpDown upgradesPistol;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown upgradesMinigun;
+        private System.Windows.Forms.NumericUpDown upgradesFlame;
+        private System.Windows.Forms.NumericUpDown upgradesShock;
+        private System.Windows.Forms.NumericUpDown upgradesGauss;
+        private System.Windows.Forms.NumericUpDown upgradesHandgrenade;
+        private System.Windows.Forms.NumericUpDown upgradesSatchel;
+        private System.Windows.Forms.NumericUpDown upgradesTripmine;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown upgradesPlasmagun;
+        private System.Windows.Forms.NumericUpDown upgradesRailgun;
+        private System.Windows.Forms.NumericUpDown upgradesGL;
+        private System.Windows.Forms.NumericUpDown upgradesRPG;
+        private System.Windows.Forms.NumericUpDown upgradesSniper;
+        private System.Windows.Forms.NumericUpDown upgradesSAW;
+        private System.Windows.Forms.NumericUpDown upgradesAssault;
+        private System.Windows.Forms.NumericUpDown upgradesCrossbow;
+        private System.Windows.Forms.NumericUpDown upgradesShotgun;
+        private System.Windows.Forms.NumericUpDown upgradesMP5;
+        private System.Windows.Forms.NumericUpDown upgradesAkimbo;
+        private System.Windows.Forms.NumericUpDown upgrades357;
     }
 }

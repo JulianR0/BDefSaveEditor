@@ -301,6 +301,7 @@ namespace BDefSaveEditor
             0,
             0,
             0,
+            0,
             0
         };
 
@@ -984,7 +985,7 @@ namespace BDefSaveEditor
                     boxUpgrades.Enabled = false;
                     boxUpgrades.Value = 0;
                 }
-                else if (ITEM_Colors[comboItemIndex] == 0) // "White" items
+                else if (ITEM_Colors[comboItemIndex] == 0 && ITEM_IDs[comboItemIndex] < 0x96 ) // "White" items (Exclude potions)
                 {
                     boxAttribute.Enabled = false;
                     boxAttribute.Value = 0;
